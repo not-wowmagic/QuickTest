@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import {
   collection, getDocs, addDoc, updateDoc, deleteDoc,
-  doc, query, orderBy, serverTimestamp,
+  doc, query, orderBy, serverTimestamp, onSnapshot
 } from 'firebase/firestore';
 import {
   Chart as ChartJS,
@@ -131,24 +131,40 @@ export default function AdminDashboard() {
     navigate('/admin/login', { replace: true });
   }, [navigate]);
 
-  // Fetch data
+  // Fetch data with real-time listeners
   useEffect(() => {
-    async function fetchAll() {
-      setLoading(true);
-      try {
-        const [qSnap, rSnap] = await Promise.all([
-          getDocs(collection(db, 'questions')),
-          getDocs(query(collection(db, 'results'), orderBy('submittedAt', 'desc'))),
-        ]);
-        setQuestions(qSnap.docs.map((d) => ({ id: d.id, ...d.data() })));
-        setResults(rSnap.docs.map((d) => ({ id: d.id, ...d.data() })));
-      } catch {
-        showToast('error', 'Failed to load data. Check Firebase connection.');
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchAll();
+    setLoading(true);
+    let qLoaded = false;
+    let rLoaded = false;
+
+    const checkLoading = () => {
+      if (qLoaded && rLoaded) setLoading(false);
+    };
+
+    const unsubQ = onSnapshot(collection(db, 'questions'), (snap) => {
+      setQuestions(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
+      qLoaded = true;
+      checkLoading();
+    }, () => {
+      showToast('error', 'Failed to sync questions.');
+      qLoaded = true;
+      checkLoading();
+    });
+
+    const unsubR = onSnapshot(query(collection(db, 'results'), orderBy('submittedAt', 'desc')), (snap) => {
+      setResults(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
+      rLoaded = true;
+      checkLoading();
+    }, () => {
+      showToast('error', 'Failed to sync results.');
+      rLoaded = true;
+      checkLoading();
+    });
+
+    return () => {
+      unsubQ();
+      unsubR();
+    };
   }, [showToast]);
 
   // ── Overview chart data ──
@@ -228,12 +244,10 @@ export default function AdminDashboard() {
     try {
       if (editingQ) {
         await updateDoc(doc(db, 'questions', editingQ.id), payload);
-        setQuestions((prev) => prev.map((q) => q.id === editingQ.id ? { ...q, ...payload } : q));
         showToast('success', 'Question updated.');
       } else {
         payload.createdAt = serverTimestamp();
-        const ref = await addDoc(collection(db, 'questions'), payload);
-        setQuestions((prev) => [...prev, { id: ref.id, ...payload }]);
+        await addDoc(collection(db, 'questions'), payload);
         showToast('success', 'Question added.');
       }
       closeModal();
@@ -248,7 +262,6 @@ export default function AdminDashboard() {
     if (!window.confirm('Delete this question? This cannot be undone.')) return;
     try {
       await deleteDoc(doc(db, 'questions', id));
-      setQuestions((prev) => prev.filter((q) => q.id !== id));
       showToast('success', 'Question deleted.');
     } catch {
       showToast('error', 'Failed to delete question.');
@@ -277,16 +290,7 @@ export default function AdminDashboard() {
           createdAt: serverTimestamp() 
         });
       });
-      const refs = await Promise.all(batch);
-      const newQs = allQuestions.map((q, i) => ({ 
-          id: refs[i].id, 
-          text: q.text,
-          subject: q.subject ?? Object.keys(SUBJECTS).find(k => SUBJECTS[k].questions?.includes(q)),
-          options: q.options,
-          answer: q.answer,
-          explanation: q.explanation ?? ''
-      }));
-      setQuestions((prev) => [...prev, ...newQs]);
+      await Promise.all(batch);
       showToast('success', `${allQuestions.length} questions seeded!`);
     } catch (e) {
       console.error(e);
