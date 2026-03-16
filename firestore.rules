@@ -1,0 +1,20 @@
+# Firebase Firestore Security Rules
+# Paste these into Firebase Console → Firestore → Rules
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Questions: anyone can read, only authenticated admin can write
+    match /questions/{questionId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // Results: any user can create their own result, only admin can read all
+    match /results/{resultId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}

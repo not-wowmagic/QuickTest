@@ -1,0 +1,1050 @@
+{
+  "title": "ETHICS AND MORAL PHILOSOPHY — 100-Item Quiz",
+  "description": "Multiple Choice and True or False",
+  "weeks": [
+    {
+      "week": 1,
+      "topic": "Ethics, Morality, Branches, and Related Disciplines",
+      "questions": [
+        {
+          "number": 1,
+          "type": "multiple_choice",
+          "question": "What does the Greek word ethos mean?",
+          "choices": {
+            "A": "Reason",
+            "B": "Custom, habit, or character",
+            "C": "Duty",
+            "D": "Virtue"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 2,
+          "type": "multiple_choice",
+          "question": "Ethics is best described as:",
+          "choices": {
+            "A": "The study of human biology",
+            "B": "The practical science of the morality of human conduct",
+            "C": "A set of laws enforced by the state",
+            "D": "The study of religious traditions"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 3,
+          "type": "multiple_choice",
+          "question": "According to Glenn (1930), ethics is:",
+          "choices": {
+            "A": "A theoretical science of human emotions",
+            "B": "The practical science of the morality of human conduct",
+            "C": "The study of political systems",
+            "D": "A branch of natural science"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 4,
+          "type": "multiple_choice",
+          "question": "Common-sense ethics refers to:",
+          "choices": {
+            "A": "Knowledge about right and wrong learned from textbooks",
+            "B": "Knowledge about right and wrong that a person already has before formal study",
+            "C": "Ethics applied to common social situations only",
+            "D": "Rules enforced by social media"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 5,
+          "type": "multiple_choice",
+          "question": "Systematic ethics is:",
+          "choices": {
+            "A": "Ethics based solely on intuition",
+            "B": "Knowledge about right and wrong gained through formal course discussions and activities",
+            "C": "A list of laws passed by the government",
+            "D": "Ethics practiced only in professional settings"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 6,
+          "type": "true_or_false",
+          "question": "Ethics and morality have identical etymological origins.",
+          "answer": "False"
+        },
+        {
+          "number": 7,
+          "type": "multiple_choice",
+          "question": "The Latin words mos, moris, and moralitas all relate to:",
+          "choices": {
+            "A": "Justice and fairness",
+            "B": "Custom, habit, and character",
+            "C": "Religious obedience",
+            "D": "Political loyalty"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 8,
+          "type": "multiple_choice",
+          "question": "A moral statement is best described as:",
+          "choices": {
+            "A": "A factual statement about what is the case",
+            "B": "A normative statement expressing a value judgment about what ought to be the case",
+            "C": "A legal declaration by a court",
+            "D": "An emotional reaction to a situation"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 9,
+          "type": "true_or_false",
+          "question": "A normative statement claims that something is the case, while a factual statement claims something ought to be the case.",
+          "answer": "False"
+        },
+        {
+          "number": 10,
+          "type": "multiple_choice",
+          "question": "According to Ocampo (2018), when ethics talks about the good, it points to:",
+          "choices": {
+            "A": "Subjective feelings about pleasure",
+            "B": "Objective facts, rules, and norms that define being a good person",
+            "C": "Cultural traditions passed down through generations",
+            "D": "Religious commandments"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 11,
+          "type": "multiple_choice",
+          "question": "Ethics has a categorical norm, which means:",
+          "choices": {
+            "A": "Ethics only applies to certain people",
+            "B": "One has to act or behave in a specific way",
+            "C": "Ethics changes based on context",
+            "D": "Rules are optional suggestions"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 12,
+          "type": "true_or_false",
+          "question": "Theory in ethics is useful even without applicability to real life.",
+          "answer": "False"
+        },
+        {
+          "number": 13,
+          "type": "multiple_choice",
+          "question": "Ethical relativism (ER) is the view that:",
+          "choices": {
+            "A": "All moral principles are absolute and universal",
+            "B": "All moral principles are valid relative to a particular society or individual",
+            "C": "Morality is determined solely by religion",
+            "D": "Ethics should be based on scientific evidence"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 14,
+          "type": "multiple_choice",
+          "question": "Who is associated with the statement 'Man is the measure of all things'?",
+          "choices": {
+            "A": "Aristotle",
+            "B": "Plato",
+            "C": "Protagoras",
+            "D": "Socrates"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 15,
+          "type": "multiple_choice",
+          "question": "Which is NOT one of the arguments for ethical relativism?",
+          "choices": {
+            "A": "Diversity Argument",
+            "B": "Dependency Argument",
+            "C": "Universality Argument",
+            "D": "Toleration Argument"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 16,
+          "type": "multiple_choice",
+          "question": "Cultural ethical relativism holds that moral principles are valid relative to:",
+          "choices": {
+            "A": "Each individual",
+            "B": "A particular culture or society",
+            "C": "A religious institution",
+            "D": "A government"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 17,
+          "type": "multiple_choice",
+          "question": "Individual ethical relativism holds that moral principles are valid relative to:",
+          "choices": {
+            "A": "A nation",
+            "B": "A culture",
+            "C": "Each individual person",
+            "D": "A professional code"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 18,
+          "type": "true_or_false",
+          "question": "Moral standards, according to Evangelista and Mabacquiao, are established by the decisions of authoritarian bodies.",
+          "answer": "False"
+        },
+        {
+          "number": 19,
+          "type": "multiple_choice",
+          "question": "Which of the following is TRUE about moral standards?",
+          "choices": {
+            "A": "They apply only within a single country",
+            "B": "They are solely determined by majority consensus",
+            "C": "They have universal validity",
+            "D": "They are created by authoritarian bodies"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 20,
+          "type": "true_or_false",
+          "question": "An act can be legal but immoral, or moral but illegal.",
+          "answer": "True"
+        },
+        {
+          "number": 21,
+          "type": "multiple_choice",
+          "question": "How does ethics differ from law?",
+          "choices": {
+            "A": "Ethics is enforced by courts; law is not",
+            "B": "The legal sphere is distinct from the moral sphere",
+            "C": "Ethics only applies to public figures",
+            "D": "Law always reflects moral truth"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 22,
+          "type": "multiple_choice",
+          "question": "How does ethics relate to psychology?",
+          "choices": {
+            "A": "Psychology prescribes how people ought to behave; ethics describes how they do",
+            "B": "Psychology describes how people actually behave; ethics prescribes how they ought to behave",
+            "C": "Both disciplines are identical in purpose",
+            "D": "Ethics studies the human brain"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 23,
+          "type": "multiple_choice",
+          "question": "Metaethics is concerned with:",
+          "choices": {
+            "A": "Applying ethical principles to real-world situations",
+            "B": "The nature and meaning of moral concepts, assumptions, and claims",
+            "C": "Formulating specific moral rules for conduct",
+            "D": "Studying the history of moral philosophy"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 24,
+          "type": "multiple_choice",
+          "question": "Normative ethics involves:",
+          "choices": {
+            "A": "Studying how people behave in society",
+            "B": "Investigating specific ethical issues in professions",
+            "C": "Formulating moral norms or rules as the basis for judging right and wrong",
+            "D": "Analyzing brain chemistry related to moral decisions"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 25,
+          "type": "multiple_choice",
+          "question": "Applied ethics is primarily concerned with:",
+          "choices": {
+            "A": "Abstract questions about the nature of morality",
+            "B": "Particular issues with moral content, subject to moral judgment",
+            "C": "The relationship between ethics and biology",
+            "D": "Developing new ethical theories"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 26,
+          "type": "true_or_false",
+          "question": "Normative ethics studies the three broad ethical perspectives of consequentialism, deontology, and virtue ethics.",
+          "answer": "True"
+        },
+        {
+          "number": 27,
+          "type": "multiple_choice",
+          "question": "Which branch of ethics asks 'Is morality objective or subjective?'",
+          "choices": {
+            "A": "Applied Ethics",
+            "B": "Normative Ethics",
+            "C": "Metaethics",
+            "D": "Practical Ethics"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 28,
+          "type": "true_or_false",
+          "question": "Applied ethics deals only with issues related to public policy and professions.",
+          "answer": "False"
+        },
+        {
+          "number": 29,
+          "type": "multiple_choice",
+          "question": "Ethical reflection and discernment are necessary because:",
+          "choices": {
+            "A": "They help us follow laws more effectively",
+            "B": "They help us determine whether we are truly right or wrong",
+            "C": "They allow us to avoid making any decisions",
+            "D": "They replace the need for moral standards"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 30,
+          "type": "true_or_false",
+          "question": "Ethical standards have no role in forming sound ethical judgment.",
+          "answer": "False"
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "topic": "Consequentialism",
+      "questions": [
+        {
+          "number": 31,
+          "type": "multiple_choice",
+          "question": "Consequentialism is best described as:",
+          "choices": {
+            "A": "A theory focused on the intentions behind actions",
+            "B": "A broad theoretical perspective that focuses on the consequences of an action",
+            "C": "A theory that judges acts based on divine law",
+            "D": "A theory concerned only with personal happiness"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 32,
+          "type": "multiple_choice",
+          "question": "According to Copp and Brink (2006), consequentialism makes which concept explanatorily primary?",
+          "choices": {
+            "A": "Duty",
+            "B": "Virtue",
+            "C": "The good",
+            "D": "Rights"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 33,
+          "type": "true_or_false",
+          "question": "Impersonal goods are values directly connected to human welfare and well-being.",
+          "answer": "False"
+        },
+        {
+          "number": 34,
+          "type": "multiple_choice",
+          "question": "Which of the following is an example of an impersonal good?",
+          "choices": {
+            "A": "Personal health",
+            "B": "A person's financial security",
+            "C": "The beauty of a sunset",
+            "D": "An individual's happiness"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 35,
+          "type": "multiple_choice",
+          "question": "Impartial consequentialism emphasizes:",
+          "choices": {
+            "A": "Prioritizing one's family and friends",
+            "B": "Equal consideration of everyone's interests regardless of who they are",
+            "C": "Giving more weight to the interests of the majority",
+            "D": "Prioritizing the interests of future generations"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 36,
+          "type": "true_or_false",
+          "question": "Partial consequentialism allows for special moral consideration for certain individuals like family or friends.",
+          "answer": "True"
+        },
+        {
+          "number": 37,
+          "type": "multiple_choice",
+          "question": "Self-referential altruism is described as:",
+          "choices": {
+            "A": "Caring only about oneself",
+            "B": "A position between impartial and partial consequentialism where concern has wide scope but variable weight",
+            "C": "An extreme form of impartial consequentialism",
+            "D": "The belief that only one's own group matters morally"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 38,
+          "type": "multiple_choice",
+          "question": "Agent-neutral consequentialism:",
+          "choices": {
+            "A": "Allows agents to give special moral weight to their own interests",
+            "B": "Treats all agents from a universal standpoint without special weight to the agent's own perspective",
+            "C": "Judges actions based on the agent's cultural background",
+            "D": "Prioritizes the agent's long-term happiness"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 39,
+          "type": "multiple_choice",
+          "question": "Agent-relative consequentialism:",
+          "choices": {
+            "A": "Ignores the identity of the moral agent entirely",
+            "B": "Allows moral agents to give special weight to their own relationships and commitments",
+            "C": "Treats all consequences as equally important regardless of who causes them",
+            "D": "Applies only to government officials"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 40,
+          "type": "multiple_choice",
+          "question": "Act consequentialism evaluates:",
+          "choices": {
+            "A": "Whether an action conforms to an established rule",
+            "B": "The character of the person performing the action",
+            "C": "The specific consequences of that individual act",
+            "D": "The intentions behind the act"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 41,
+          "type": "true_or_false",
+          "question": "Scalar consequentialism treats morality as a binary system of right and wrong.",
+          "answer": "False"
+        },
+        {
+          "number": 42,
+          "type": "multiple_choice",
+          "question": "Scalar consequentialism evaluates actions based on:",
+          "choices": {
+            "A": "Whether they follow a specific rule",
+            "B": "How good or bad their consequences are, as a matter of degree",
+            "C": "Whether they are intended to be good",
+            "D": "How they compare to divine commands"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 43,
+          "type": "multiple_choice",
+          "question": "Direct consequentialism judges actions:",
+          "choices": {
+            "A": "By whether they conform to rules that produce good outcomes",
+            "B": "By the character traits of the agent",
+            "C": "Solely by the consequences of that action itself",
+            "D": "By their alignment with tradition"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 44,
+          "type": "multiple_choice",
+          "question": "Indirect consequentialism judges actions by:",
+          "choices": {
+            "A": "Their specific consequences in each case",
+            "B": "Whether they conform to rules or character traits that tend to produce the best outcomes in general",
+            "C": "The emotional response they produce in others",
+            "D": "Their consistency with legal standards"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 45,
+          "type": "true_or_false",
+          "question": "Maximizing holds that suboptimal acts are still permissible as long as they are good enough.",
+          "answer": "False"
+        },
+        {
+          "number": 46,
+          "type": "multiple_choice",
+          "question": "The difference between satisficing and maximizing is:",
+          "choices": {
+            "A": "Satisficing requires the best possible outcome; maximizing allows for 'good enough'",
+            "B": "Maximizing requires the best possible outcome; satisficing allows for a sufficiently good outcome",
+            "C": "Both require the same level of outcomes",
+            "D": "Satisficing applies only to personal decisions"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 47,
+          "type": "multiple_choice",
+          "question": "Which moral category refers to acts that are morally required?",
+          "choices": {
+            "A": "The permissible",
+            "B": "The supererogatory",
+            "C": "The obligatory",
+            "D": "The indirect"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 48,
+          "type": "multiple_choice",
+          "question": "Supererogatory acts are best described as:",
+          "choices": {
+            "A": "Acts that are morally forbidden",
+            "B": "Acts that are morally required",
+            "C": "Acts that go beyond what is required, praiseworthy but not obligatory",
+            "D": "Acts that have no moral value"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 49,
+          "type": "true_or_false",
+          "question": "'Other-regarding concern' refers to focusing solely on one's own well-being.",
+          "answer": "False"
+        },
+        {
+          "number": 50,
+          "type": "multiple_choice",
+          "question": "Non-instrumental concern for others means:",
+          "choices": {
+            "A": "Using others as a means to achieve personal goals",
+            "B": "Valuing others not merely as a means, but as something intrinsically good in itself",
+            "C": "Caring for others only when it benefits you",
+            "D": "Helping others to gain social recognition"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 51,
+          "type": "multiple_choice",
+          "question": "Ethical egoism claims that:",
+          "choices": {
+            "A": "An agent must always prioritize others over themselves",
+            "B": "An agent's moral obligation is to do what promotes their own good or welfare",
+            "C": "Morality requires equal consideration of all persons",
+            "D": "Self-interest is always morally wrong"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 52,
+          "type": "true_or_false",
+          "question": "According to agent-neutral consequentialism, who performs an action affects the moral evaluation of its consequences.",
+          "answer": "False"
+        },
+        {
+          "number": 53,
+          "type": "multiple_choice",
+          "question": "To 'promote' a value, according to the lecture, means to:",
+          "choices": {
+            "A": "Act on it or protect it at every opportunity",
+            "B": "Take steps that lead to its greater realization overall",
+            "C": "Maintain it regardless of consequences",
+            "D": "Enforce it through legal means"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 54,
+          "type": "multiple_choice",
+          "question": "To 'honor' a value means to:",
+          "choices": {
+            "A": "Act on it or protect it at every opportunity",
+            "B": "Seek to maximize it across all situations",
+            "C": "Promote its realization in the future",
+            "D": "Share it with as many people as possible"
+          },
+          "answer": "A"
+        },
+        {
+          "number": 55,
+          "type": "true_or_false",
+          "question": "Indirect consequentialism assesses every individual act directly by its own consequences.",
+          "answer": "False"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "topic": "Utilitarianism",
+      "questions": [
+        {
+          "number": 56,
+          "type": "multiple_choice",
+          "question": "Utilitarianism is the ethical theory that holds everyone should perform the act that brings about:",
+          "choices": {
+            "A": "The greatest personal benefit to the agent",
+            "B": "The greatest good or happiness to the greatest number of people",
+            "C": "Perfect adherence to moral rules",
+            "D": "Maximum spiritual fulfillment"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 57,
+          "type": "multiple_choice",
+          "question": "According to Aguas (2019), the goal of utilitarianism is:",
+          "choices": {
+            "A": "Fulfilling divine commands",
+            "B": "Maximizing intellectual virtue",
+            "C": "Greatest happiness to the greatest number of people",
+            "D": "Obeying the law of the land"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 58,
+          "type": "true_or_false",
+          "question": "Jeremy Bentham and John Stuart Mill are the two most prominent classical utilitarians.",
+          "answer": "True"
+        },
+        {
+          "number": 59,
+          "type": "multiple_choice",
+          "question": "Bentham's principle of utility approves or disapproves of actions according to:",
+          "choices": {
+            "A": "Whether they conform to religious law",
+            "B": "Their tendency to augment or diminish the happiness of the party whose interest is in question",
+            "C": "Whether they follow established social norms",
+            "D": "Their consistency with constitutional rights"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 60,
+          "type": "multiple_choice",
+          "question": "Mill's greatest happiness principle states that the ultimate end is:",
+          "choices": {
+            "A": "Maximum political freedom",
+            "B": "Perfect compliance with moral rules",
+            "C": "An existence exempt as far as possible from pain and as rich as possible in enjoyment",
+            "D": "The fulfillment of rational self-interest"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 61,
+          "type": "true_or_false",
+          "question": "According to Mill, actions are right in proportion as they promote happiness and wrong as they tend to produce the reverse.",
+          "answer": "True"
+        },
+        {
+          "number": 62,
+          "type": "multiple_choice",
+          "question": "Person-neutrality in utilitarianism means:",
+          "choices": {
+            "A": "Each person's interests count equally; no one's happiness has more weight based on identity",
+            "B": "Only the interests of the majority count",
+            "C": "Only affected parties near the agent matter",
+            "D": "The agent's interests are given priority"
+          },
+          "answer": "A"
+        },
+        {
+          "number": 63,
+          "type": "multiple_choice",
+          "question": "Temporal neutrality in utilitarianism means:",
+          "choices": {
+            "A": "Only present happiness counts in moral calculations",
+            "B": "Future happiness counts equally to present happiness",
+            "C": "Happiness experienced in the past has no moral value",
+            "D": "Time should not be wasted on moral reflection"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 64,
+          "type": "multiple_choice",
+          "question": "Hedonistic utilitarianism holds that:",
+          "choices": {
+            "A": "Knowledge is the only intrinsic good",
+            "B": "Pleasure is the only intrinsic good and pain the only intrinsic evil",
+            "C": "Friendship and achievement are the highest goods",
+            "D": "Moral virtue is the ultimate end"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 65,
+          "type": "multiple_choice",
+          "question": "Non-hedonistic utilitarianism holds that:",
+          "choices": {
+            "A": "Pain is morally neutral",
+            "B": "Only physical pleasure matters",
+            "C": "Other values beyond pleasure — such as knowledge or friendship — may count as intrinsic goods",
+            "D": "Happiness is irrelevant to morality"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 66,
+          "type": "true_or_false",
+          "question": "Act utilitarianism judges the morality of an action by whether it conforms to a rule that generally produces the greatest good.",
+          "answer": "False"
+        },
+        {
+          "number": 67,
+          "type": "multiple_choice",
+          "question": "Rule utilitarianism judges the morality of an action by:",
+          "choices": {
+            "A": "Whether the specific act produces the greatest happiness in this case",
+            "B": "Whether it conforms to a rule that, if generally followed, produces the greatest good",
+            "C": "Whether the agent intended to do good",
+            "D": "Whether the act is legally permitted"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 68,
+          "type": "multiple_choice",
+          "question": "Act utilitarianism judges the morality of an action by:",
+          "choices": {
+            "A": "Conformity to general rules of conduct",
+            "B": "The character of the agent",
+            "C": "The specific consequences of that individual act in that situation",
+            "D": "Whether it follows divine commands"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 69,
+          "type": "true_or_false",
+          "question": "Bentham's utilitarianism is characterized as consequentialist, relativist, maximizing, and impartial.",
+          "answer": "True"
+        },
+        {
+          "number": 70,
+          "type": "multiple_choice",
+          "question": "Which of the following is NOT a characteristic of Bentham's utilitarianism?",
+          "choices": {
+            "A": "Consequentialist",
+            "B": "Deontological",
+            "C": "Maximizing",
+            "D": "Impartial"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 71,
+          "type": "multiple_choice",
+          "question": "In Bentham's felicific calculus, 'intensity' refers to:",
+          "choices": {
+            "A": "How long a pleasure lasts",
+            "B": "How certain the pleasure is to occur",
+            "C": "How strong or intense the pleasure is",
+            "D": "How many people share the pleasure"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 72,
+          "type": "multiple_choice",
+          "question": "In Bentham's felicific calculus, 'duration' refers to:",
+          "choices": {
+            "A": "How intense the pleasure is",
+            "B": "How long the pleasure lasts",
+            "C": "How soon the pleasure follows the act",
+            "D": "How pure the pleasure is"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 73,
+          "type": "multiple_choice",
+          "question": "In Bentham's felicific calculus, 'certainty' refers to:",
+          "choices": {
+            "A": "How many people experience the pleasure",
+            "B": "How quickly the pleasure follows the act",
+            "C": "The probability that the desired pleasure will actually be experienced",
+            "D": "Whether the pleasure will lead to more pleasure"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 74,
+          "type": "multiple_choice",
+          "question": "'Propinquity' in the felicific calculus refers to:",
+          "choices": {
+            "A": "The purity of the pleasure",
+            "B": "The number of people experiencing it",
+            "C": "The temporal closeness between the act and the pleasure it produces",
+            "D": "The intensity of the pleasure"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 75,
+          "type": "true_or_false",
+          "question": "'Fecundity' in the felicific calculus refers to the probability that a pleasure will not be followed by pain.",
+          "answer": "False"
+        },
+        {
+          "number": 76,
+          "type": "multiple_choice",
+          "question": "'Purity' in the felicific calculus refers to:",
+          "choices": {
+            "A": "The intensity of the pleasure",
+            "B": "The probability that the pleasure will not be followed by pain",
+            "C": "The number of people sharing the pleasure",
+            "D": "How soon the pleasure is produced"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 77,
+          "type": "multiple_choice",
+          "question": "'Extent' in the felicific calculus refers to:",
+          "choices": {
+            "A": "How long the pleasure lasts",
+            "B": "How intense the pleasure is",
+            "C": "The number of persons who experience the pleasure",
+            "D": "How pure the pleasure is"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 78,
+          "type": "true_or_false",
+          "question": "Mill agreed entirely with Bentham that the quantity of pleasure is all that matters.",
+          "answer": "False"
+        },
+        {
+          "number": 79,
+          "type": "multiple_choice",
+          "question": "Mill distinguished between higher and lower pleasures. Higher pleasures are:",
+          "choices": {
+            "A": "Bodily and sensory pleasures",
+            "B": "Intellectual and moral pleasures, which are superior even if they produce less quantity",
+            "C": "Any pleasures that last longer",
+            "D": "Pleasures shared by the greatest number of people"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 80,
+          "type": "multiple_choice",
+          "question": "Mill's famous quote 'It is better to be a human being dissatisfied than a pig satisfied' illustrates:",
+          "choices": {
+            "A": "That Bentham's view is correct",
+            "B": "That the quality of pleasure matters, not just quantity",
+            "C": "That dissatisfaction is always morally superior",
+            "D": "That humans should avoid pleasure entirely"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 81,
+          "type": "true_or_false",
+          "question": "The utilitarian conception of impartiality assigns greater moral importance to benefits that fall on the agent themselves.",
+          "answer": "False"
+        },
+        {
+          "number": 82,
+          "type": "multiple_choice",
+          "question": "James Rachels describes utilitarianism as the attempt to:",
+          "choices": {
+            "A": "Follow God's commands perfectly",
+            "B": "Bring about as much happiness as possible in this world",
+            "C": "Apply abstract moral rules without exception",
+            "D": "Maximize personal virtue"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 83,
+          "type": "true_or_false",
+          "question": "Rule utilitarianism focuses on the consequences of each specific action.",
+          "answer": "False"
+        },
+        {
+          "number": 84,
+          "type": "multiple_choice",
+          "question": "In rule utilitarianism, the focus of consequences is on:",
+          "choices": {
+            "A": "The individual act",
+            "B": "The agent's intention",
+            "C": "The rule or rules followed",
+            "D": "The agent's character"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 85,
+          "type": "true_or_false",
+          "question": "Bentham's approach to happiness is primarily quantitative, while Mill introduces qualitative distinctions.",
+          "answer": "True"
+        },
+        {
+          "number": 86,
+          "type": "multiple_choice",
+          "question": "Which utilitarian thinker introduced the felicific calculus?",
+          "choices": {
+            "A": "John Stuart Mill",
+            "B": "David Hume",
+            "C": "Jeremy Bentham",
+            "D": "James Rachels"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 87,
+          "type": "multiple_choice",
+          "question": "Which utilitarian thinker argued that the quality of pleasure matters?",
+          "choices": {
+            "A": "Jeremy Bentham",
+            "B": "John Stuart Mill",
+            "C": "David Copp",
+            "D": "Peter Singer"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 88,
+          "type": "true_or_false",
+          "question": "According to David Copp, the utilitarian takes everyone's interests and balances benefits to some against harm to others to produce the best total outcome.",
+          "answer": "True"
+        },
+        {
+          "number": 89,
+          "type": "multiple_choice",
+          "question": "The 'calculus of felicity' is also known as the:",
+          "choices": {
+            "A": "Happiness Index",
+            "B": "Felicific Calculus",
+            "C": "Utility Matrix",
+            "D": "Pleasure Standard"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 90,
+          "type": "true_or_false",
+          "question": "Utilitarianism holds that the morality of an action depends primarily on the agent's intentions rather than its outcomes.",
+          "answer": "False"
+        }
+      ]
+    },
+    {
+      "week": "Mixed",
+      "topic": "Mixed Review — All Weeks",
+      "questions": [
+        {
+          "number": 91,
+          "type": "multiple_choice",
+          "question": "Which of the following is the correct order of the three branches of ethics?",
+          "choices": {
+            "A": "Applied Ethics → Metaethics → Normative Ethics",
+            "B": "Metaethics → Normative Ethics → Applied Ethics",
+            "C": "Normative Ethics → Applied Ethics → Metaethics",
+            "D": "Metaethics → Applied Ethics → Normative Ethics"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 92,
+          "type": "true_or_false",
+          "question": "Ethical egoism is a form of consequentialism where the agent's own good is primary.",
+          "answer": "True"
+        },
+        {
+          "number": 93,
+          "type": "multiple_choice",
+          "question": "A doctor follows a hospital rule against disclosing certain information to patients because that rule generally produces the best outcomes. This is an example of:",
+          "choices": {
+            "A": "Act utilitarianism",
+            "B": "Deontology",
+            "C": "Rule utilitarianism",
+            "D": "Ethical egoism"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 94,
+          "type": "multiple_choice",
+          "question": "A person donates anonymously to a typhoon relief fund because it helps the most people. This reasoning most closely reflects:",
+          "choices": {
+            "A": "Ethical egoism",
+            "B": "Agent-relative consequentialism",
+            "C": "Impartial consequentialism",
+            "D": "Cultural ethical relativism"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 95,
+          "type": "true_or_false",
+          "question": "Metaethics is the branch of ethics that applies moral principles to specific real-world issues.",
+          "answer": "False"
+        },
+        {
+          "number": 96,
+          "type": "multiple_choice",
+          "question": "Which concept best explains why a person might feel justified in prioritizing their own family's welfare over strangers in a moral decision?",
+          "choices": {
+            "A": "Impartial consequentialism",
+            "B": "Agent-neutral consequentialism",
+            "C": "Partial consequentialism",
+            "D": "Scalar consequentialism"
+          },
+          "answer": "C"
+        },
+        {
+          "number": 97,
+          "type": "true_or_false",
+          "question": "According to utilitarianism, the morality of an action is determined by whether it conforms to divine law.",
+          "answer": "False"
+        },
+        {
+          "number": 98,
+          "type": "multiple_choice",
+          "question": "Evaluating whether typhoon donors acted ethically based on whether their donations benefited the most people is an application of:",
+          "choices": {
+            "A": "Deontological ethics",
+            "B": "Utilitarianism",
+            "C": "Virtue ethics",
+            "D": "Metaethics"
+          },
+          "answer": "B"
+        },
+        {
+          "number": 99,
+          "type": "true_or_false",
+          "question": "All three weeks of content — ethics and morality, consequentialism, and utilitarianism — belong under the broader umbrella of normative ethics.",
+          "answer": "True"
+        },
+        {
+          "number": 100,
+          "type": "multiple_choice",
+          "question": "Which statement best summarizes the relationship between ethics and morality?",
+          "choices": {
+            "A": "They are completely unrelated disciplines",
+            "B": "Ethics is a branch of law, while morality is a branch of religion",
+            "C": "They have different etymological roots but are meaningfully connected; both concern right and wrong human conduct",
+            "D": "Morality is the scientific study of ethics"
+          },
+          "answer": "C"
+        }
+      ]
+    }
+  ]
+}
