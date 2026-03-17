@@ -108,11 +108,32 @@ function isOnCooldown(subj) {
   } catch { return false; }
 }
 function setCooldown(subj) {
-  try { localStorage.setItem(getCooldownKey(subj), String(Date.now())); } catch {}
+  try { localStorage.setItem(getCooldownKey(subj), String(Date.now())); } catch {
+    // best-effort cooldown only
+  }
 }
 
 // ── Duplicate tab lock ──
 const LOCK_KEY = (subj) => `qt_exam_lock_${subj}`;
+const LOCK_STALE_MS = 15000;
+const LOCK_HEARTBEAT_MS = 4000;
+
+function readLock(subj) {
+  try {
+    const raw = localStorage.getItem(LOCK_KEY(subj));
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeLock(subj, lock) {
+  try {
+    localStorage.setItem(LOCK_KEY(subj), JSON.stringify(lock));
+  } catch {
+    // best-effort lock only
+  }
+}
 
 // ── Main ExamPage ──
 export default function ExamPage() {
@@ -127,7 +148,6 @@ export default function ExamPage() {
 
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -138,25 +158,100 @@ export default function ExamPage() {
   const [hideNav, setHideNav] = useState(false);
   const [timeLeft, setTimeLeft] = useState(null);
   const [duplicateTab, setDuplicateTab] = useState(false);
+  const [hasSessionLock, setHasSessionLock] = useState(true);
+
+  const sessionIdRef = useRef(`sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`);
+  const startedAtRef = useRef(Date.now());
+  const perfStartedAtRef = useRef(performance.now());
+  const visibilitySwitchesRef = useRef(0);
+  const hiddenCountRef = useRef(0);
+  const blurCountRef = useRef(0);
+  const focusCountRef = useRef(0);
+  const duplicateDetectedRef = useRef(false);
   
   const { trigger } = useWebHaptics();
 
-  // Duplicate tab detection
+  // Duplicate tab/session lock hardening
   useEffect(() => {
-    const key = LOCK_KEY(subject);
-    const existing = localStorage.getItem(key);
-    if (existing && Date.now() - Number(existing) < 60000) {
+    const sessionId = sessionIdRef.current;
+
+    const attemptAcquire = () => {
+      const now = Date.now();
+      const existing = readLock(subject);
+      const isStale = !existing || now - Number(existing.ts || 0) > LOCK_STALE_MS;
+      const isMine = existing && existing.owner === sessionId;
+
+      if (isMine || isStale) {
+        writeLock(subject, { owner: sessionId, ts: now });
+        setHasSessionLock(true);
+        setDuplicateTab(false);
+        return true;
+      }
+
+      duplicateDetectedRef.current = true;
+      setHasSessionLock(false);
       setDuplicateTab(true);
-    }
-    localStorage.setItem(key, String(Date.now()));
+      return false;
+    };
+
+    attemptAcquire();
+
+    const onStorage = (event) => {
+      if (event.key !== LOCK_KEY(subject)) return;
+      const current = readLock(subject);
+      if (current && current.owner !== sessionId) {
+        duplicateDetectedRef.current = true;
+        setHasSessionLock(false);
+        setDuplicateTab(true);
+      }
+    };
+
+    window.addEventListener('storage', onStorage);
+
     const interval = setInterval(() => {
-      localStorage.setItem(key, String(Date.now()));
-    }, 5000);
+      const now = Date.now();
+      const current = readLock(subject);
+      if (current && current.owner === sessionId) {
+        writeLock(subject, { owner: sessionId, ts: now });
+        setHasSessionLock(true);
+        return;
+      }
+      attemptAcquire();
+    }, LOCK_HEARTBEAT_MS);
+
     return () => {
       clearInterval(interval);
-      localStorage.removeItem(key);
+      window.removeEventListener('storage', onStorage);
+      const current = readLock(subject);
+      if (current && current.owner === sessionId) {
+        localStorage.removeItem(LOCK_KEY(subject));
+      }
     };
   }, [subject]);
+
+  // Track anti-cheat focus/visibility signals
+  useEffect(() => {
+    const onVisibility = () => {
+      visibilitySwitchesRef.current += 1;
+      if (document.hidden) hiddenCountRef.current += 1;
+    };
+    const onBlur = () => {
+      blurCountRef.current += 1;
+    };
+    const onFocus = () => {
+      focusCountRef.current += 1;
+    };
+
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('blur', onBlur);
+    window.addEventListener('focus', onFocus);
+
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('blur', onBlur);
+      window.removeEventListener('focus', onFocus);
+    };
+  }, []);
 
   // Build question lookup map (js-set-map-lookups / js-index-maps)
   const questionMap = useMemo(
@@ -291,15 +386,25 @@ export default function ExamPage() {
   }, [questions.length, trigger]);
 
   const validateAndConfirm = useCallback(() => {
+    if (!hasSessionLock || duplicateTab) {
+      setSubmitError('Another active exam session is detected for this subject. Close the other tab/window before submitting.');
+      return;
+    }
     if (isOnCooldown(subject)) {
       setSubmitError('Please wait 10 minutes between submissions for the same subject.');
       return;
     }
     setSubmitError(null);
     setShowConfirm(true);
-  }, [subject]);
+  }, [subject, hasSessionLock, duplicateTab]);
 
   const handleSubmit = useCallback(async () => {
+    if (!hasSessionLock || duplicateTab) {
+      setSubmitError('Submission blocked: duplicate exam session detected.');
+      setShowConfirm(false);
+      return;
+    }
+
     setShowConfirm(false);
     setSubmitting(true);
     setSubmitError(null);
@@ -309,6 +414,31 @@ export default function ExamPage() {
     );
     const percentage = Math.round((score / questions.length) * 100);
 
+    const endedAt = Date.now();
+    const perfEndedAt = performance.now();
+    const elapsedWallMs = Math.max(0, endedAt - startedAtRef.current);
+    const elapsedPerfMs = Math.max(0, perfEndedAt - perfStartedAtRef.current);
+    const driftMs = Math.round(elapsedWallMs - elapsedPerfMs);
+    const minExpectedMs = Math.max(3000, questions.length * 1200);
+    const timeAnomalyFlags = {
+      negativeElapsed: endedAt < startedAtRef.current,
+      implausiblyFastCompletion: elapsedWallMs < minExpectedMs,
+      clockDriftHigh: Math.abs(driftMs) > 15000,
+    };
+
+    const integritySignals = {
+      visibilityChangeCount: visibilitySwitchesRef.current,
+      tabSwitchCount: hiddenCountRef.current,
+      windowBlurCount: blurCountRef.current,
+      windowFocusCount: focusCountRef.current,
+      duplicateSessionDetected: duplicateDetectedRef.current || duplicateTab,
+      lockOwnerValidAtSubmit: hasSessionLock,
+      elapsedWallMs,
+      elapsedPerfMs: Math.round(elapsedPerfMs),
+      clockDriftMs: driftMs,
+      timeAnomalyFlags,
+    };
+
     const resultData = {
       studentName,
       subject,
@@ -317,7 +447,8 @@ export default function ExamPage() {
       percentage,
       answers,
       submittedAt: serverTimestamp(),
-      timeTaken: 0,
+      timeTaken: Math.round(elapsedWallMs / 1000),
+      integritySignals,
     };
 
     try {
@@ -331,12 +462,13 @@ export default function ExamPage() {
 
     setCooldown(subject);
     clearProgress(subject);
+    setSubmitted(true);
 
     navigate('/results', {
       state: { ...resultData, questions, subjectLabel: subjectInfo?.title },
       replace: true,
     });
-  }, [answers, questions, subject, studentName, navigate, subjectInfo]);
+  }, [answers, questions, subject, studentName, navigate, subjectInfo, hasSessionLock, duplicateTab]);
 
   if (loading) return <LoadingSpinner message="Loading questions…" />;
   if (!subjectInfo) return null;
@@ -377,6 +509,12 @@ export default function ExamPage() {
       </header>
 
       <div className="exam-body">
+        {duplicateTab && (
+          <div className="alert alert-error" style={{ marginBottom: 14 }}>
+            <FiAlertTriangle /> Duplicate exam session detected. Keep only one active tab/window for this subject.
+          </div>
+        )}
+
         {/* Progress header */}
         <div className="exam-progress-wrap">
           <div className="exam-progress-top">
