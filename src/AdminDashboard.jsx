@@ -55,9 +55,28 @@ function validateQuestion(form) {
   return errors;
 }
 
+function getWarningMeta(result) {
+  const integrity = result.integritySignals || {};
+  const reasons = Array.isArray(integrity.warningReasons) ? integrity.warningReasons : [];
+  const inferredCount =
+    (integrity.tabSwitchCount || 0) +
+    (integrity.windowBlurCount || 0) +
+    (integrity.duplicateSessionDetected ? 1 : 0) +
+    (integrity.timeAnomalyFlags?.implausiblyFastCompletion ? 1 : 0) +
+    (integrity.timeAnomalyFlags?.clockDriftHigh || integrity.timeAnomalyFlags?.negativeElapsed ? 1 : 0);
+
+  const count = Number.isFinite(integrity.warningCount) ? integrity.warningCount : inferredCount;
+  return {
+    count,
+    hasWarnings: count > 0 || reasons.length > 0,
+    reasons,
+  };
+}
+
 // ── Memoized table rows ──
 const ResultRow = memo(function ResultRow({ result, index, onDelete }) {
   const pct = result.percentage ?? Math.round((result.score / result.total) * 100);
+  const warningMeta = getWarningMeta(result);
   return (
     <tr>
       <td className="td-muted">{index + 1}</td>
@@ -66,6 +85,15 @@ const ResultRow = memo(function ResultRow({ result, index, onDelete }) {
       <td>{result.score} / {result.total}</td>
       <td>
         <span className={`badge ${pct >= 60 ? 'badge-success' : 'badge-rose'}`}>{pct}%</span>
+      </td>
+      <td>
+        {warningMeta.hasWarnings ? (
+          <span className="badge badge-rose" title={warningMeta.reasons.join(', ')}>
+            ⚠ {warningMeta.count}
+          </span>
+        ) : (
+          <span className="badge badge-success">None</span>
+        )}
       </td>
       <td className="td-muted">
         {result.submittedAt?.toDate
@@ -362,10 +390,21 @@ export default function AdminDashboard() {
 
   // ── CSV Export ──
   const handleExportCSV = useCallback(() => {
-    const rows = [['#', 'Name', 'Subject', 'Score', 'Total', '%', 'Date']];
+    const rows = [['#', 'Name', 'Subject', 'Score', 'Total', '%', 'Warnings', 'Warning Reasons', 'Date']];
     filteredResults.forEach((r, i) => {
       const d = r.submittedAt?.toDate ? r.submittedAt.toDate().toLocaleString() : '';
-      rows.push([i + 1, r.studentName || 'Anonymous', SUBJECTS[r.subject]?.title || r.subject, r.score, r.total, r.percentage ?? '', d]);
+      const warningMeta = getWarningMeta(r);
+      rows.push([
+        i + 1,
+        r.studentName || 'Anonymous',
+        SUBJECTS[r.subject]?.title || r.subject,
+        r.score,
+        r.total,
+        r.percentage ?? '',
+        warningMeta.count,
+        warningMeta.reasons.join('|'),
+        d,
+      ]);
     });
     const csv = rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
@@ -601,18 +640,28 @@ export default function AdminDashboard() {
                         <div style={{ overflowX: 'auto' }}>
                           <table className="data-table" style={{ fontSize: '0.82rem' }}>
                             <thead>
-                              <tr><th>Subject</th><th>Score</th><th>%</th><th>Date</th><th></th></tr>
+                              <tr><th>Subject</th><th>Score</th><th>%</th><th>Warnings</th><th>Date</th><th></th></tr>
                             </thead>
                             <tbody>
-                              {g.attempts.map((r) => (
-                                <tr key={r.id}>
-                                  <td>{SUBJECTS[r.subject]?.title ?? r.subject}</td>
-                                  <td>{r.score}/{r.total}</td>
-                                  <td><span className={`badge ${r.percentage >= 60 ? 'badge-success' : 'badge-rose'}`}>{r.percentage}%</span></td>
-                                  <td className="td-muted">{r.submittedAt?.toDate ? r.submittedAt.toDate().toLocaleString() : '—'}</td>
-                                  <td><button className="btn btn-danger btn-sm" onClick={() => handleDeleteResult(r.id)}><FiTrash2 size={11} /></button></td>
-                                </tr>
-                              ))}
+                              {g.attempts.map((r) => {
+                                const warningMeta = getWarningMeta(r);
+                                return (
+                                  <tr key={r.id}>
+                                    <td>{SUBJECTS[r.subject]?.title ?? r.subject}</td>
+                                    <td>{r.score}/{r.total}</td>
+                                    <td><span className={`badge ${r.percentage >= 60 ? 'badge-success' : 'badge-rose'}`}>{r.percentage}%</span></td>
+                                    <td>
+                                      {warningMeta.hasWarnings ? (
+                                        <span className="badge badge-rose" title={warningMeta.reasons.join(', ')}>⚠ {warningMeta.count}</span>
+                                      ) : (
+                                        <span className="badge badge-success">None</span>
+                                      )}
+                                    </td>
+                                    <td className="td-muted">{r.submittedAt?.toDate ? r.submittedAt.toDate().toLocaleString() : '—'}</td>
+                                    <td><button className="btn btn-danger btn-sm" onClick={() => handleDeleteResult(r.id)}><FiTrash2 size={11} /></button></td>
+                                  </tr>
+                                );
+                              })}
                             </tbody>
                           </table>
                         </div>
@@ -629,7 +678,7 @@ export default function AdminDashboard() {
                     <div style={{ overflowX: 'auto' }}>
                       <table className="data-table">
                         <thead>
-                          <tr><th>#</th><th>Student</th><th>Subject</th><th>Score</th><th>%</th><th>Date</th><th></th></tr>
+                          <tr><th>#</th><th>Student</th><th>Subject</th><th>Score</th><th>%</th><th>Warnings</th><th>Date</th><th></th></tr>
                         </thead>
                         <tbody>
                           {filteredResults.map((r, i) => <ResultRow key={r.id} result={r} index={i} onDelete={handleDeleteResult} />)}

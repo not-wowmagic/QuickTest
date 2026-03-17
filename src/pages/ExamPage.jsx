@@ -159,6 +159,7 @@ export default function ExamPage() {
   const [timeLeft, setTimeLeft] = useState(null);
   const [duplicateTab, setDuplicateTab] = useState(false);
   const [hasSessionLock, setHasSessionLock] = useState(true);
+  const [warningPopup, setWarningPopup] = useState(null);
 
   const sessionIdRef = useRef(`sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`);
   const startedAtRef = useRef(Date.now());
@@ -168,8 +169,19 @@ export default function ExamPage() {
   const blurCountRef = useRef(0);
   const focusCountRef = useRef(0);
   const duplicateDetectedRef = useRef(false);
+  const lastWarningAtRef = useRef(0);
   
   const { trigger } = useWebHaptics();
+
+  const showWarningPopup = useCallback((message) => {
+    setWarningPopup({ message, ts: Date.now() });
+  }, []);
+
+  useEffect(() => {
+    if (!warningPopup) return;
+    const timer = setTimeout(() => setWarningPopup(null), 2600);
+    return () => clearTimeout(timer);
+  }, [warningPopup]);
 
   // Duplicate tab/session lock hardening
   useEffect(() => {
@@ -191,6 +203,7 @@ export default function ExamPage() {
       duplicateDetectedRef.current = true;
       setHasSessionLock(false);
       setDuplicateTab(true);
+      showWarningPopup('Warning: duplicate session detected. Keep only one exam tab open.');
       return false;
     };
 
@@ -203,6 +216,7 @@ export default function ExamPage() {
         duplicateDetectedRef.current = true;
         setHasSessionLock(false);
         setDuplicateTab(true);
+        showWarningPopup('Warning: session lock transferred to another tab/window.');
       }
     };
 
@@ -227,16 +241,28 @@ export default function ExamPage() {
         localStorage.removeItem(LOCK_KEY(subject));
       }
     };
-  }, [subject]);
+  }, [subject, showWarningPopup]);
 
   // Track anti-cheat focus/visibility signals
   useEffect(() => {
+    const maybeWarn = (message) => {
+      const now = Date.now();
+      if (now - lastWarningAtRef.current < 900) return;
+      lastWarningAtRef.current = now;
+      trigger('nudge');
+      showWarningPopup(message);
+    };
+
     const onVisibility = () => {
       visibilitySwitchesRef.current += 1;
-      if (document.hidden) hiddenCountRef.current += 1;
+      if (document.hidden) {
+        hiddenCountRef.current += 1;
+        maybeWarn(`Warning ${hiddenCountRef.current}: tab switch detected.`);
+      }
     };
     const onBlur = () => {
       blurCountRef.current += 1;
+      maybeWarn(`Warning: window focus lost (${blurCountRef.current}).`);
     };
     const onFocus = () => {
       focusCountRef.current += 1;
@@ -251,7 +277,7 @@ export default function ExamPage() {
       window.removeEventListener('blur', onBlur);
       window.removeEventListener('focus', onFocus);
     };
-  }, []);
+  }, [showWarningPopup, trigger]);
 
   // Build question lookup map (js-set-map-lookups / js-index-maps)
   const questionMap = useMemo(
@@ -426,6 +452,20 @@ export default function ExamPage() {
       clockDriftHigh: Math.abs(driftMs) > 15000,
     };
 
+    const warningReasons = [];
+    if (hiddenCountRef.current > 0) warningReasons.push('tab_switch_detected');
+    if (blurCountRef.current > 0) warningReasons.push('focus_lost');
+    if (duplicateDetectedRef.current || duplicateTab) warningReasons.push('duplicate_session');
+    if (timeAnomalyFlags.implausiblyFastCompletion) warningReasons.push('implausibly_fast_completion');
+    if (timeAnomalyFlags.clockDriftHigh || timeAnomalyFlags.negativeElapsed) warningReasons.push('time_anomaly');
+
+    const warningCount =
+      hiddenCountRef.current +
+      blurCountRef.current +
+      (duplicateDetectedRef.current || duplicateTab ? 1 : 0) +
+      (timeAnomalyFlags.implausiblyFastCompletion ? 1 : 0) +
+      (timeAnomalyFlags.clockDriftHigh || timeAnomalyFlags.negativeElapsed ? 1 : 0);
+
     const integritySignals = {
       visibilityChangeCount: visibilitySwitchesRef.current,
       tabSwitchCount: hiddenCountRef.current,
@@ -437,6 +477,9 @@ export default function ExamPage() {
       elapsedPerfMs: Math.round(elapsedPerfMs),
       clockDriftMs: driftMs,
       timeAnomalyFlags,
+      warningCount,
+      warningReasons,
+      hasWarnings: warningCount > 0,
     };
 
     const resultData = {
@@ -507,6 +550,24 @@ export default function ExamPage() {
           <ThemeToggle />
         </div>
       </header>
+
+      {warningPopup && (
+        <div
+          className="alert alert-error"
+          style={{
+            position: 'fixed',
+            top: 78,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 350,
+            minWidth: 280,
+            maxWidth: 520,
+            boxShadow: 'var(--shadow-md)',
+          }}
+        >
+          <FiAlertTriangle /> {warningPopup.message}
+        </div>
+      )}
 
       <div className="exam-body">
         {duplicateTab && (
