@@ -97,12 +97,33 @@ const QuestionCard = memo(function QuestionCard({
 
 // Timer removed
 
+// ── Rate limiting helpers ──
+const COOLDOWN_MS = 10 * 60 * 1000; // 10 minutes
+function getCooldownKey(subj) { return `qt_cooldown_${subj}`; }
+function isOnCooldown(subj) {
+  try {
+    const ts = localStorage.getItem(getCooldownKey(subj));
+    if (!ts) return false;
+    return Date.now() - Number(ts) < COOLDOWN_MS;
+  } catch { return false; }
+}
+function setCooldown(subj) {
+  try { localStorage.setItem(getCooldownKey(subj), String(Date.now())); } catch {}
+}
+
+// ── Duplicate tab lock ──
+const LOCK_KEY = (subj) => `qt_exam_lock_${subj}`;
+
 // ── Main ExamPage ──
 export default function ExamPage() {
   const { subject } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const subjectInfo = SUBJECTS[subject];
+
+  // Read student name from URL params (set by StudentSite modal)
+  const searchParams = new URLSearchParams(location.search);
+  const studentName = decodeURIComponent(searchParams.get('name') || '') || 'Anonymous';
 
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -116,14 +137,26 @@ export default function ExamPage() {
   const [timeAttack, setTimeAttack] = useState(false);
   const [hideNav, setHideNav] = useState(false);
   const [timeLeft, setTimeLeft] = useState(null);
+  const [duplicateTab, setDuplicateTab] = useState(false);
   
   const { trigger } = useWebHaptics();
 
-
-  // Stable name input ref to avoid re-renders
-  const nameRef = useRef('');
-  const [nameValue, setNameValue] = useState('');
-  const [nameError, setNameError] = useState('');
+  // Duplicate tab detection
+  useEffect(() => {
+    const key = LOCK_KEY(subject);
+    const existing = localStorage.getItem(key);
+    if (existing && Date.now() - Number(existing) < 60000) {
+      setDuplicateTab(true);
+    }
+    localStorage.setItem(key, String(Date.now()));
+    const interval = setInterval(() => {
+      localStorage.setItem(key, String(Date.now()));
+    }, 5000);
+    return () => {
+      clearInterval(interval);
+      localStorage.removeItem(key);
+    };
+  }, [subject]);
 
   // Build question lookup map (js-set-map-lookups / js-index-maps)
   const questionMap = useMemo(
@@ -258,19 +291,19 @@ export default function ExamPage() {
   }, [questions.length, trigger]);
 
   const validateAndConfirm = useCallback(() => {
-    const trimmed = nameValue.trim();
-    if (trimmed && trimmed.length < 2) { setNameError('Name must be at least 2 characters if provided.'); return; }
-    if (trimmed && !/^[a-zA-Z\s.'-]+$/.test(trimmed)) { setNameError('Name contains invalid characters.'); return; }
-    setNameError('');
+    if (isOnCooldown(subject)) {
+      setSubmitError('Please wait 10 minutes between submissions for the same subject.');
+      return;
+    }
+    setSubmitError(null);
     setShowConfirm(true);
-  }, [nameValue]);
+  }, [subject]);
 
   const handleSubmit = useCallback(async () => {
     setShowConfirm(false);
     setSubmitting(true);
     setSubmitError(null);
 
-    const studentName = nameValue.trim() || 'Anonymous';
     const score = questions.reduce(
       (acc, q, i) => acc + (answers[i] === q.answer ? 1 : 0), 0
     );
@@ -296,13 +329,14 @@ export default function ExamPage() {
       // Non-blocking — continue to results even if save fails
     }
 
+    setCooldown(subject);
     clearProgress(subject);
 
     navigate('/results', {
-      state: { ...resultData, questions, subjectLabel: subjectInfo?.label },
+      state: { ...resultData, questions, subjectLabel: subjectInfo?.title },
       replace: true,
     });
-  }, [answers, questions, subject, nameValue, navigate, subjectInfo]);
+  }, [answers, questions, subject, studentName, navigate, subjectInfo]);
 
   if (loading) return <LoadingSpinner message="Loading questions…" />;
   if (!subjectInfo) return null;
@@ -401,6 +435,7 @@ export default function ExamPage() {
         {currentQ === questions.length - 1 && (
           <div className="submit-section">
             <h4 style={{ marginBottom: 16, fontSize: '1.05rem', borderBottom: '1px solid var(--border)', paddingBottom: 12 }}>Submit Your Exam</h4>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: 16 }}>Submitting as <strong style={{ color: 'var(--text-primary)' }}>{studentName}</strong></p>
           {unansweredCount > 0 && (
             <div className="alert alert-info" style={{ marginBottom: 16, borderLeftColor: 'var(--primary)' }}>
               <FiAlertTriangle style={{ color: 'var(--primary)' }} />
@@ -408,18 +443,6 @@ export default function ExamPage() {
             </div>
           )}
           {submitError && <div className="alert alert-error">{submitError}</div>}
-          <div className="form-group" style={{ marginBottom: 12 }}>
-            <label className="form-label" htmlFor="student-name">Your Name (Optional)</label>
-            <input
-              id="student-name"
-              className={`form-input ${nameError ? 'error' : ''}`}
-              placeholder="e.g. Ariadne"
-              value={nameValue}
-              onChange={(e) => { setNameValue(e.target.value); setNameError(''); }}
-              maxLength={60}
-            />
-            {nameError && <span className="form-error"><FiAlertTriangle size={11} />{nameError}</span>}
-          </div>
           <button
             className="btn btn-primary btn-lg"
             style={{ width: '100%', marginTop: 8 }}

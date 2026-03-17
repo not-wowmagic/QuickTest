@@ -1,15 +1,11 @@
 // src/StudentSite.jsx — Landing / Subject Selection Page
 // Performance: no inline components (rerender-no-inline-components rule)
-// Design: DM Sans + Space Grotesk, glassmorphism, micro-animations
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiBookOpen, FiClock, FiTarget, FiArrowRight, FiAward, FiX } from 'react-icons/fi';
+import { FiBookOpen, FiArrowRight, FiAward, FiX, FiTrendingUp } from 'react-icons/fi';
 import { useWebHaptics } from 'web-haptics/react';
 import { SUBJECTS } from './data/seedQuestions';
 import ThemeToggle from './components/ThemeToggle';
-
-// Static JSX hoisted outside component (rendering-hoist-jsx rule)
-// StatsBar removed
 
 // SubjectCard is defined outside StudentSite to avoid inline component rule violation
 function SubjectCard({ subject, onStart }) {
@@ -21,7 +17,7 @@ function SubjectCard({ subject, onStart }) {
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === 'Enter' && onStart(subject.id)}
-      aria-label={`Start ${subject.label} exam`}
+      aria-label={`Start ${subject.title} exam`}
     >
       <span className="subject-icon">{subject.icon}</span>
       <h3 className="subject-title">{subject.title}</h3>
@@ -40,26 +36,44 @@ export default function StudentSite() {
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [timeAttack, setTimeAttack] = useState(false);
   const [showNav, setShowNav] = useState(true);
+  const [studentName, setStudentName] = useState('');
+  const [nameError, setNameError] = useState('');
 
-  // Stable callback — open modal instead of navigating
   const handleStart = useCallback((subjectId) => {
     trigger('nudge');
     const subjectInfo = SUBJECTS[subjectId];
     if (subjectInfo) {
       setSelectedSubject(subjectInfo);
-      setTimeAttack(false); // Reset settings on new modal open
+      setTimeAttack(false);
       setShowNav(true);
+      setNameError('');
     }
   }, [trigger]);
 
   const startExamWithItems = useCallback((itemCount) => {
+    const trimmed = studentName.trim();
+    if (!trimmed) {
+      setNameError('Please enter your name to continue.');
+      return;
+    }
+    if (trimmed.length < 2) {
+      setNameError('Name must be at least 2 characters.');
+      return;
+    }
+    if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) {
+      setNameError('Name contains invalid characters.');
+      return;
+    }
+    setNameError('');
     trigger('success');
     if (selectedSubject) {
       const items = itemCount || 'all';
-      navigate(`/exam/${selectedSubject.id}?items=${items}${timeAttack ? '&timeAttack=true' : ''}${!showNav ? '&hideNav=true' : ''}`);
+      const nameParam = encodeURIComponent(trimmed);
+      navigate(`/exam/${selectedSubject.id}?items=${items}&name=${nameParam}${timeAttack ? '&timeAttack=true' : ''}${!showNav ? '&hideNav=true' : ''}`);
       setSelectedSubject(null);
+      setStudentName('');
     }
-  }, [navigate, selectedSubject, timeAttack, showNav, trigger]);
+  }, [navigate, selectedSubject, timeAttack, showNav, trigger, studentName]);
 
   const subjectList = Object.values(SUBJECTS);
 
@@ -74,6 +88,9 @@ export default function StudentSite() {
             <span className="navbar-badge">BETA</span>
           </div>
           <div className="flex items-center gap-2">
+            <button className="btn btn-outline btn-sm" onClick={() => navigate('/leaderboard')}>
+              <FiTrendingUp size={13} /> Leaderboard
+            </button>
             <ThemeToggle />
           </div>
         </div>
@@ -112,7 +129,7 @@ export default function StudentSite() {
         </div>
       </section>
 
-      {/* Tips Section */}
+      {/* Tips */}
       <section className="tips-section">
         <div className="container">
           <div className="tips-grid">
@@ -138,8 +155,8 @@ export default function StudentSite() {
       {/* Footer */}
       <footer className="site-footer">
         <div className="container">
-          <p>© 2026 <span 
-            onClick={() => navigate('/admin/login')} 
+          <p>© 2026 <span
+            onClick={() => navigate('/admin/login')}
             style={{ cursor: 'text', userSelect: 'none' }}
           >QuickTest</span> · Built for academic excellence</p>
         </div>
@@ -151,42 +168,48 @@ export default function StudentSite() {
           <div className="modal animate-slide-up" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 420 }}>
             <div className="modal-header">
               <h3>Exam Settings</h3>
-              <button className="btn btn-outline btn-sm" onClick={() => setSelectedSubject(null)}>
-                <FiX />
-              </button>
+              <button className="btn btn-outline btn-sm" onClick={() => setSelectedSubject(null)}><FiX /></button>
             </div>
-            
+
             <div style={{ textAlign: 'center', marginBottom: 24 }}>
               <span className="subject-icon" style={{ fontSize: '2.5rem', marginBottom: 12, display: 'inline-block' }}>
                 {selectedSubject.icon}
               </span>
-              <h4 style={{ fontSize: '1.2rem', marginBottom: 8 }}>{selectedSubject.title}</h4>
+              <h4 style={{ fontSize: '1.2rem', marginBottom: 16 }}>{selectedSubject.title}</h4>
+
+              {/* Required Name Input */}
+              <div style={{ textAlign: 'left', marginBottom: 16 }}>
+                <label className="form-label" htmlFor="exam-student-name" style={{ fontSize: '0.85rem' }}>
+                  Your Name <span style={{ color: 'var(--error)' }}>*</span>
+                </label>
+                <input
+                  id="exam-student-name"
+                  className={`form-input ${nameError ? 'error' : ''}`}
+                  placeholder="Enter your full name"
+                  value={studentName}
+                  onChange={(e) => { setStudentName(e.target.value); setNameError(''); }}
+                  maxLength={60}
+                  autoComplete="name"
+                />
+                {nameError && <span className="form-error" style={{ fontSize: '0.8rem' }}>{nameError}</span>}
+              </div>
+
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                 How many questions would you like to attempt?
               </p>
-              
+
               <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 16, cursor: 'pointer', fontSize: '0.9rem', color: 'var(--text-main)' }}>
-                <input 
-                  type="checkbox" 
-                  checked={timeAttack} 
-                  onChange={(e) => {
-                    trigger('nudge');
-                    setTimeAttack(e.target.checked);
-                  }} 
-                  style={{ accentColor: 'var(--accent)', width: 16, height: 16 }} 
+                <input type="checkbox" checked={timeAttack}
+                  onChange={(e) => { trigger('nudge'); setTimeAttack(e.target.checked); }}
+                  style={{ accentColor: 'var(--accent)', width: 16, height: 16 }}
                 />
                 <strong>Time Attack Mode</strong> <span style={{ color: 'var(--text-secondary)' }}>(30s per item)</span>
               </label>
 
               <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 10, cursor: 'pointer', fontSize: '0.9rem', color: 'var(--text-main)' }}>
-                <input 
-                  type="checkbox" 
-                  checked={showNav} 
-                  onChange={(e) => {
-                    trigger('nudge');
-                    setShowNav(e.target.checked);
-                  }} 
-                  style={{ accentColor: 'var(--accent)', width: 16, height: 16 }} 
+                <input type="checkbox" checked={showNav}
+                  onChange={(e) => { trigger('nudge'); setShowNav(e.target.checked); }}
+                  style={{ accentColor: 'var(--accent)', width: 16, height: 16 }}
                 />
                 <strong>Show Question Navigator</strong>
               </label>
@@ -200,10 +223,7 @@ export default function StudentSite() {
               ))}
             </div>
 
-            <button className="btn btn-outline" style={{ width: '100%' }} onClick={() => {
-              trigger('nudge');
-              setSelectedSubject(null);
-            }}>
+            <button className="btn btn-outline" style={{ width: '100%' }} onClick={() => { trigger('nudge'); setSelectedSubject(null); }}>
               Cancel
             </button>
           </div>
@@ -212,7 +232,6 @@ export default function StudentSite() {
 
       <style>{`
         .student-site { min-height: 100vh; }
-        .stat-text { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
         .subjects-section { padding: 20px 0 60px; }
         .section-header { text-align: center; margin-bottom: 32px; }
         .section-sub { color: var(--text-secondary); margin-top: 8px; }
@@ -234,8 +253,6 @@ export default function StudentSite() {
         .tip-card h4 { font-size: 0.95rem; margin-bottom: 6px; }
         .tip-card p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
         .site-footer { border-top: 1px solid var(--border); padding: 24px 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
-        @media (max-width: 600px) {
-        }
       `}</style>
     </div>
   );

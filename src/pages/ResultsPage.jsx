@@ -2,7 +2,7 @@
 // Chart.js: doughnut (score) + bar (per-question breakdown)
 // Shows correct/incorrect review with explanations
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import {
   Chart as ChartJS,
@@ -17,6 +17,7 @@ import { Doughnut, Bar } from 'react-chartjs-2';
 import {
   FiCheckCircle, FiXCircle, FiRefreshCw,
   FiHome, FiAward, FiBarChart2,
+  FiShare2, FiTrendingUp,
 } from 'react-icons/fi';
 import ThemeToggle from '../components/ThemeToggle';
 
@@ -88,6 +89,25 @@ export default function ResultsPage() {
 
   const { studentName, subject, score, total, percentage, answers, questions, subjectLabel } = state;
   const passed = percentage >= 60;
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = () => {
+    const text = `I scored ${percentage}% on ${subjectLabel || subject}! 🎓 — QuickTest`;
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {
+      // Fallback for older browsers
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   // Derive per-question correctness (rerender-derived-state-no-effect)
   const correctnessMap = useMemo(
@@ -135,6 +155,12 @@ export default function ResultsPage() {
           <div className="navbar-brand" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}><FiAward /> QuickTest</div>
           <div className="flex gap-2 items-center">
             <ThemeToggle />
+            <button className="btn btn-outline btn-sm" onClick={() => navigate('/leaderboard')}>
+              <FiTrendingUp size={13} /> Leaderboard
+            </button>
+            <button className="btn btn-outline btn-sm" onClick={handleShare}>
+              <FiShare2 size={13} /> {copied ? 'Copied!' : 'Share'}
+            </button>
             <button className="btn btn-outline btn-sm" onClick={() => navigate(`/exam/${subject}`)}>
               <FiRefreshCw size={13} /> Retake
             </button>

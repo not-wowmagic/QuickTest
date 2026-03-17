@@ -150,15 +150,17 @@ export default function AdminLogin() {
           </form>
         </div>
 
-        <div className="card" style={{ padding: '16px', marginTop: 16, background: 'var(--accent-light)', border: '1px solid var(--accent-dim)', textAlign: 'center' }}>
-          <p style={{ fontSize: '0.8rem', color: 'var(--accent-dim)', fontWeight: 600 }}>
-            {isDemoMode ? '🚀 Demo Mode Active (Bypass Enabled)' : 'Temporary Admin Access:'}
-          </p>
-          <p style={{ fontSize: '0.85rem' }}>
-            Email: <strong>admin@mockexam.com</strong><br/>
-            Password: <strong>admin123</strong>
-          </p>
-        </div>
+        {isDemoMode && (
+          <div className="card" style={{ padding: '16px', marginTop: 16, background: 'var(--accent-light)', border: '1px solid var(--accent-dim)', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.8rem', color: 'var(--accent-dim)', fontWeight: 600 }}>
+              🚀 Demo Mode Active (Bypass Enabled)
+            </p>
+            <p style={{ fontSize: '0.85rem' }}>
+              Email: <strong>admin@mockexam.com</strong><br/>
+              Password: <strong>admin123</strong>
+            </p>
+          </div>
+        )}
 
         <p style={{ textAlign: 'center', marginTop: 16, fontSize: '0.8rem', color: 'var(--text-muted)' }}>
           Student area? <a href="/">Go to Exams</a>
