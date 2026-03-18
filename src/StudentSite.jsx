@@ -75,7 +75,13 @@ export default function StudentSite() {
     }
   }, [navigate, selectedSubject, timeAttack, showNav, trigger, studentName]);
 
-  const subjectList = Object.values(SUBJECTS);
+  const desiredOrder = ['world', 'sts', 'filipino', 'ethics', 'self'];
+  const subjectList = Object.values(SUBJECTS).sort((a, b) => {
+    const indexA = desiredOrder.indexOf(a.id);
+    const indexB = desiredOrder.indexOf(b.id);
+    // If not in desiredOrder, put them at the end
+    return (indexA === -1 ? 99 : indexA) - (indexB === -1 ? 99 : indexB);
+  });
 
   return (
     <div className="student-site">

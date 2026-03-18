@@ -539,9 +539,12 @@ img { max-width: 100%; display: block; }
   font-size: 0.94rem;
   text-align: left;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: all var(--transition), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  -webkit-tap-highlight-color: transparent;
 }
 .option-btn:hover { background: var(--bg-base); border-color: var(--border-accent); }
+.option-btn:active { transform: scale(0.97); }
 .option-btn.selected {
   background: var(--accent-light);
   border-color: var(--accent);
@@ -633,14 +636,29 @@ img { max-width: 100%; display: block; }
 .data-table tr:hover td { background: var(--bg-base); }
 
 /* ── Tabs ── */
+.tabs-container {
+  position: relative;
+  margin-bottom: 28px;
+}
+.tabs-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, var(--bg-base));
+  pointer-events: none;
+}
 .tabs {
   display: flex;
   gap: 0;
   border-bottom: 1.5px solid var(--border);
-  margin-bottom: 28px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.tabs::-webkit-scrollbar { display: none; }
 .tab-btn {
   display: flex;
   align-items: center;
@@ -796,6 +814,23 @@ img { max-width: 100%; display: block; }
 .animate-fade { animation: fade-in 0.35s ease both; }
 .animate-slide { animation: slide-up 0.35s cubic-bezier(0.4, 0, 0.2, 1) both; }
 
+/* ── Skeleton Loading ── */
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--border) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-sm);
+}
+.skeleton-text { height: 1em; margin-bottom: 0.5em; width: 100%; }
+.skeleton-text.short { width: 60%; }
+.skeleton-card { height: 120px; width: 100%; border-radius: var(--radius-md); }
+.skeleton-row { height: 48px; width: 100%; border-radius: var(--radius-sm); margin-bottom: 8px; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 /* ── Alerts ── */
 .alert {
   padding: 13px 16px;
@@ -922,6 +957,8 @@ img { max-width: 100%; display: block; }
   .lb-tabs { gap: 6px; margin-bottom: 16px; }
   .lb-tab { padding: 7px 12px; font-size: 0.78rem; }
   .lb-table th, .lb-table td { padding: 10px 10px; font-size: 0.78rem; }
+  .hide-text-mobile { display: none; }
+  .btn.btn-sm.icon-btn-mobile { padding: 8px 10px; }
 }
 
 /* ── Admin Login Page ── */

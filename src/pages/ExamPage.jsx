@@ -398,6 +398,9 @@ export default function ExamPage() {
   // Stable answer selection callback (rerender-functional-setstate)
   const handleSelect = useCallback((optionIndex) => {
     trigger('success'); // gentle pop for selection
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+      navigator.vibrate(10);
+    }
     setAnswers((prev) => ({ ...prev, [currentQ]: optionIndex }));
   }, [currentQ, trigger]);
 
@@ -416,13 +419,9 @@ export default function ExamPage() {
       setSubmitError('Another active exam session is detected for this subject. Close the other tab/window before submitting.');
       return;
     }
-    if (isOnCooldown(subject)) {
-      setSubmitError('Please wait 10 minutes between submissions for the same subject.');
-      return;
-    }
     setSubmitError(null);
     setShowConfirm(true);
-  }, [subject, hasSessionLock, duplicateTab]);
+  }, [hasSessionLock, duplicateTab]);
 
   const handleSubmit = useCallback(async () => {
     if (!hasSessionLock || duplicateTab) {
@@ -513,7 +512,53 @@ export default function ExamPage() {
     });
   }, [answers, questions, subject, studentName, navigate, subjectInfo, hasSessionLock, duplicateTab]);
 
-  if (loading) return <LoadingSpinner message="Loading questions…" />;
+  if (loading) {
+    return (
+      <div className="exam-page">
+        <header className="exam-header glass-header" style={{ padding: '12px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="exam-header-left" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div className="skeleton" style={{ width: 42, height: 42, borderRadius: 8 }}></div>
+            <div className="skeleton" style={{ width: 160, height: 22, borderRadius: 4 }}></div>
+          </div>
+          <div className="exam-header-right" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+             <div className="skeleton" style={{ width: 80, height: 32, borderRadius: 8 }}></div>
+             <div className="skeleton" style={{ width: 120, height: 32, borderRadius: 8 }}></div>
+          </div>
+        </header>
+
+        <div className="exam-body" style={{ marginTop: 24 }}>
+          {/* Progress skeleton */}
+          <div className="exam-progress-wrap" style={{ marginBottom: '1.5rem' }}>
+            <div className="exam-progress-top" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
+              <div className="skeleton" style={{ width: 100, height: 16, borderRadius: 4 }}></div>
+              <div className="skeleton" style={{ width: 40, height: 16, borderRadius: 4 }}></div>
+            </div>
+            <div className="progress-bar-wrap" style={{ display: 'block', background: 'transparent' }}>
+              <div className="skeleton" style={{ width: '100%', height: '100%', borderRadius: 100 }}></div>
+            </div>
+          </div>
+
+          {/* Question Navigator Dots Skeleton */}
+          <div className="question-nav" style={{ gap: 8, display: 'flex', flexWrap: 'wrap', marginBottom: 24 }}>
+             {[...Array(8)].map((_, i) => (
+                <div key={i} className="skeleton" style={{ width: 36, height: 36, borderRadius: '50%' }}></div>
+             ))}
+          </div>
+
+          <div className="card question-card" style={{ padding: 28 }}>
+            <div className="skeleton skeleton-text" style={{ height: 20, marginBottom: 16 }}></div>
+            <div className="skeleton skeleton-text short" style={{ height: 20, marginBottom: 40, width: '60%' }}></div>
+            {[1, 2, 3, 4].map(i => <div key={i} className="skeleton skeleton-row" style={{ height: 56, marginBottom: 14, borderRadius: 8 }}></div>)}
+          </div>
+          
+          <div className="exam-actions" style={{ marginTop: 24, display: 'flex', justifyContent: 'space-between' }}>
+            <div className="skeleton" style={{ width: 120, height: 48, borderRadius: 8 }}></div>
+            <div className="skeleton" style={{ width: 120, height: 48, borderRadius: 8 }}></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   if (!subjectInfo) return null;
 
   const unansweredCount = questions.length - Object.keys(answers).length;

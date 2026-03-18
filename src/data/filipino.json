@@ -1,0 +1,1112 @@
+[
+  {
+    "id": "filipino-q1",
+    "text": "Alin sa mga sumusunod ang pinakamaikling kahulugan ng Interdisiplinaryo?",
+    "options": [
+      "Pag-aaral mula sa isang disiplina lamang",
+      "Pagsasama ng dalawang akademikong disiplina at pagbuo ng bagong kaalaman",
+      "Pagtawid sa ibayo tungo sa holistikong pananaw",
+      "Pag-aaral ng wika sa iba't ibang larangan"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q2",
+    "text": "Ang pananaliksik na \"Pag Utang Bait 'Pag Singil Galit: Ang Kultura ng Pangungutang sa mga Pamilihang Bayan\" ay halimbawa ng anong uri ng pananaliksik?",
+    "options": [
+      "Transdisiplinaryo",
+      "Multidisiplinaryo",
+      "Interdisiplinaryo",
+      "Monodisiplinaryo"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q3",
+    "text": "Alin sa mga sumusunod na larangang sangkot sa pananaliksik na nabanggit sa #2?",
+    "options": [
+      "Botanist at Chemistry",
+      "Pamamahalang Pampinansyal at Araling Pilipino",
+      "Edukasyon at Filipino",
+      "Kasaysayan at Panitikan"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q4",
+    "text": "Ang Transdisiplinaryo ay nailalarawan sa pamamagitan ng:",
+    "options": [
+      "Pagsasanib ng dalawang disiplina lamang",
+      "Pagtawid sa ibayo tungo sa holistikong pananaw",
+      "Paggamit ng iisang metodo sa pananaliksik",
+      "Pag-aaral na limitado sa isang larangan"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q5",
+    "text": "Ang pananaliksik na \"Mula Bulaklak hanggang Pabango: Mga Talutot ng Talinghaga sa Kasaysayan ng Pabango sa Pilipinas\" ay halimbawa ng:",
+    "options": [
+      "Interdisiplinaryo",
+      "Multidisiplinaryo",
+      "Transdisiplinaryo",
+      "Unidisiplinaryo"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q6",
+    "text": "Alin sa mga sumusunod ang HINDI kabilang sa mga larangang sangkot sa pananaliksik #5?",
+    "options": [
+      "Kasaysayan",
+      "Chemistry",
+      "Panitikan",
+      "Matematika"
+    ],
+    "answer": 3,
+    "explanation": "Correct answer is D"
+  },
+  {
+    "id": "filipino-q7",
+    "text": "Ang \"Paglikha ng Online Portal para sa Senior Highschool\" ay halimbawa ng anong uri?",
+    "options": [
+      "Transdisiplinaryo",
+      "Interdisiplinaryo",
+      "Multidisiplinaryo",
+      "Bidisiplinaryo"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q8",
+    "text": "Ang Multidisiplinaryo ay nailalarawan ng lahat ng sumusunod MALIBAN sa:",
+    "options": [
+      "Pag-aaral mula sa iba't ibang disiplina",
+      "Pagsilip sa ibang pananaw palabas",
+      "Pag-unawa sa kompleks na sitwasyon",
+      "Paggamit ng iisang teorya at metodo"
+    ],
+    "answer": 3,
+    "explanation": "Correct answer is D"
+  },
+  {
+    "id": "filipino-q9",
+    "text": "Ano ang tinatawag na \"crossing boundaries\" sa konteksto ng Interdisiplinaryo?",
+    "options": [
+      "Pagtatalik ng dalawang wika",
+      "Pagsasanib ng ideya mula sa iba't ibang disiplina",
+      "Pagtatapos ng isang pananaliksik",
+      "Paglipas ng hangganan ng bansa"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q10",
+    "text": "Ang Transdisiplinaryo ay may katangiang ang nabuo na pananaw sa isang disiplina ay:",
+    "options": [
+      "Nananatili sa isang larangan lamang",
+      "Muli pang gagamitin sa iba pang disiplina",
+      "Iniaalis sa akademikong talakayan",
+      "Tinatanggihan ng ibang disiplina"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q11",
+    "text": "Alin ang pinaka-malawak na uri ng cross-disciplinary approach?",
+    "options": [
+      "Interdisiplinaryo",
+      "Transdisiplinaryo",
+      "Multidisiplinaryo",
+      "Pareho ang B at C"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q12",
+    "text": "Ang pagpaplano sa konteksto ng pananaliksik ay:",
+    "options": [
+      "Huling hakbang sa pag-aaral",
+      "Mahalagang hakbang sa paglulunsad ng isang pag-aaral",
+      "Opsyonal na bahagi ng pananaliksik",
+      "Pagsulat ng konklusyon"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q13",
+    "text": "Alin sa mga sumusunod ang HINDI kasama sa pagpaplano ng pananaliksik?",
+    "options": [
+      "Istratehiya kung paano isasagawa ang proyekto",
+      "Kakailanganing materyales",
+      "Listahan ng mga posibleng suliraning kahaharapin",
+      "Pagsulat ng buong manuskrito"
+    ],
+    "answer": 3,
+    "explanation": "Correct answer is D"
+  },
+  {
+    "id": "filipino-q14",
+    "text": "Ano ang layunin ng pagpili ng paksa sa pananaliksik?",
+    "options": [
+      "Magbigay ng konklusyon",
+      "Magbigay ng direksyon sa pag-aaral mula umpisa hanggang wakas",
+      "Mag-ulat ng mga natuklasan",
+      "Magsaliksik ng mga sanggunian"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q15",
+    "text": "Ang pagbabalangkas sa pananaliksik ay kinabibilangan ng:",
+    "options": [
+      "Larangan, paksa, suliranin, kahalagahan, at pamagat",
+      "Konklusyon at rekomendasyon lamang",
+      "Listahan ng mga sanggunian",
+      "Pagsulat ng abstract"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is A"
+  },
+  {
+    "id": "filipino-q16",
+    "text": "Sa halimbawa ng pagbabalangkas, ang larangan ay Pamamahalang Pagnenegosyo at ang paksa ay:",
+    "options": [
+      "Mga Pagbabago ng mga Produkto sa Pamilihang Bayan",
+      "Ang Kultura ng Pangungutang",
+      "Online Portal para sa Senior Highschool",
+      "Kasaysayan ng Pabango sa Pilipinas"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is A"
+  },
+  {
+    "id": "filipino-q17",
+    "text": "Ang suliranin sa halimbawa ng pagbabalangkas ay tungkol sa:",
+    "options": [
+      "Kakulangan ng pondo sa negosyo",
+      "Kakulangan ng kaalaman at pagmamapa ng mga mamamayan ukol sa ebolusyon ng mga produkto sa pamilihang bayan",
+      "Pagbaba ng kalidad ng mga produkto",
+      "Pagtaas ng presyo sa pamilihan"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q18",
+    "text": "Ang kahalagahan ng pananaliksik sa halimbawa ng pagbabalangkas ay:",
+    "options": [
+      "Mapabuti ang kalidad ng mga produkto",
+      "Makita ang mga posibleng pagbabago bilang gabay sa pagpaplanong ekonomikal",
+      "Mapataas ang kita ng mga mamamayan",
+      "Matuklasan ang bagong produkto"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q19",
+    "text": "Ang pamagat sa halimbawa ng pagbabalangkas ay:",
+    "options": [
+      "Ebolusyon ng mga Negosyo sa Pilipinas",
+      "Pagmamapa ng Kasaysayan: Ebolusyon ng mga Produktong Tinatangkilik sa Pamilihang Bayan ng Obando Bulakan",
+      "Ang Kasaysayan ng Pamilihang Bayan ng Bulacan",
+      "Mga Pagbabago sa Ekonomiya ng Obando"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q20",
+    "text": "Ang pagbubuod ng impormasyon ay ginagawa:",
+    "options": [
+      "Bago pa pumili ng paksa",
+      "Pagkatapos ng pagbabalangkas at pagpili ng paksa",
+      "Sa pagtatapos ng pananaliksik",
+      "Kasabay ng pagpili ng larangan"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q21",
+    "text": "Ang pagpili ng batis ng impormasyon ay may layuning:",
+    "options": [
+      "Gumawa ng mas mahabang sulatin",
+      "Pumili ng mas mainam, tama, akma, at makatutulong na impormasyon",
+      "Mangolekta ng lahat ng available na datos",
+      "Maghanap ng pinakasikat na sources"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q22",
+    "text": "Alin ang HINDI tamang suhestiyon sa pagpili ng paksa sa pananaliksik?",
+    "options": [
+      "Iwasan ang napakapalasak na paksa",
+      "Piliin ang napapanahong paksa",
+      "Piliin ang paksa na interesante sa mananaliksik kahit sensitibo",
+      "Isaalang-alang ang panahong ibinibigay ng guro"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q23",
+    "text": "Bakit dapat iwasan ang napakapalasak o komon na paksa?",
+    "options": [
+      "Mahirap itong i-research",
+      "Maaaring kulang na ang bagong kontribusyon nito sa kaalaman",
+      "Hindi ito tinatanggap ng mga guro",
+      "Mahal ang mga sanggunian para dito"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q24",
+    "text": "Bakit mahalaga ang pagsaalang-alang sa panahong ibinibigay ng guro?",
+    "options": [
+      "Para may sapat na oras na matapos ang pananaliksik",
+      "Para maiwasan ang mataas na gastos",
+      "Para mapili ang mas magandang paksa",
+      "Para makasiguro na maraming sanggunian"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is A"
+  },
+  {
+    "id": "filipino-q25",
+    "text": "Ang pagpili ng paksa na nagbibigay ng benipisyo sa mga target na mambabasa ay nagpapakita ng:",
+    "options": [
+      "Kahirapan ng paksang pinili",
+      "Angkop at makabuluhang direksyon ng pananaliksik",
+      "Kahusayan ng mananaliksik sa pagsulat",
+      "Kawalan ng sariling interes ng mananaliksik"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q26",
+    "text": "Ang Alibata ay binubuo ng ilang titik?",
+    "options": [
+      "20",
+      "15",
+      "17",
+      "22"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q27",
+    "text": "Ilang patinig ang mayroon sa Alibata?",
+    "options": [
+      "5",
+      "3",
+      "4",
+      "2"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q28",
+    "text": "Ilang katinig ang mayroon sa Alibata?",
+    "options": [
+      "12",
+      "16",
+      "14",
+      "10"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q29",
+    "text": "Sa panahon ng mga Kastila, ang Alibata ay napalitan ng Alpabetong Romano na binubuo ng:",
+    "options": [
+      "22 titik",
+      "20 titik",
+      "26 titik",
+      "18 titik"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q30",
+    "text": "Ilang patinig ang mayroon sa Alpabetong Romano na dinala ng mga Kastila?",
+    "options": [
+      "3",
+      "7",
+      "5",
+      "6"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q31",
+    "text": "Sa panahon ng mga Amerikano, ano ang pangunahing dinala nila sa Pilipinas?",
+    "options": [
+      "Bagong sistema ng pamahalaan",
+      "Sistema ng Pampublikong Paaralan",
+      "Bagong relihiyon",
+      "Bagong alpabeto"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q32",
+    "text": "Ang Order Militar Blg. 13 ay kaugnay ng anong panahon?",
+    "options": [
+      "Panahon ng mga Kastila",
+      "Panahon ng mga Amerikano",
+      "Panahon ng Hapon",
+      "Panahon ng Komonwelt"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q33",
+    "text": "Ano ang naging resulta ng Order Militar Blg. 13?",
+    "options": [
+      "Pagpapalawak ng alpabeto",
+      "Pamayagpag ng Panitikang Tagalog",
+      "Pagtatayo ng mga paaralan",
+      "Pagtatatag ng Surian ng Wikang Pambansa"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q34",
+    "text": "Sa Konstitusyon ng 1935, Artikulo XIV, Seksiyon 3, ang Pambansang Assemblea ay gagawa ng mga hakbang para sa:",
+    "options": [
+      "Pagtuturo ng Ingles sa lahat ng paaralan",
+      "Pagpapalakas ng ekonomiya",
+      "Paglinang at pagpapatibay ng isang panlahat na wikang Pambansa",
+      "Pagtatapos ng kolonyalismo"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q35",
+    "text": "Ang wikang Tagalog ay ginamit bilang wikang opisyal sa Konstitusyon ng:",
+    "options": [
+      "Malolos",
+      "Biak-na-Bato",
+      "1935",
+      "1973"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q36",
+    "text": "Noong anong taon naitatag ang Surian ng Wikang Pambansa?",
+    "options": [
+      "1935",
+      "1937",
+      "1940",
+      "1946"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q37",
+    "text": "Sino ang nagtatag ng Surian ng Wikang Pambansa?",
+    "options": [
+      "Pangulong Marcos",
+      "Pangulong Quezon",
+      "Pangulong Roxas",
+      "Pangulong Magsaysay"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q38",
+    "text": "Ang Surian ng Wikang Pambansa ngayon ay kilala bilang:",
+    "options": [
+      "Komisyon sa Wikang Filipino",
+      "Sentro ng Wikang Filipino",
+      "Kagawaran ng Edukasyon",
+      "Instituto ng Wikang Pambansa"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q39",
+    "text": "Ang Batas Komonwelt Blg. 184 ay nagtatakda ng:",
+    "options": [
+      "Paggamit ng Ingles sa pamahalaan",
+      "Pagbuo ng Surian ng Wikang Pambansa",
+      "Pagsasalin ng lahat ng batas sa Tagalog",
+      "Pagtatayo ng mga paaralang pampubliko"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q40",
+    "text": "Si Jaime C. de Veyra ay nagmula sa anong rehiyon at anong tungkulin ang hawak niya sa Surian?",
+    "options": [
+      "Cebu – Kalihim",
+      "Samar – Pangulo",
+      "Tagalog – Kalihim",
+      "Bicol – Miyembro"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q41",
+    "text": "Sino ang Kalihim ng Surian ng Wikang Pambansa?",
+    "options": [
+      "Santiago A. Fonacier",
+      "Hadji Butu",
+      "Cecilio Lopez",
+      "Filemon Sotto"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q42",
+    "text": "Ang miyembro ng Surian na kumakatawan sa Ilokano ay:",
+    "options": [
+      "Cecilio Lopez",
+      "Casimiro F. Perfecto",
+      "Santiago A. Fonacier",
+      "Hadji Butu"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q43",
+    "text": "Ang Kautusang Tagapagpaganap Blg. 134 ay nagtatakda na:",
+    "options": [
+      "Ingles ang wikang panturo sa lahat ng paaralan",
+      "Tagalog ang gagamitin bilang wikang Pambansa",
+      "Filipino ang opisyal na wika ng Pilipinas",
+      "Parehong Tagalog at Ingles ang mga wikang opisyal"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q44",
+    "text": "Alin sa mga sumusunod ang HINDI kasama sa mga dahilan kung bakit pinili ang Tagalog bilang wikang Pambansa?",
+    "options": [
+      "Mas marami ang nakapagsasalita nito",
+      "Mas madaling matutuhan",
+      "Tagalog ang ginagamit sa kalakalan sa Kamaynilaan",
+      "Tagalog ang wikang pinakamatanda sa Pilipinas"
+    ],
+    "answer": 3,
+    "explanation": "Correct answer is D"
+  },
+  {
+    "id": "filipino-q45",
+    "text": "Ang Kautusang Tagapagpaganap Blg. 263 ay may kaugnayan sa:",
+    "options": [
+      "Pagtatayo ng Surian ng Wikang Pambansa",
+      "Paglalabas ng Talatinigang Tagalog at Ingles noong Abril 1, 1940",
+      "Pagpapalit ng pangalan ng wikang Pambansa",
+      "Pagtatakda ng Linggo ng Wika"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q46",
+    "text": "Ayon sa Batas Komonwelt Blg. 570, hanggang saan ang mga baitang na ituturo ng Pambansang Wika?",
+    "options": [
+      "Elementarya lamang",
+      "Mula unang baitang elementarya hanggang ikaapat na taon sa sekundarya",
+      "Mula ikatlong baitang elementarya hanggang kolehiyo",
+      "Sekundarya lamang"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q47",
+    "text": "Ang Proklamasyon Blg. 12 ay inilabas noong:",
+    "options": [
+      "Enero 1, 1954",
+      "Marso 26, 1954",
+      "Hunyo 12, 1954",
+      "Agosto 19, 1954"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q48",
+    "text": "Ang Proklamasyon Blg. 12 ay nagtatakda ng pagdiriwang ng Linggo ng Wikang Pambansa mula:",
+    "options": [
+      "Ika-13 hanggang 19 ng Agosto",
+      "Ika-29 ng Marso hanggang Abril 4",
+      "Ika-1 hanggang 7 ng Hunyo",
+      "Ika-12 hanggang 18 ng Hunyo"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q49",
+    "text": "Bilang pagpapahalaga sa kaarawan ni Balagtas, ang pagdiriwang ng Linggo ng Wikang Pambansa ay itinakda sa:",
+    "options": [
+      "Ika-13 hanggang 19 ng Agosto",
+      "Ika-29 ng Marso hanggang Abril 4",
+      "Ika-26 ng Marso",
+      "Ika-1 ng Nobyembre"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q50",
+    "text": "Ang Proklamasyon Blg. 186 ay nilayong ilipat ang pagdiriwang ng Linggo ng Wika sa:",
+    "options": [
+      "Ika-29 ng Marso hanggang Abril 4",
+      "Ika-13 hanggang 19 ng Agosto",
+      "Ika-12 ng Hunyo",
+      "Ika-1 ng Nobyembre"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q51",
+    "text": "Ang paglilipat ng Linggo ng Wika sa Agosto ay bilang pagpapahalaga sa kaarawan ni:",
+    "options": [
+      "Jose Rizal",
+      "Andres Bonifacio",
+      "Pangulong Quezon",
+      "Francisco Balagtas"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q52",
+    "text": "Ang Tagapagpaganap Blg. 96 ay naglalaman ng:",
+    "options": [
+      "Paggamit ng Ingles sa lahat ng transaksiyon ng pamahalaan",
+      "Pagsasa-Pilipino ng mga pangalan ng gusali at tanggapan ng Pamahalaan",
+      "Pagpapalit ng alpabeto ng Filipino",
+      "Pagtatakda ng Linggo ng Wika"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q53",
+    "text": "Noong anong taon inilabas ang Tagapagpaganap Blg. 96?",
+    "options": [
+      "1954",
+      "1960",
+      "1967",
+      "1973"
+    ],
+    "answer": 2,
+    "explanation": "Correct answer is C"
+  },
+  {
+    "id": "filipino-q54",
+    "text": "Ang Memorandum Sirkular Blg. 96 ay nag-aatas ng:",
+    "options": [
+      "Paggamit ng wikang opisyal ng Pilipinas sa mga komunikasyon o transaksiyon sa pamahalaan",
+      "Pagtuturo ng Filipino sa lahat ng antas ng paaralan",
+      "Pagpapalawak ng Komisyon sa Wikang Filipino",
+      "Pagsasalin ng lahat ng batas sa Filipino"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is A"
+  },
+  {
+    "id": "filipino-q55",
+    "text": "Ayon sa Saligang Batas ng 1973, mga anong wika ang magiging mga opisyal na wika ng Pilipinas? ==============================",
+    "options": [
+      "Tagalog at Kastila",
+      "Filipino at Ingles",
+      "Pilipino at Kastila",
+      "Tagalog at Ingles"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is B"
+  },
+  {
+    "id": "filipino-q56",
+    "text": "Ang Interdisiplinaryo ay limitado sa pagsasama ng tatlo o higit pang disiplina.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q57",
+    "text": "Ang Transdisiplinaryo ay may mas malawak na pananaw kaysa sa Interdisiplinaryo.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q58",
+    "text": "Ang pananaliksik na \"Paglikha ng Online Portal para sa Senior Highschool\" ay Transdisiplinaryo.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q59",
+    "text": "Ang pagpaplano ay isang opsyonal na hakbang sa pananaliksik.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q60",
+    "text": "Ang pagpili ng paksa ang magbibigay ng direksyon sa pag-aaral mula umpisa hanggang wakas.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q61",
+    "text": "Ang sensitibong paksa na bumabangga sa karapatang pantao ay dapat iwasan sa pananaliksik.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q62",
+    "text": "Ang pagbubuod ng impormasyon ay ginagawa bago pa man pumili ng paksa.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q63",
+    "text": "Maaaring magsimulang kumuha ng impormasyon ang mananaliksik kapag mayroon nang paksa.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q64",
+    "text": "Ang pagpili ng batis ng impormasyon ay nagtatakda kung anong datos ang gagamitin sa sulatin.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q65",
+    "text": "Ang napakapalasak na paksa ay dapat piliing-piliin sa pananaliksik.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q66",
+    "text": "Ang Alibata ay binubuo ng 20 titik.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q67",
+    "text": "Ang Alibata ay may 3 patinig at 14 katinig.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q68",
+    "text": "Sa panahon ng mga Kastila, ang Alibata ay napalitan ng Alpabetong Romano.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q69",
+    "text": "Ang Alpabetong Romano na dinala ng mga Kastila ay binubuo ng 26 titik.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q70",
+    "text": "Ang mga Amerikano ang nagdala ng Sistema ng Pampublikong Paaralan sa Pilipinas.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q71",
+    "text": "Sa panahon ng Hapon, ang Panitikang Tagalog ay namayagpag dahil sa Order Militar Blg. 13.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q72",
+    "text": "Ang Konstitusyon ng 1935 ay nagtatakda ng iisang wikang Pambansa na Tagalog.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q73",
+    "text": "Ang Konstitusyon ng Biak-na-Bato noong 1899 ay gumagamit ng wikang Tagalog bilang wikang opisyal.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q74",
+    "text": "Si Pangulong Roxas ang nagtatag ng Surian ng Wikang Pambansa.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q75",
+    "text": "Ang Surian ng Wikang Pambansa ngayon ay tinatawag na Sentro ng Wikang Filipino.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q76",
+    "text": "Ang Batas Komonwelt Blg. 184 ay nagtatakda ng pagbuo ng Surian ng Wikang Pambansa.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q77",
+    "text": "Si Jaime C. de Veyra ay mula sa Cebu at siya ang Pangulo ng Surian.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q78",
+    "text": "Si Cecilio Lopez ay ang Kalihim ng Surian ng Wikang Pambansa at siya ay Tagalog.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q79",
+    "text": "Si Hadji Butu ay kumakatawan sa Muslim sa Surian ng Wikang Pambansa.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q80",
+    "text": "Si Filemon Sotto ay kumakatawan sa Cebu sa Surian ng Wikang Pambansa.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q81",
+    "text": "Ang Kautusang Tagapagpaganap Blg. 134 ay nagtatakda na Ingles ang wikang Pambansa ng Pilipinas.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q82",
+    "text": "Isa sa mga dahilan ng pagpili sa Tagalog bilang wikang Pambansa ay ang mas malaking bilang ng nakapagsasalita nito.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q83",
+    "text": "Ayon sa Kautusang Tagapagpaganap Blg. 134, mas mahirap matutuhan ang Tagalog kaysa sa ibang wika.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q84",
+    "text": "Ang Tagalog ang ginagamit sa kalakalan sa Kamaynilaan — isa ito sa mga dahilan ng pagpili nito.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q85",
+    "text": "Ang Kautusang Tagapagpaganap Blg. 263 ay noong Abril 1, 1940 nagpalimbag ng Talatinigang Tagalog at Ingles.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q86",
+    "text": "Ang Batas Komonwelt Blg. 570 ay nagtatakda ng pagtuturo ng Pambansang Wika mula sa kolehiyo.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q87",
+    "text": "Ang Proklamasyon Blg. 12 ay inilabas noong Marso 26, 1954.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q88",
+    "text": "Ang pagdiriwang ng Linggo ng Wikang Pambansa sa Proklamasyon Blg. 12 ay bilang pagpapahalaga sa kaarawan ni Pangulong Quezon.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q89",
+    "text": "Ang Proklamasyon Blg. 186 ay naglipat ng pagdiriwang ng Linggo ng Wika sa Agosto bilang pagpapahalaga sa kaarawan ni Pangulong Quezon.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q90",
+    "text": "Ang Tagapagpaganap Blg. 96 ay tungkol sa pagsasa-Filipino ng mga pangalan ng gusali ng pamahalaan noong 1967.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q91",
+    "text": "Ang Memorandum Sirkular Blg. 96 ay nagbabawal sa paggamit ng Ingles sa lahat ng opisyal na komunikasyon.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q92",
+    "text": "Ayon sa Saligang Batas ng 1973, Filipino at Ingles ang mga opisyal na wika ng Pilipinas.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q93",
+    "text": "Ang Multidisiplinaryo at Interdisiplinaryo ay magkapareho ang kahulugan.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q94",
+    "text": "Ang \"crossing boundaries\" ay isang katangian ng Interdisiplinaryo na pananaliksik.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q95",
+    "text": "Ang pananaliksik na nagsasangkot ng Kasaysayan, Botanist, Chemistry, at Panitikan ay halimbawa ng Interdisiplinaryo.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q96",
+    "text": "Ang napapanahong paksa ay isa sa mga dapat isaalang-alang sa pagpili ng paksa.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q97",
+    "text": "Ang Tagapagpaganap Blg. 96 ay inilabas noong 1960.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 1,
+    "explanation": "Correct answer is F"
+  },
+  {
+    "id": "filipino-q98",
+    "text": "Ang pagbabalangkas ay nauna sa pagpili ng paksa sa proseso ng pananaliksik.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q99",
+    "text": "Ang Surian ng Wikang Pambansa ay may anim na miyembro kasama ang Pangulo at Kalihim.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  },
+  {
+    "id": "filipino-q100",
+    "text": "Ang disiplina ng Botanist ay kabilang sa pananaliksik na \"Mula Bulaklak hanggang Pabango.\"",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": 0,
+    "explanation": "Correct answer is T"
+  }
+]

@@ -1,6 +1,15 @@
 // src/data/seedQuestions.js
 
+import filipinoData from './filipino.json';
 export const SUBJECTS = {
+  filipino: {
+    id: 'filipino',
+    title: "Filipino sa Iba't Ibang Larangan",
+    description: 'Pag-aaral ng wika at pananaliksik sa kultura, sining, at kasaysayan.',
+    icon: '📜',
+    tags: ['Lika', 'Pananaliksik'],
+    questions: filipinoData
+  },
   ethics: {
     id: 'ethics',
     title: 'Ethics with Peace Education',

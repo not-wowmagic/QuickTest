@@ -85,27 +85,34 @@ export default function LeaderboardPage() {
         </div>
 
         {/* Subject Tabs */}
-        <div className="lb-tabs">
-          <button
-            className={`lb-tab ${activeTab === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveTab('all')}
-          >
-            All Subjects
-          </button>
-          {SUBJECT_LIST.map((s) => (
+        <div className="tabs-container">
+          <div className="tabs lb-tabs">
             <button
-              key={s.id}
-              className={`lb-tab ${activeTab === s.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(s.id)}
+              className={`lb-tab ${activeTab === 'all' ? 'active' : ''}`}
+              onClick={() => setActiveTab('all')}
             >
-              {s.icon} {s.title}
+              All Subjects
             </button>
-          ))}
+            {SUBJECT_LIST.map((s) => (
+              <button
+                key={s.id}
+                className={`lb-tab ${activeTab === s.id ? 'active' : ''}`}
+                onClick={() => setActiveTab(s.id)}
+              >
+                {s.icon} {s.title}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Results Table */}
         {loading ? (
-          <LoadingSpinner message="Loading leaderboard…" />
+          <div className="card lb-table-card" style={{ padding: 24 }}>
+            <div className="skeleton skeleton-row" style={{ height: 32, marginBottom: 16 }}></div>
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="skeleton skeleton-row"></div>
+            ))}
+          </div>
         ) : results.length === 0 ? (
           <div className="card" style={{ textAlign: 'center', padding: 40, color: 'var(--text-muted)' }}>
             No results yet. Be the first to take a quiz!
@@ -154,9 +161,9 @@ export default function LeaderboardPage() {
         .lb-body { max-width: 900px; margin: 0 auto; padding: 32px 20px 80px; }
         .lb-hero { text-align: center; margin-bottom: 28px; }
         .lb-hero h1 { margin-top: 8px; }
+        .lb-hero h1 { margin-top: 8px; }
         .lb-tabs {
-          display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
-          margin-bottom: 24px; scrollbar-width: thin;
+          display: flex; gap: 8px; padding-bottom: 4px; border: none;
         }
         .lb-tab {
           padding: 8px 16px; border-radius: 100px; border: 1px solid var(--border);

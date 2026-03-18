@@ -87,7 +87,7 @@ export default function ResultsPage() {
     );
   }
 
-  const { studentName, subject, score, total, percentage, answers, questions, subjectLabel } = state;
+  const { studentName, subject, score, total, percentage, answers, questions, subjectLabel, timeAttack } = state;
   const passed = percentage >= 60;
   const [copied, setCopied] = useState(false);
 
@@ -155,19 +155,19 @@ export default function ResultsPage() {
           <div className="navbar-brand" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}><FiAward /> QuickTest</div>
           <div className="flex gap-2 items-center">
             <ThemeToggle />
-            <button className="btn btn-outline btn-sm" onClick={() => navigate('/leaderboard')}>
-              <FiTrendingUp size={13} /> Leaderboard
-            </button>
-            <button className="btn btn-outline btn-sm" onClick={handleShare}>
-              <FiShare2 size={13} /> {copied ? 'Copied!' : 'Share'}
-            </button>
-            <button className="btn btn-outline btn-sm" onClick={() => navigate(`/exam/${subject}`)}>
-              <FiRefreshCw size={13} /> Retake
-            </button>
-            <button className="btn btn-primary btn-sm" onClick={() => navigate('/')}>
-              <FiHome size={13} /> Home
-            </button>
-          </div>
+            <button className="btn btn-outline btn-sm icon-btn-mobile" onClick={() => navigate('/leaderboard')}>
+              <FiTrendingUp size={13} /> <span className="hide-text-mobile">Leaderboard</span>
+             </button>
+             <button className="btn btn-outline btn-sm icon-btn-mobile" onClick={handleShare}>
+               <FiShare2 size={13} /> <span className="hide-text-mobile">{copied ? 'Copied!' : 'Share'}</span>
+             </button>
+             <button className="btn btn-outline btn-sm icon-btn-mobile" onClick={() => navigate(`/exam/${subject}?items=${total}&name=${encodeURIComponent(studentName || '')}${timeAttack ? '&timeAttack=true' : ''}`)}>
+               <FiRefreshCw size={13} /> <span className="hide-text-mobile">Retake</span>
+             </button>
+             <button className="btn btn-primary btn-sm icon-btn-mobile" onClick={() => navigate('/')}>
+               <FiHome size={13} /> <span className="hide-text-mobile">Home</span>
+             </button>
+           </div>
         </div>
       </nav>
 
@@ -268,14 +268,15 @@ export default function ResultsPage() {
       </div>
 
       <style>{`
-        .results-page { min-height: 100vh; background: var(--bg-base); }
-        .results-body { max-width: 880px; margin: 0 auto; padding: 40px 20px 80px; }
+        .results-page { min-height: 100vh; background: var(--bg-base); overflow-x: hidden; width: 100%; box-sizing: border-box; }
+        .results-body { max-width: 880px; margin: 0 auto; padding: 40px 20px 80px; width: 100%; box-sizing: border-box; }
         .results-hero { text-align: center; margin-bottom: 36px; }
         .results-title { font-size: clamp(1.4rem, 3vw, 2rem); margin: 12px 0 6px; }
         .results-sub { color: var(--text-secondary); font-size: 0.95rem; }
         .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
-        .chart-card { }
-        .chart-title { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
+        .chart-card { min-width: 0; overflow-x: auto; }
+        .chart-container { position: relative; width: 100%; min-width: 400px; }
+        .chart-title { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; position: sticky; left: 0; }
         .chart-legend { display: flex; gap: 16px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
         .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-secondary); }
         .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
@@ -287,23 +288,29 @@ export default function ResultsPage() {
         .review-item.skipped { border-color: rgba(0,0,0,0.07); opacity: 0.7; }
         .review-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
         .review-num { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
-        .review-question { font-weight: 500; margin-bottom: 14px; line-height: 1.6; }
+        .review-question { font-weight: 500; margin-bottom: 14px; line-height: 1.6; word-break: break-word; overflow-wrap: anywhere; }
         .review-options { display: flex; flex-direction: column; gap: 7px; }
         .review-opt {
-          display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+          display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px;
           border-radius: var(--radius-sm); font-size: 0.88rem; border: 1px solid transparent;
-          color: var(--text-secondary);
+          color: var(--text-secondary); word-break: break-word; overflow-wrap: anywhere;
         }
         .review-opt.correct-opt { background: hsla(142,71%,45%,0.08); border-color: hsla(142,71%,45%,0.25); color: var(--text-primary); }
         .review-opt.wrong-opt { background: hsla(0,84%,60%,0.08); border-color: hsla(0,84%,60%,0.25); }
-        .opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; color: var(--text-muted); }
-        .opt-badge { margin-left: auto; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+        .opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; color: var(--text-muted); margin-top: 2px; }
+        .opt-badge { margin-left: auto; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; flex-shrink: 0; white-space: nowrap; }
         .correct-badge { background: hsla(142,71%,45%,0.2); color: var(--success); }
         .wrong-badge { background: hsla(0,84%,60%,0.2); color: var(--error); }
-        .review-explanation { margin-top: 12px; padding: 12px 14px; background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.87rem; color: var(--text-secondary); line-height: 1.6; }
-        @media (max-width: 640px) {
+        .review-explanation { margin-top: 12px; padding: 12px 14px; background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.87rem; color: var(--text-secondary); line-height: 1.6; word-break: break-word; overflow-wrap: anywhere; }
+        @media (max-width: 850px) {
           .charts-row { grid-template-columns: 1fr; }
-          .results-body { padding: 24px 14px 60px; }
+          .results-body { padding: 24px 16px 60px; }
+          .results-hero { margin-bottom: 24px; }
+          .score-circle { transform: scale(0.9); margin-bottom: -10px; }
+        }
+        @media (max-width: 480px) {
+          .results-title { font-size: 1.5rem; }
+          .badge { font-size: 0.65rem; padding: 4px 8px; }
         }
       `}</style>
     </div>
