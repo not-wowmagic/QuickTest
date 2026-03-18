@@ -703,11 +703,15 @@ export default function ExamPage() {
         .exam-actions { display: flex; justify-content: space-between; align-items: center; margin: 24px 0; }
         .submit-section { margin-top: 40px; }
         @media (max-width: 480px) {
-          .exam-nav { padding: 12px 14px; }
-          .exam-body { padding: 20px 14px 80px; }
-          .question-text { font-size: 1rem; }
-          .exam-actions { gap: 8px; }
-          .exam-actions .btn { flex: 1; justify-content: center; }
+          .exam-nav { padding: 10px 12px; gap: 6px; }
+          .exam-nav-left { gap: 8px; }
+          .exam-subject-badge { font-size: 0.82rem; }
+          .exam-body { padding: 16px 12px 60px; }
+          .question-text { font-size: 0.96rem; }
+          .question-card { margin-bottom: 20px; }
+          .exam-actions { gap: 6px; }
+          .exam-actions .btn { flex: 1; justify-content: center; font-size: 0.85rem; padding: 10px 12px; }
+          .submit-section { margin-top: 28px; }
         }
       `}</style>
     </div>
