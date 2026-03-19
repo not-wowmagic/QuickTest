@@ -1,11 +1,11 @@
 // src/pages/LeaderboardPage.jsx
 // Public leaderboard — top scores per subject from Firestore
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { collection, query, orderBy, limit, getDocs, where } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { SUBJECTS } from '../data/seedQuestions';
-import { FiAward, FiTrendingUp, FiHome, FiClock, FiUser, FiBookOpen, FiShield, FiGlobe, FiCpu } from 'react-icons/fi';
+import { FiAward, FiTrendingUp, FiHome, FiUser, FiBookOpen, FiShield, FiGlobe, FiCpu } from 'react-icons/fi';
 
 const SUBJECT_ICONS = {
   filipino: <FiBookOpen />,
@@ -15,7 +15,6 @@ const SUBJECT_ICONS = {
   sts: <FiCpu />
 };
 import ThemeToggle from '../components/ThemeToggle';
-import LoadingSpinner from '../components/LoadingSpinner';
 
 const SUBJECT_LIST = Object.values(SUBJECTS);
 
@@ -26,6 +25,7 @@ export default function LeaderboardPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let isMounted = true;
     const fetchLeaderboard = async () => {
       setLoading(true);
       try {
@@ -37,19 +37,29 @@ export default function LeaderboardPage() {
             collection(db, 'results'),
             where('subject', '==', activeTab),
             orderBy('percentage', 'desc'),
-            limit(20)
+            limit(50)
           );
         }
         const snap = await getDocs(q);
         const data = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-        setResults(data);
+        
+        data.sort((a, b) => {
+          if (b.total !== a.total) return b.total - a.total;
+          if (b.score !== a.score) return b.score - a.score;
+          return b.percentage - a.percentage;
+        });
+        
+        if (isMounted) setResults(data.slice(0, 50));
       } catch (err) {
         console.error('[Leaderboard] fetch error:', err);
-        setResults([]);
+        if (isMounted) setResults([]);
       }
-      setLoading(false);
+      if (isMounted) setLoading(false);
     };
     fetchLeaderboard();
+    return () => {
+      isMounted = false;
+    };
   }, [activeTab]);
 
   const getSubjectLabel = (subjectId) => {

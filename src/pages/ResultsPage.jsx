@@ -2,7 +2,7 @@
 // Chart.js: doughnut (score) + bar (per-question breakdown)
 // Shows correct/incorrect review with explanations
 
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import {
   Chart as ChartJS,
@@ -20,6 +20,9 @@ import {
   FiShare2, FiTrendingUp, FiStar, FiBook
 } from 'react-icons/fi';
 import ThemeToggle from '../components/ThemeToggle';
+
+const EMPTY_ANSWERS = Object.freeze({});
+const EMPTY_QUESTIONS = Object.freeze([]);
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
@@ -74,28 +77,31 @@ function getGrade(percentage) {
 export default function ResultsPage() {
   const { state } = useLocation();
   const navigate = useNavigate();
-
-  // Guard against direct navigation to /results
-  if (!state || !state.questions) {
-    return (
-      <div className="spinner-overlay">
-        <p style={{ color: 'var(--text-secondary)' }}>No results found.</p>
-        <Link to="/" className="btn btn-primary" style={{ marginTop: 16 }}>
-          <FiHome /> Go Home
-        </Link>
-      </div>
-    );
-  }
-
-  const { studentName, subject, score, total, percentage, answers, questions, subjectLabel, timeAttack } = state;
-  const passed = percentage >= 60;
+  const shareResetTimerRef = useRef(null);
   const [copied, setCopied] = useState(false);
+  const hasResultsState = Boolean(state && state.questions && state.answers);
+
+  const studentName = state?.studentName ?? '';
+  const subject = state?.subject ?? '';
+  const score = state?.score ?? 0;
+  const total = state?.total ?? 0;
+  const percentage = state?.percentage ?? 0;
+  const answers = state?.answers ?? EMPTY_ANSWERS;
+  const questions = state?.questions ?? EMPTY_QUESTIONS;
+  const subjectLabel = state?.subjectLabel ?? '';
+  const timeAttack = Boolean(state?.timeAttack);
+  const passed = percentage >= 60;
+
+  useEffect(() => () => {
+    if (shareResetTimerRef.current) clearTimeout(shareResetTimerRef.current);
+  }, []);
 
   const handleShare = () => {
     const text = `I scored ${percentage}% on ${subjectLabel || subject}! 🎓 — QuickTest`;
+    if (shareResetTimerRef.current) clearTimeout(shareResetTimerRef.current);
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      shareResetTimerRef.current = setTimeout(() => setCopied(false), 2000);
     }).catch(() => {
       // Fallback for older browsers
       const ta = document.createElement('textarea');
@@ -105,7 +111,7 @@ export default function ResultsPage() {
       document.execCommand('copy');
       document.body.removeChild(ta);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      shareResetTimerRef.current = setTimeout(() => setCopied(false), 2000);
     });
   };
 
@@ -130,22 +136,17 @@ export default function ResultsPage() {
     }],
   }), [score, questions, answers, correctnessMap]);
 
-  const barData = useMemo(() => ({
-    labels: questions.map((_, i) => `Q${i + 1}`),
-    datasets: [{
-      label: 'Result',
-      data: questions.map((_, i) => correctnessMap[i] ? 1 : 0),
-      backgroundColor: questions.map((_, i) =>
-        answers[i] === undefined
-          ? 'rgba(148, 163, 184, 0.3)'
-          : correctnessMap[i]
-          ? 'rgba(74, 222, 128, 0.7)'
-          : 'rgba(58, 140, 217, 0.7)'
-      ),
-      borderColor: 'transparent',
-      borderRadius: 6,
-    }],
-  }), [questions, correctnessMap, answers]);
+  // Guard against direct navigation to /results
+  if (!hasResultsState) {
+    return (
+      <div className="spinner-overlay">
+        <p style={{ color: 'var(--text-secondary)' }}>No results found.</p>
+        <Link to="/" className="btn btn-primary" style={{ marginTop: 16 }}>
+          <FiHome /> Go Home
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="results-page">
@@ -199,7 +200,7 @@ export default function ResultsPage() {
         </div>
 
         {/* Charts row */}
-        <div className="charts-row">
+        <div className="charts-row" style={{ gridTemplateColumns: '1fr', maxWidth: '500px', margin: '0 auto 28px' }}>
           <div className="card chart-card">
             <h3 className="chart-title"><FiAward size={15} /> Score Breakdown</h3>
             <div className="chart-container" style={{ height: 220 }}>
@@ -209,12 +210,6 @@ export default function ResultsPage() {
               <span className="legend-item"><span className="dot" style={{ background: '#4ade80' }} />Correct</span>
               <span className="legend-item"><span className="dot" style={{ background: '#3A8CD9' }} />Incorrect</span>
               <span className="legend-item"><span className="dot" style={{ background: '#475569' }} />Skipped</span>
-            </div>
-          </div>
-          <div className="card chart-card">
-            <h3 className="chart-title"><FiBarChart2 size={15} /> Per-Question Results</h3>
-            <div className="chart-container" style={{ height: 220 }}>
-              <Bar data={barData} options={BAR_OPTIONS} />
             </div>
           </div>
         </div>
@@ -255,11 +250,6 @@ export default function ResultsPage() {
                       </div>
                     ))}
                   </div>
-                  {q.explanation && (
-                    <div className="review-explanation">
-                      <strong>💡 Explanation:</strong> {q.explanation}
-                    </div>
-                  )}
                 </div>
               );
             })}
@@ -275,7 +265,7 @@ export default function ResultsPage() {
         .results-sub { color: var(--text-secondary); font-size: 0.95rem; }
         .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
         .chart-card { min-width: 0; overflow-x: auto; }
-        .chart-container { position: relative; width: 100%; min-width: 400px; }
+        .chart-container { position: relative; width: 100%; min-width: 0; }
         .chart-title { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; position: sticky; left: 0; }
         .chart-legend { display: flex; gap: 16px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
         .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-secondary); }

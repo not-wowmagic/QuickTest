@@ -56,13 +56,21 @@ function clearProgress(subject) {
 }
 
 // ── Memoized child components (rerender-no-inline-components) ──
-const OptionBtn = memo(function OptionBtn({ option, index, selected, onSelect, disabled }) {
+const OptionBtn = memo(function OptionBtn({ option, index, selected, onSelect, disabled, practiceMode, showPracticeFeedback, isCorrect }) {
   const letters = ['A', 'B', 'C', 'D'];
+  
+  let practiceClass = '';
+  if (practiceMode && showPracticeFeedback) {
+    if (selected && isCorrect) practiceClass = 'correct';
+    else if (selected && !isCorrect) practiceClass = 'incorrect';
+    else if (!selected && isCorrect) practiceClass = 'correct-unselected';
+  }
+
   return (
     <button
-      className={`option-btn ${selected ? 'selected' : ''}`}
+      className={`option-btn ${selected ? 'selected' : ''} ${practiceClass}`}
       onClick={() => !disabled && onSelect(index)}
-      disabled={disabled}
+      disabled={disabled || (practiceMode && showPracticeFeedback)}
       aria-pressed={selected}
     >
       <span className="option-letter">{letters[index]}</span>
@@ -72,11 +80,13 @@ const OptionBtn = memo(function OptionBtn({ option, index, selected, onSelect, d
 });
 
 const QuestionCard = memo(function QuestionCard({
-  question, questionIndex, total, selectedAnswer, onSelect,
+  question, questionIndex, total, selectedAnswer, onSelect, practiceMode
 }) {
+  const showPracticeFeedback = selectedAnswer !== undefined;
+
   return (
     <div className="question-card animate-slide">
-      <div className="question-header">
+      <div className="question-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
         <span className="q-number">Question {questionIndex + 1} of {total}</span>
       </div>
       <p className="question-text">{question.text}</p>
@@ -88,6 +98,9 @@ const QuestionCard = memo(function QuestionCard({
             index={i}
             selected={selectedAnswer === i}
             onSelect={onSelect}
+            practiceMode={practiceMode}
+            showPracticeFeedback={showPracticeFeedback}
+            isCorrect={question.answer === i}
           />
         ))}
       </div>
@@ -100,13 +113,14 @@ const QuestionCard = memo(function QuestionCard({
 // ── Rate limiting helpers ──
 const COOLDOWN_MS = 10 * 60 * 1000; // 10 minutes
 function getCooldownKey(subj) { return `qt_cooldown_${subj}`; }
-function isOnCooldown(subj) {
-  try {
-    const ts = localStorage.getItem(getCooldownKey(subj));
-    if (!ts) return false;
-    return Date.now() - Number(ts) < COOLDOWN_MS;
-  } catch { return false; }
-}
+// isOnCooldown is unused but kept for future rate-limiting feature
+// function isOnCooldown(subj) {
+//   try {
+//     const ts = localStorage.getItem(getCooldownKey(subj));
+//     if (!ts) return false;
+//     return Date.now() - Number(ts) < COOLDOWN_MS;
+//   } catch { return false; }
+// }
 function setCooldown(subj) {
   try { localStorage.setItem(getCooldownKey(subj), String(Date.now())); } catch {
     // best-effort cooldown only
@@ -155,11 +169,14 @@ export default function ExamPage() {
   const [submitting, setSubmitting] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [timeAttack, setTimeAttack] = useState(false);
-  const [hideNav, setHideNav] = useState(false);
+  const [practiceMode, setPracticeMode] = useState(false);
+  const [hideNav, setHideNav] = useState(true);
+  const [autoNextParam, setAutoNextParam] = useState(false);
   const [timeLeft, setTimeLeft] = useState(null);
   const [duplicateTab, setDuplicateTab] = useState(false);
   const [hasSessionLock, setHasSessionLock] = useState(true);
   const [warningPopup, setWarningPopup] = useState(null);
+  const autoNextTimerRef = useRef(null);
 
   const sessionIdRef = useRef(`sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`);
   const startedAtRef = useRef(Date.now());
@@ -182,6 +199,10 @@ export default function ExamPage() {
     const timer = setTimeout(() => setWarningPopup(null), 2600);
     return () => clearTimeout(timer);
   }, [warningPopup]);
+
+  useEffect(() => () => {
+    if (autoNextTimerRef.current) clearTimeout(autoNextTimerRef.current);
+  }, []);
 
   // Duplicate tab/session lock hardening
   useEffect(() => {
@@ -297,13 +318,29 @@ export default function ExamPage() {
         subjectInfo ? [...subjectInfo.questions].sort(() => Math.random() - 0.5) : [];
 
       const applyQuestions = (qs, isTimeAttack) => {
-        setQuestions(qs);
-        if (isTimeAttack && qs.length > 0) {
-          setTimeLeft(qs.length * 30);
+        // Shuffle options for each question
+        const processedQs = qs.map(q => {
+          if (q.options && q.options.length === 2 && q.options.includes('True') && q.options.includes('False')) {
+            return q;
+          }
+          if (q.options) {
+            const shuffled = q.options.map((opt, i) => ({ opt, isAnswer: i === q.answer })).sort(() => Math.random() - 0.5);
+            return {
+              ...q,
+              options: shuffled.map(s => s.opt),
+              answer: shuffled.findIndex(s => s.isAnswer)
+            };
+          }
+          return q;
+        });
+
+        setQuestions(processedQs);
+        if (isTimeAttack && processedQs.length > 0) {
+          setTimeLeft(processedQs.length * 30);
         }
         if (saved && saved.answers) {
           setAnswers(saved.answers);
-          setCurrentQ(Math.min(saved.currentQ ?? 0, qs.length - 1));
+          setCurrentQ(Math.min(saved.currentQ ?? 0, processedQs.length - 1));
         }
       };
 
@@ -329,8 +366,12 @@ export default function ExamPage() {
         const limitParam = searchParams.get('items');
         const isTimeAttack = searchParams.get('timeAttack') === 'true';
         const isHideNav = searchParams.get('hideNav') === 'true';
+        const isPracticeMode = searchParams.get('practiceMode') === 'true';
+        const isAutoNext = searchParams.get('autoNext') === 'true';
         setTimeAttack(isTimeAttack);
         setHideNav(isHideNav);
+        setPracticeMode(isPracticeMode);
+        setAutoNextParam(isAutoNext);
         
         if (limitParam && limitParam !== 'all') {
           const limit = parseInt(limitParam, 10);
@@ -347,8 +388,12 @@ export default function ExamPage() {
         const limitParam = searchParams.get('items');
         const isTimeAttack = searchParams.get('timeAttack') === 'true';
         const isHideNav = searchParams.get('hideNav') === 'true';
+        const isPracticeMode = searchParams.get('practiceMode') === 'true';
+        const isAutoNext = searchParams.get('autoNext') === 'true';
         setTimeAttack(isTimeAttack);
         setHideNav(isHideNav);
+        setPracticeMode(isPracticeMode);
+        setAutoNextParam(isAutoNext);
 
         if (limitParam && limitParam !== 'all') {
           const limit = parseInt(limitParam, 10);
@@ -363,7 +408,7 @@ export default function ExamPage() {
     }
 
     fetchQuestions();
-  }, [subject]); // primitive dep (rerender-dependencies)
+  }, [subject, subjectInfo, navigate, location.search]); // primitive dep (rerender-dependencies)
 
   // Persist progress to localStorage whenever answers or currentQ changes
   useEffect(() => {
@@ -406,7 +451,15 @@ export default function ExamPage() {
       navigator.vibrate(10);
     }
     setAnswers((prev) => ({ ...prev, [currentQ]: optionIndex }));
-  }, [currentQ, trigger]);
+    
+    // Auto-next implementation
+    if (autoNextParam && currentQ < questions.length - 1) {
+      if (autoNextTimerRef.current) clearTimeout(autoNextTimerRef.current);
+      autoNextTimerRef.current = setTimeout(() => {
+        setCurrentQ((p) => Math.min(questions.length - 1, p + 1));
+      }, practiceMode ? 1200 : 350); // longer delay in practice mode to see feedback
+    }
+  }, [currentQ, trigger, autoNextParam, questions.length, practiceMode]);
 
   const handlePrev = useCallback(() => {
     trigger('nudge');
@@ -664,6 +717,7 @@ export default function ExamPage() {
             total={questions.length}
             selectedAnswer={answers[currentQ]}
             onSelect={handleSelect}
+            practiceMode={practiceMode}
           />
         )}
 
@@ -751,16 +805,25 @@ export default function ExamPage() {
         .options-list { display: flex; flex-direction: column; gap: 10px; }
         .exam-actions { display: flex; justify-content: space-between; align-items: center; margin: 24px 0; }
         .submit-section { margin-top: 40px; }
-        @media (max-width: 480px) {
-          .exam-nav { padding: 10px 12px; gap: 6px; }
+        .q-dot.flagged { border: 2px solid var(--error); background: rgba(255, 59, 48, 0.1); }
+        .q-dot.flagged.current { background: var(--error); color: white; border-color: var(--error); }
+        .practice-feedback { transition: all var(--transition); }
+        .practice-feedback.correct { background: rgba(52, 199, 89, 0.1); border: 1px solid var(--success); color: var(--success); }
+        .practice-feedback.incorrect { background: rgba(255, 59, 48, 0.1); border: 1px solid var(--error); color: var(--error); }
+        @media (max-width: 768px) {
+          .exam-page { overflow: hidden; height: 100vh; display: flex; flex-direction: column; }
+          .exam-nav { padding: 10px 12px; gap: 6px; flex-shrink: 0; }
           .exam-nav-left { gap: 8px; }
           .exam-subject-badge { font-size: 0.82rem; }
-          .exam-body { padding: 16px 12px 60px; }
-          .question-text { font-size: 0.96rem; }
-          .question-card { margin-bottom: 20px; }
-          .exam-actions { gap: 6px; }
+          .exam-body { padding: 0; display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+          .exam-progress-wrap { padding: 16px 16px 0; margin-bottom: 8px; flex-shrink: 0; }
+          .question-nav { padding: 0 16px; margin-bottom: 12px; flex-shrink: 0; }
+          .question-card { margin-bottom: 0; border-radius: 0; border-left: none; border-right: none; flex: 1; display: flex; flex-direction: column; background: transparent; box-shadow: none; padding: 16px; overflow-y: auto; }
+          .question-text { font-size: 1.05rem; margin-bottom: 16px; }
+          .options-list { margin-top: auto; background: var(--bg-card); padding: 16px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; box-shadow: 0 -4px 24px rgba(0,0,0,0.06); gap: 8px; margin-left: -16px; margin-right: -16px; margin-bottom: -16px; border-top: 1px solid var(--border); flex-shrink: 0; }
+          .exam-actions { gap: 6px; padding: 16px; background: var(--bg-card); margin: 0; flex-shrink: 0; }
           .exam-actions .btn { flex: 1; justify-content: center; font-size: 0.85rem; padding: 10px 12px; }
-          .submit-section { margin-top: 28px; }
+          .submit-section { margin-top: 0; padding: 24px 16px; background: var(--bg-card); flex-shrink: 0; }
         }
       `}</style>
     </div>

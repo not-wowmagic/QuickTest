@@ -543,12 +543,82 @@ img { max-width: 100%; display: block; }
 .badge-rose    { background: rgba(192, 57, 43, 0.1); color: var(--error); border: 1px solid rgba(192, 57, 43, 0.25); }
 .badge-success { background: rgba(46, 125, 82, 0.1); color: var(--success); border: 1px solid rgba(46, 125, 82, 0.25); }
 
+/* ── iOS Style Toggle Switch ── */
+.ios-switch-group {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.ios-switch-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+.ios-switch-label:last-child {
+  border-bottom: none;
+}
+.ios-switch-label:hover {
+  background: var(--bg-card-hover);
+}
+.ios-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.ios-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.ios-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border);
+  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  border-radius: 26px;
+}
+.ios-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--bg-card);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  border-radius: 50%;
+}
+.ios-switch input:checked + .ios-switch-slider {
+  background-color: var(--success);
+  border-color: var(--success);
+}
+.ios-switch input:checked + .ios-switch-slider:before {
+  transform: translateX(20px);
+  background-color: #fff;
+}
+
 /* ── Option Buttons (Exam) ── */
 .option-btn {
   display: flex;
   align-items: center;
   gap: 14px;
   width: 100%;
+  min-height: 64px;
   padding: 15px 18px;
   background: var(--bg-card);
   border: 1.5px solid var(--border);
@@ -569,8 +639,10 @@ img { max-width: 100%; display: block; }
   border-color: var(--accent);
   color: var(--text-primary);
 }
-.option-btn.correct { background: rgba(46, 125, 82, 0.08); border-color: var(--success); }
-.option-btn.incorrect { background: rgba(192, 57, 43, 0.08); border-color: var(--error); }
+.option-btn.correct { background: rgba(52, 199, 89, 0.08); border-color: var(--success); }
+.option-btn.incorrect { background: rgba(255, 59, 48, 0.08); border-color: var(--error); }
+.option-btn.correct-unselected { border-color: var(--success); border-style: dashed; }
+.option-btn.correct-unselected .option-letter { color: var(--success); border-color: var(--success); }
 
 .option-letter {
   display: flex;
@@ -588,6 +660,8 @@ img { max-width: 100%; display: block; }
   color: var(--text-secondary);
 }
 .option-btn.selected .option-letter { background: var(--accent); border-color: var(--accent); color: #fff; }
+.option-btn.correct .option-letter { background: var(--success); border-color: var(--success); color: #fff; }
+.option-btn.incorrect .option-letter { background: var(--error); border-color: var(--error); color: #fff; }
 
 /* ── Timer ── */
 .timer {

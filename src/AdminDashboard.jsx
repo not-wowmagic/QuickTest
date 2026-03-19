@@ -7,7 +7,7 @@ import { useState, useEffect, useCallback, useMemo, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import {
-  collection, getDocs, addDoc, updateDoc, deleteDoc,
+  collection, addDoc, updateDoc, deleteDoc,
   doc, query, orderBy, serverTimestamp, onSnapshot
 } from 'firebase/firestore';
 import {
@@ -216,7 +216,7 @@ export default function AdminDashboard() {
       backgroundColor: ['rgba(139,92,246,0.7)', 'rgba(56,189,189,0.7)', 'rgba(251,191,36,0.7)'],
       borderRadius: 8,
     }],
-  }), [results]);
+  }), [results, subjectIds, subjectLabels]);
 
   const avgScoreData = useMemo(() => ({
     labels: subjectLabels,
@@ -230,7 +230,7 @@ export default function AdminDashboard() {
       backgroundColor: ['rgba(139,92,246,0.6)', 'rgba(56,189,189,0.6)', 'rgba(251,191,36,0.6)'],
       borderRadius: 8,
     }],
-  }), [results]);
+  }), [results, subjectIds, subjectLabels]);
 
   const donutData = useMemo(() => {
     const passed = results.filter((r) => r.percentage >= 60).length;
@@ -417,32 +417,16 @@ export default function AdminDashboard() {
     showToast('success', 'CSV downloaded!');
   }, [filteredResults, showToast]);
 
-  // ── Per-question analytics ──
-  const questionAnalytics = useMemo(() => {
-    // Match results answers to questions
-    const analytics = questions.map((q) => {
-      const qResults = results.filter((r) => r.subject === q.subject && r.answers);
-      let attempts = 0;
-      let correct = 0;
-      qResults.forEach((r) => {
-        // Find if this question was in the exam
-        const answerEntries = Object.values(r.answers);
-        // We can't directly map since exams are randomized, 
-        // so we approximate using question text matching
-        // For simplicity, we count overall subject stats per question
-        attempts++;
-      });
-      // A simpler approach: use total results for this subject
-      const subjectResults = results.filter((r) => r.subject === q.subject);
-      return {
-        id: q.id,
-        text: q.text,
-        subject: q.subject,
-        totalSubjectResults: subjectResults.length,
-      };
-    });
-    return analytics;
-  }, [questions, results]);
+  // ── Per-question analytics (unused — commented for future use) ──
+  // const questionAnalytics = useMemo(() => {
+  //   const analytics = questions.map((q) => ({
+  //     id: q.id,
+  //     text: q.text,
+  //     subject: q.subject,
+  //     totalSubjectResults: results.filter((r) => r.subject === q.subject).length,
+  //   }));
+  //   return analytics;
+  // }, [questions, results]);
 
   // ── Stat numbers ──
   const stats = useMemo(() => ({

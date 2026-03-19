@@ -63,7 +63,7 @@ export default function AdminLogin() {
           await createUserWithEmailAndPassword(auth, email.trim(), password);
           navigate('/admin/dashboard', { replace: true });
           return;
-        } catch (createErr) {
+        } catch {
           setFirebaseError('Failed to initialize admin account.');
           return;
         }

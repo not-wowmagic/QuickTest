@@ -46,7 +46,9 @@ export default function StudentSite() {
 
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [timeAttack, setTimeAttack] = useState(false);
-  const [showNav, setShowNav] = useState(true);
+  const [practiceMode, setPracticeMode] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const [autoNext, setAutoNext] = useState(true);
   const [studentName, setStudentName] = useState('');
   const [nameError, setNameError] = useState('');
 
@@ -56,7 +58,9 @@ export default function StudentSite() {
     if (subjectInfo) {
       setSelectedSubject(subjectInfo);
       setTimeAttack(false);
-      setShowNav(true);
+      setPracticeMode(false);
+      setShowNav(false);
+      setAutoNext(true);
       setNameError('');
     }
   }, [trigger]);
@@ -80,11 +84,11 @@ export default function StudentSite() {
     if (selectedSubject) {
       const items = itemCount || 'all';
       const nameParam = encodeURIComponent(trimmed);
-      navigate(`/exam/${selectedSubject.id}?items=${items}&name=${nameParam}${timeAttack ? '&timeAttack=true' : ''}${!showNav ? '&hideNav=true' : ''}`);
+      navigate(`/exam/${selectedSubject.id}?items=${items}&name=${nameParam}${timeAttack ? '&timeAttack=true' : ''}${practiceMode ? '&practiceMode=true' : ''}${!showNav ? '&hideNav=true' : ''}${autoNext ? '&autoNext=true' : ''}`);
       setSelectedSubject(null);
       setStudentName('');
     }
-  }, [navigate, selectedSubject, timeAttack, showNav, trigger, studentName]);
+  }, [navigate, selectedSubject, timeAttack, practiceMode, showNav, autoNext, trigger, studentName]);
 
   const desiredOrder = ['world', 'sts', 'filipino', 'ethics', 'self'];
   const subjectList = Object.values(SUBJECTS).sort((a, b) => {
@@ -215,21 +219,55 @@ export default function StudentSite() {
                 How many questions would you like to attempt?
               </p>
 
-              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 16, cursor: 'pointer', fontSize: '0.9rem', color: 'var(--text-main)' }}>
-                <input type="checkbox" checked={timeAttack}
-                  onChange={(e) => { trigger('nudge'); setTimeAttack(e.target.checked); }}
-                  style={{ accentColor: 'var(--accent)', width: 16, height: 16 }}
-                />
-                <strong>Time Attack Mode</strong> <span style={{ color: 'var(--text-secondary)' }}>(30s per item)</span>
-              </label>
+              <div className="ios-switch-group" style={{ marginTop: 20, marginBottom: 24, textAlign: 'left' }}>
+                <label className="ios-switch-label">
+                  <div>
+                    <strong>Time Attack</strong> <span style={{ color: 'var(--text-secondary)' }}>(30s/item)</span>
+                  </div>
+                  <div className="ios-switch">
+                    <input type="checkbox" checked={timeAttack}
+                      onChange={(e) => { trigger('nudge'); setTimeAttack(e.target.checked); }}
+                    />
+                    <span className="ios-switch-slider"></span>
+                  </div>
+                </label>
 
-              <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 10, cursor: 'pointer', fontSize: '0.9rem', color: 'var(--text-main)' }}>
-                <input type="checkbox" checked={showNav}
-                  onChange={(e) => { trigger('nudge'); setShowNav(e.target.checked); }}
-                  style={{ accentColor: 'var(--accent)', width: 16, height: 16 }}
-                />
-                <strong>Show Question Navigator</strong>
-              </label>
+                <label className="ios-switch-label">
+                  <div>
+                    <strong>Question Navigator</strong>
+                  </div>
+                  <div className="ios-switch">
+                    <input type="checkbox" checked={showNav}
+                      onChange={(e) => { trigger('nudge'); setShowNav(e.target.checked); }}
+                    />
+                    <span className="ios-switch-slider"></span>
+                  </div>
+                </label>
+
+                <label className="ios-switch-label">
+                  <div>
+                    <strong>Auto-Next on Answer</strong>
+                  </div>
+                  <div className="ios-switch">
+                    <input type="checkbox" checked={autoNext}
+                      onChange={(e) => { trigger('nudge'); setAutoNext(e.target.checked); }}
+                    />
+                    <span className="ios-switch-slider"></span>
+                  </div>
+                </label>
+
+                <label className="ios-switch-label">
+                  <div>
+                    <strong>Practice Mode</strong> <span style={{ color: 'var(--text-secondary)' }}>(live feedback)</span>
+                  </div>
+                  <div className="ios-switch">
+                    <input type="checkbox" checked={practiceMode}
+                      onChange={(e) => { trigger('nudge'); setPracticeMode(e.target.checked); }}
+                    />
+                    <span className="ios-switch-slider"></span>
+                  </div>
+                </label>
+              </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
