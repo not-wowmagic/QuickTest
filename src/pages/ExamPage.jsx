@@ -318,7 +318,11 @@ export default function ExamPage() {
         let qs = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
 
         // If Firestore returned but is empty, use seed data
-        if (qs.length === 0) qs = getSeedFallback();
+        if (qs.length === 0) {
+          qs = getSeedFallback();
+        } else {
+          qs = qs.sort(() => Math.random() - 0.5);
+        }
 
         // Limit items if requested
         const searchParams = new URLSearchParams(location.search);
