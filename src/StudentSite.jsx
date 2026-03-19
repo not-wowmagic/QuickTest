@@ -6,9 +6,9 @@ import {
   FiBookOpen, FiArrowRight, FiAward, FiX, FiTrendingUp,
   FiZap, FiBarChart2, FiRefreshCw, FiShield, FiUser, FiGlobe, FiCpu
 } from 'react-icons/fi';
-import { useWebHaptics } from 'web-haptics/react';
 import { SUBJECTS } from './data/seedQuestions';
 import ThemeToggle from './components/ThemeToggle';
+import { useHapticFeedback } from './hooks/useHapticFeedback';
 
 const SUBJECT_ICONS = {
   filipino: <FiBookOpen />,
@@ -42,7 +42,7 @@ function SubjectCard({ subject, onStart }) {
 
 export default function StudentSite() {
   const navigate = useNavigate();
-  const { trigger } = useWebHaptics();
+  const { triggerHaptic } = useHapticFeedback();
 
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [timeAttack, setTimeAttack] = useState(false);
@@ -53,7 +53,7 @@ export default function StudentSite() {
   const [nameError, setNameError] = useState('');
 
   const handleStart = useCallback((subjectId) => {
-    trigger('nudge');
+    triggerHaptic('nudge');
     const subjectInfo = SUBJECTS[subjectId];
     if (subjectInfo) {
       setSelectedSubject(subjectInfo);
@@ -63,7 +63,7 @@ export default function StudentSite() {
       setAutoNext(true);
       setNameError('');
     }
-  }, [trigger]);
+  }, [triggerHaptic]);
 
   const startExamWithItems = useCallback((itemCount) => {
     const trimmed = studentName.trim();
@@ -80,7 +80,7 @@ export default function StudentSite() {
       return;
     }
     setNameError('');
-    trigger('success');
+    triggerHaptic('success');
     if (selectedSubject) {
       const items = itemCount || 'all';
       const nameParam = encodeURIComponent(trimmed);
@@ -88,7 +88,7 @@ export default function StudentSite() {
       setSelectedSubject(null);
       setStudentName('');
     }
-  }, [navigate, selectedSubject, timeAttack, practiceMode, showNav, autoNext, trigger, studentName]);
+  }, [navigate, selectedSubject, timeAttack, practiceMode, showNav, autoNext, triggerHaptic, studentName]);
 
   const desiredOrder = ['sts', 'filipino', 'world', 'ethics', 'self'];
   const subjectList = Object.values(SUBJECTS).sort((a, b) => {
@@ -225,9 +225,9 @@ export default function StudentSite() {
                     <strong>Time Attack</strong> <span style={{ color: 'var(--text-secondary)' }}>(30s/item)</span>
                   </div>
                   <div className="ios-switch">
-                    <input type="checkbox" checked={timeAttack}
-                      onChange={(e) => { trigger('nudge'); setTimeAttack(e.target.checked); }}
-                    />
+                      <input type="checkbox" checked={timeAttack}
+                      onChange={(e) => { triggerHaptic('nudge'); setTimeAttack(e.target.checked); }}
+                     />
                     <span className="ios-switch-slider"></span>
                   </div>
                 </label>
@@ -237,9 +237,9 @@ export default function StudentSite() {
                     <strong>Question Navigator</strong>
                   </div>
                   <div className="ios-switch">
-                    <input type="checkbox" checked={showNav}
-                      onChange={(e) => { trigger('nudge'); setShowNav(e.target.checked); }}
-                    />
+                      <input type="checkbox" checked={showNav}
+                      onChange={(e) => { triggerHaptic('nudge'); setShowNav(e.target.checked); }}
+                     />
                     <span className="ios-switch-slider"></span>
                   </div>
                 </label>
@@ -249,9 +249,9 @@ export default function StudentSite() {
                     <strong>Auto-Next on Answer</strong>
                   </div>
                   <div className="ios-switch">
-                    <input type="checkbox" checked={autoNext}
-                      onChange={(e) => { trigger('nudge'); setAutoNext(e.target.checked); }}
-                    />
+                      <input type="checkbox" checked={autoNext}
+                      onChange={(e) => { triggerHaptic('nudge'); setAutoNext(e.target.checked); }}
+                     />
                     <span className="ios-switch-slider"></span>
                   </div>
                 </label>
@@ -261,9 +261,9 @@ export default function StudentSite() {
                     <strong>Practice Mode</strong> <span style={{ color: 'var(--text-secondary)' }}>(live feedback)</span>
                   </div>
                   <div className="ios-switch">
-                    <input type="checkbox" checked={practiceMode}
-                      onChange={(e) => { trigger('nudge'); setPracticeMode(e.target.checked); }}
-                    />
+                      <input type="checkbox" checked={practiceMode}
+                      onChange={(e) => { triggerHaptic('nudge'); setPracticeMode(e.target.checked); }}
+                     />
                     <span className="ios-switch-slider"></span>
                   </div>
                 </label>
@@ -278,7 +278,7 @@ export default function StudentSite() {
               ))}
             </div>
 
-            <button className="btn btn-outline" style={{ width: '100%' }} onClick={() => { trigger('nudge'); setSelectedSubject(null); }}>
+            <button className="btn btn-outline" style={{ width: '100%' }} onClick={() => { triggerHaptic('nudge'); setSelectedSubject(null); }}>
               Cancel
             </button>
           </div>

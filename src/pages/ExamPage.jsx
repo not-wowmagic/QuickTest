@@ -14,9 +14,9 @@ import {
 } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { SUBJECTS } from '../data/seedQuestions';
-import { useWebHaptics } from 'web-haptics/react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ThemeToggle from '../components/ThemeToggle';
+import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import {
   FiChevronLeft, FiChevronRight, FiSend,
   FiAlertTriangle, FiCheckCircle, FiLoader,
@@ -188,7 +188,7 @@ export default function ExamPage() {
   const duplicateDetectedRef = useRef(false);
   const lastWarningAtRef = useRef(0);
   
-  const { trigger } = useWebHaptics();
+  const { triggerHaptic } = useHapticFeedback();
 
   const showWarningPopup = useCallback((message) => {
     setWarningPopup({ message, ts: Date.now() });
@@ -270,7 +270,7 @@ export default function ExamPage() {
       const now = Date.now();
       if (now - lastWarningAtRef.current < 900) return;
       lastWarningAtRef.current = now;
-      trigger('nudge');
+      triggerHaptic('nudge');
       showWarningPopup(message);
     };
 
@@ -298,7 +298,7 @@ export default function ExamPage() {
       window.removeEventListener('blur', onBlur);
       window.removeEventListener('focus', onFocus);
     };
-  }, [showWarningPopup, trigger]);
+  }, [showWarningPopup, triggerHaptic]);
 
   // Build question lookup map (js-set-map-lookups / js-index-maps)
   const questionMap = useMemo(
@@ -446,10 +446,7 @@ export default function ExamPage() {
 
   // Stable answer selection callback (rerender-functional-setstate)
   const handleSelect = useCallback((optionIndex) => {
-    trigger('success'); // gentle pop for selection
-    if (typeof navigator !== 'undefined' && navigator.vibrate) {
-      navigator.vibrate(10);
-    }
+    triggerHaptic('success'); // gentle pop for selection
     setAnswers((prev) => ({ ...prev, [currentQ]: optionIndex }));
     
     // Auto-next implementation
@@ -459,17 +456,17 @@ export default function ExamPage() {
         setCurrentQ((p) => Math.min(questions.length - 1, p + 1));
       }, practiceMode ? 1200 : 350); // longer delay in practice mode to see feedback
     }
-  }, [currentQ, trigger, autoNextParam, questions.length, practiceMode]);
+  }, [currentQ, triggerHaptic, autoNextParam, questions.length, practiceMode]);
 
   const handlePrev = useCallback(() => {
-    trigger('nudge');
+    triggerHaptic('nudge');
     setCurrentQ((p) => Math.max(0, p - 1));
-  }, [trigger]);
+  }, [triggerHaptic]);
   
   const handleNext = useCallback(() => {
-    trigger('nudge');
+    triggerHaptic('nudge');
     setCurrentQ((p) => Math.min(questions.length - 1, p + 1));
-  }, [questions.length, trigger]);
+  }, [questions.length, triggerHaptic]);
 
   const validateAndConfirm = useCallback(() => {
     if (!hasSessionLock || duplicateTab) {
@@ -627,7 +624,7 @@ export default function ExamPage() {
       {/* Hidden button for timer auto-submit to avoid dependency cycles */}
       <button id="hidden-submit-trigger" style={{ display: 'none' }} onClick={() => {
         if (!submitting && !submitted) {
-          trigger('buzz'); // vibrate user on auto submit
+          triggerHaptic('buzz'); // vibrate user on auto submit
           handleSubmit();
         }
       }} />

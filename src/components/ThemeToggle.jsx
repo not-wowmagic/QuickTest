@@ -1,16 +1,16 @@
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../hooks/useTheme';
-import { useWebHaptics } from 'web-haptics/react';
+import { useHapticFeedback } from '../hooks/useHapticFeedback';
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  const { trigger } = useWebHaptics();
+  const { triggerHaptic } = useHapticFeedback();
 
   // We need to determine the actual theme if it's 'system'
   const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
   const handleToggle = () => {
-    trigger('nudge');
+    triggerHaptic('nudge');
     toggleTheme();
   };
 
