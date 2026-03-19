@@ -90,7 +90,7 @@ export default function StudentSite() {
     }
   }, [navigate, selectedSubject, timeAttack, practiceMode, showNav, autoNext, trigger, studentName]);
 
-  const desiredOrder = ['world', 'sts', 'filipino', 'ethics', 'self'];
+  const desiredOrder = ['sts', 'filipino', 'world', 'ethics', 'self'];
   const subjectList = Object.values(SUBJECTS).sort((a, b) => {
     const indexA = desiredOrder.indexOf(a.id);
     const indexB = desiredOrder.indexOf(b.id);
