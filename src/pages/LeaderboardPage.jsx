@@ -5,7 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { collection, query, orderBy, limit, getDocs, where } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { SUBJECTS } from '../data/seedQuestions';
-import { FiAward, FiTrendingUp, FiHome, FiClock, FiUser } from 'react-icons/fi';
+import { FiAward, FiTrendingUp, FiHome, FiClock, FiUser, FiBookOpen, FiShield, FiGlobe, FiCpu } from 'react-icons/fi';
+
+const SUBJECT_ICONS = {
+  filipino: <FiBookOpen />,
+  ethics: <FiShield />,
+  self: <FiUser />,
+  world: <FiGlobe />,
+  sts: <FiCpu />
+};
 import ThemeToggle from '../components/ThemeToggle';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -55,9 +63,9 @@ export default function LeaderboardPage() {
   };
 
   const getMedal = (rank) => {
-    if (rank === 1) return '🥇';
-    if (rank === 2) return '🥈';
-    if (rank === 3) return '🥉';
+    if (rank === 1) return <FiAward style={{ color: '#F59E0B' }} size={20} />;
+    if (rank === 2) return <FiAward style={{ color: '#9CA3AF' }} size={20} />;
+    if (rank === 3) return <FiAward style={{ color: '#D97706' }} size={20} />;
     return `#${rank}`;
   };
 
@@ -99,7 +107,7 @@ export default function LeaderboardPage() {
                 className={`lb-tab ${activeTab === s.id ? 'active' : ''}`}
                 onClick={() => setActiveTab(s.id)}
               >
-                {s.icon} {s.title}
+                {SUBJECT_ICONS[s.id] || s.icon} {s.title}
               </button>
             ))}
           </div>

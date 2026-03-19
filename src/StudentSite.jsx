@@ -2,10 +2,21 @@
 // Performance: no inline components (rerender-no-inline-components rule)
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiBookOpen, FiArrowRight, FiAward, FiX, FiTrendingUp } from 'react-icons/fi';
+import {
+  FiBookOpen, FiArrowRight, FiAward, FiX, FiTrendingUp,
+  FiZap, FiBarChart2, FiRefreshCw, FiShield, FiUser, FiGlobe, FiCpu
+} from 'react-icons/fi';
 import { useWebHaptics } from 'web-haptics/react';
 import { SUBJECTS } from './data/seedQuestions';
 import ThemeToggle from './components/ThemeToggle';
+
+const SUBJECT_ICONS = {
+  filipino: <FiBookOpen />,
+  ethics: <FiShield />,
+  self: <FiUser />,
+  world: <FiGlobe />,
+  sts: <FiCpu />
+};
 
 // SubjectCard is defined outside StudentSite to avoid inline component rule violation
 function SubjectCard({ subject, onStart }) {
@@ -19,7 +30,7 @@ function SubjectCard({ subject, onStart }) {
       onKeyDown={(e) => e.key === 'Enter' && onStart(subject.id)}
       aria-label={`Start ${subject.title} exam`}
     >
-      <span className="subject-icon">{subject.icon}</span>
+      <span className="subject-icon">{SUBJECT_ICONS[subject.id] || subject.icon}</span>
       <h3 className="subject-title">{subject.title}</h3>
       <p className="subject-desc">{subject.description}</p>
       <div className="subject-cta">
@@ -140,17 +151,17 @@ export default function StudentSite() {
         <div className="container">
           <div className="tips-grid">
             <div className="tip-card">
-              <div className="tip-icon">💡</div>
+              <div className="tip-icon"><FiZap /></div>
               <h4>Read Carefully</h4>
               <p>Read each question fully before selecting your answer.</p>
             </div>
             <div className="tip-card">
-              <div className="tip-icon">📊</div>
+              <div className="tip-icon"><FiBarChart2 /></div>
               <h4>Review Results</h4>
               <p>After submitting, review detailed performance analytics.</p>
             </div>
             <div className="tip-card">
-              <div className="tip-icon">🔄</div>
+              <div className="tip-icon"><FiRefreshCw /></div>
               <h4>Practice Often</h4>
               <p>Your progress is saved — retake anytime to improve.</p>
             </div>

@@ -17,7 +17,7 @@ import { Doughnut, Bar } from 'react-chartjs-2';
 import {
   FiCheckCircle, FiXCircle, FiRefreshCw,
   FiHome, FiAward, FiBarChart2,
-  FiShare2, FiTrendingUp,
+  FiShare2, FiTrendingUp, FiStar, FiBook
 } from 'react-icons/fi';
 import ThemeToggle from '../components/ThemeToggle';
 
@@ -179,7 +179,7 @@ export default function ResultsPage() {
             <span className="score-label">Score</span>
           </div>
           <h1 className="results-title">
-            {passed ? '🎉 Excellent Work!' : '📚 Keep Practicing!'}
+            {passed ? <><FiStar style={{ color: '#F59E0B', verticalAlign: 'middle', marginTop: '-4px' }} /> Excellent Work!</> : <><FiBook style={{ color: '#3A8CD9', verticalAlign: 'middle', marginTop: '-4px' }} /> Keep Practicing!</>}
           </h1>
           <p className="results-sub">
             {studentName && <><strong style={{ color: 'var(--text-primary)' }}>{studentName}</strong> · </>}
