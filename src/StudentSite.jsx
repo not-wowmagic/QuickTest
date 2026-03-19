@@ -190,7 +190,7 @@ export default function StudentSite() {
 
             <div style={{ textAlign: 'center', marginBottom: 24 }}>
               <span className="subject-icon" style={{ fontSize: '2.5rem', marginBottom: 12, display: 'inline-block' }}>
-                {selectedSubject.icon}
+                {SUBJECT_ICONS[selectedSubject.id] || selectedSubject.icon}
               </span>
               <h4 style={{ fontSize: '1.2rem', marginBottom: 16 }}>{selectedSubject.title}</h4>
 

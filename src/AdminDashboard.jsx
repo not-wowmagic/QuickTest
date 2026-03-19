@@ -118,7 +118,7 @@ const QuestionRow = memo(function QuestionRow({ q, index, onEdit, onDelete }) {
           {q.text.length > 80 ? q.text.slice(0, 80) + '…' : q.text}
         </span>
       </td>
-      <td>{SUBJECTS[q.subject]?.icon} {SUBJECTS[q.subject]?.title ?? q.subject}</td>
+      <td>{SUBJECTS[q.subject]?.title ?? q.subject}</td>
       <td className="td-muted">{q.options?.[q.answer] ?? '—'}</td>
       <td>
         <div className="flex gap-1">
@@ -564,7 +564,7 @@ export default function AdminDashboard() {
 
                 {questions.length === 0 ? (
                   <div className="card empty-state">
-                    <div className="empty-state-icon">📚</div>
+                    <div className="empty-state-icon"><FiBook size={32} style={{ opacity: 0.5 }} /></div>
                     <h3 style={{ marginBottom: 8 }}>No Questions Yet</h3>
                     <p>Click "Seed Sample Questions" to load demo content, or add manually.</p>
                   </div>
@@ -670,7 +670,7 @@ export default function AdminDashboard() {
                   </div>
                 ) : filteredResults.length === 0 ? (
                   <div className="card empty-state">
-                    <div className="empty-state-icon">📋</div>
+                    <div className="empty-state-icon"><FiBook size={32} style={{ opacity: 0.5 }} /></div>
                     <p>No results found.</p>
                   </div>
                 ) : (
@@ -704,7 +704,7 @@ export default function AdminDashboard() {
                   return (
                     <div key={subj.id} className="card" style={{ marginBottom: 16 }}>
                       <h4 style={{ marginBottom: 12, display: 'flex', alignItems: 'center', gap: 8 }}>
-                        {subj.icon} {subj.title}
+                        {subj.title}
                         <span className="badge" style={{ background: 'var(--accent-light)', color: 'var(--accent)' }}>
                           {subjQuestions.length} questions · {subjResults.length} submissions
                         </span>
@@ -763,7 +763,7 @@ export default function AdminDashboard() {
                     </div>
                   </div>
                   <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: 12 }}>
-                    💡 Contact the developer to customize these defaults via Firestore.
+                    Contact the developer to customize these defaults via Firestore.
                   </p>
                 </div>
               </div>
@@ -790,7 +790,7 @@ export default function AdminDashboard() {
               >
                 <option value="">Select subject…</option>
                 {Object.values(SUBJECTS).map((s) => (
-                  <option key={s.id} value={s.id}>{s.icon} {s.title}</option>
+                  <option key={s.id} value={s.id}>{s.title}</option>
                 ))}
               </select>
               {qErrors.subject && <span className="form-error"><FiAlertCircle size={11} />{qErrors.subject}</span>}
