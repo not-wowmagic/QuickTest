@@ -1,0 +1,914 @@
+[
+  {
+    "id": "sts-q1",
+    "text": "The word \"Science\" comes from the Latin word _____, which means knowledge.",
+    "options": [
+      "Techne",
+      "Scientia",
+      "Socius",
+      "Logos"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q2",
+    "text": "Technology comes from the Greek words \"techne\" and \"logos.\" What does \"techne\" mean?",
+    "options": [
+      "Knowledge",
+      "Society",
+      "Art, skills, or crafts",
+      "Word or thought"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q3",
+    "text": "Which of the following BEST defines Society?",
+    "options": [
+      "The application of scientific knowledge to practical aims",
+      "A larger group of individuals associated with each other",
+      "A pursuit of knowledge covering fundamental laws",
+      "The study of how values affect scientific research"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q4",
+    "text": "STS stands for:",
+    "options": [
+      "Science, Technology, and Statistics",
+      "Society, Technology, and Systems",
+      "Science, Technology, and Society",
+      "Systems, Theory, and Science"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q5",
+    "text": "Which characteristic of science states that conclusions must be based on observable, measurable data?",
+    "options": [
+      "Focuses on the natural world",
+      "Passes through the scientific community",
+      "Goes through experiments",
+      "Relies on evidence"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q7",
+    "text": "Which of the following BEST describes the role of technology in the STS cycle?",
+    "options": [
+      "Technology demands more from society",
+      "Technology makes life easier and benefits society",
+      "Technology informs scientific research",
+      "Technology replaces the need for science"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q9",
+    "text": "The word \"Society\" is derived from the Latin word \"socius,\" which means:",
+    "options": [
+      "Knowledge",
+      "Progress",
+      "Association or companionship",
+      "Craftsmanship"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q10",
+    "text": "Which of the following is NOT one of the four common characteristics of science?",
+    "options": [
+      "Focuses on the natural world",
+      "Relies on authority figures",
+      "Relies on evidence",
+      "Goes through experiments"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q11",
+    "text": "The Printing Press was invented by:",
+    "options": [
+      "Galileo Galilei",
+      "Johannes Gutenberg",
+      "Nicolaus Copernicus",
+      "James Watt"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q12",
+    "text": "Which ancient civilization invented the wheel, glass, and maps?",
+    "options": [
+      "Egypt",
+      "Sumerians",
+      "Mesopotamia",
+      "Greece"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q13",
+    "text": "The Medieval Period is also known as the _____ because of the few written records from that era.",
+    "options": [
+      "Golden Age",
+      "Dark Ages",
+      "Age of Reason",
+      "Renaissance"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q15",
+    "text": "Who improved the steam engine during the Industrial Period?",
+    "options": [
+      "Robert Fulton",
+      "George Stephenson",
+      "James Watt",
+      "Thomas Edison"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q16",
+    "text": "Alexander Graham Bell invented the:",
+    "options": [
+      "Lightbulb",
+      "Telephone",
+      "Steam engine",
+      "Telegraph"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q17",
+    "text": "Thomas Edison invented the lightbulb in what year?",
+    "options": [
+      "1865",
+      "1876",
+      "1879",
+      "1885"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q18",
+    "text": "Who formulated the Periodic Table of Elements?",
+    "options": [
+      "John Dalton",
+      "Joseph Thomson",
+      "Henri Becquerel",
+      "Dmitri Mendeleev"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q20",
+    "text": "Michael Faraday is known for:",
+    "options": [
+      "Discovering radioactivity",
+      "Inventing the telescope",
+      "Showing that a magnet can produce electricity and inventing the dynamo",
+      "Formulating the Atomic Theory"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q21",
+    "text": "Who discovered that electric current in a wire caused a nearby compass needle to move?",
+    "options": [
+      "Michael Faraday",
+      "Hans Christian Oersted",
+      "Samuel Morse",
+      "James Clerk Maxwell"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q22",
+    "text": "The Internet was originally developed under what name?",
+    "options": [
+      "WorldWideWeb",
+      "ARPANET",
+      "DARPA",
+      "NetLink"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q24",
+    "text": "Karl Benz and Gottlieb Daimler made the first cars in:",
+    "options": [
+      "1876 and 1879",
+      "1885 and 1886",
+      "1890 and 1892",
+      "1900 and 1901"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q25",
+    "text": "Which ancient Asian country is credited with inventing the plow, lunar calendar, acupuncture, and recording sightings of comets?",
+    "options": [
+      "Japan",
+      "India",
+      "China",
+      "Thailand"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q26",
+    "text": "What is the name of the refined plank-built warship built by pre-colonial Filipinos for inter-island trade?",
+    "options": [
+      "Balangay",
+      "Caracoa",
+      "Paraw",
+      "Bangka"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q27",
+    "text": "The University of Santo Tomas was established during which period of Philippine history?",
+    "options": [
+      "Pre-Spanish Period",
+      "Spanish Period",
+      "Post-Colonial Period",
+      "Marcos Period"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q29",
+    "text": "The Science Act of 1958 was passed with the goal of establishing the:",
+    "options": [
+      "Department of Science and Technology",
+      "National Research Council of the Philippines",
+      "National Science Development Board",
+      "Philippine Science High School System"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q30",
+    "text": "Fe Del Mundo invented the bamboo incubator in what year?",
+    "options": [
+      "1935",
+      "1941",
+      "1955",
+      "1963"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q31",
+    "text": "Gregorio Y. Zara is best remembered for:",
+    "options": [
+      "Inventing the karaoke machine",
+      "Discovering erythromycin",
+      "Inventing the first two-way video telephone in 1955",
+      "Developing the single-chip GUI accelerator"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q33",
+    "text": "Diosdado \"Dado\" Banatao invented the single-chip graphical user interface accelerator in:",
+    "options": [
+      "1965",
+      "1972",
+      "1980",
+      "1988"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q34",
+    "text": "Which Filipino inventor developed the Karaoke Sing-Along System in 1975?",
+    "options": [
+      "Narciso Mosuela",
+      "Marc Loinaz",
+      "Roberto del Rosario",
+      "Gregorio Zara"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q35",
+    "text": "Dr. Abelardo Aguilar is credited with isolating a strain of bacteria that led to the development of:",
+    "options": [
+      "Penicillin",
+      "Aspirin",
+      "Erythromycin",
+      "Amoxicillin"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q36",
+    "text": "De La Salle University's solar-powered car SINAG placed _____ out of 40 competitors at the 2007 World Solar Challenge in Australia.",
+    "options": [
+      "1st",
+      "5th",
+      "12th",
+      "20th"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q38",
+    "text": "Marc Loinaz invented the:",
+    "options": [
+      "Bamboo incubator",
+      "One-chip video camera",
+      "Single-chip GUI accelerator",
+      "Videophone"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q39",
+    "text": "During the Marcos Period, which government body was established to monitor weather and related phenomena?",
+    "options": [
+      "DOST",
+      "NEDA",
+      "PAGASA",
+      "NBSB"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q40",
+    "text": "Pres. Corazon Aquino replaced the National Science & Technology Authority with the:",
+    "options": [
+      "National Research Council of the Philippines",
+      "Department of Science and Technology (DOST)",
+      "Philippine Science High School System",
+      "Bureau of Science"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q41",
+    "text": "The term \"Paradigm Shift\" was coined by:",
+    "options": [
+      "Charles Darwin",
+      "Sigmund Freud",
+      "Thomas Kuhn",
+      "Nicolaus Copernicus"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q42",
+    "text": "Thomas Kuhn introduced the concept of paradigm shift in his 1962 book titled:",
+    "options": [
+      "On the Origin of Species",
+      "The Structure of Scientific Revolutions",
+      "De Revolutionibus Orbium Coelestium",
+      "The Interpretation of Dreams"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q44",
+    "text": "Who developed the Ptolemaic System to explain planetary motion?",
+    "options": [
+      "Aristotle",
+      "Pythagoras",
+      "Claudius Ptolemy",
+      "Aristarchus"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q45",
+    "text": "Eratosthenes estimated the circumference of the Earth at approximately:",
+    "options": [
+      "20,000 km",
+      "30,000 km",
+      "40,000 km",
+      "50,000 km"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q46",
+    "text": "Who was the first to attempt a heliocentric model of the universe?",
+    "options": [
+      "Galileo Galilei",
+      "Johannes Kepler",
+      "Nicolaus Copernicus",
+      "Aristarchus of Samos"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q47",
+    "text": "Copernicus's major work, \"De Revolutionibus Orbium Coelestium,\" was published in:",
+    "options": [
+      "1506",
+      "1530",
+      "1543",
+      "1564"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q49",
+    "text": "What instrument did Galileo Galilei use to support the Copernican hypothesis?",
+    "options": [
+      "Microscope",
+      "Telescope",
+      "Barometer",
+      "Thermometer"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q50",
+    "text": "The Age of Enlightenment occurred during which century?",
+    "options": [
+      "16th century",
+      "17th century",
+      "18th century",
+      "19th century"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q51",
+    "text": "Jean-Baptiste Lamarck's Theory of Use and Disuse states that:",
+    "options": [
+      "Only the fittest organisms survive",
+      "Variations are inherited from parents",
+      "Body parts used more grow stronger; those unused deteriorate",
+      "Species were created separately and distinctly"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q53",
+    "text": "Charles Darwin joined the HMS Beagle expedition in what year?",
+    "options": [
+      "1825",
+      "1831",
+      "1840",
+      "1859"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q54",
+    "text": "Darwin's \"On the Origin of Species\" introduced the concept of:",
+    "options": [
+      "Psychoanalysis",
+      "Natural Selection",
+      "Paradigm Shift",
+      "Use and Disuse"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q55",
+    "text": "Which of the four principles of Darwinism states that overpopulation leads to competition, and organisms with survival traits persist?",
+    "options": [
+      "Variations",
+      "Inheritance",
+      "Selective Pressure",
+      "Survival of the Fittest"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q57",
+    "text": "Sigmund Freud is known as the Father of:",
+    "options": [
+      "Evolution",
+      "Psychoanalysis",
+      "Behaviorism",
+      "Cognitive Psychology"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q58",
+    "text": "According to Freud's Topographical View, which region of the mind contains thoughts and feelings we are currently aware of?",
+    "options": [
+      "Preconscious Mind",
+      "Unconscious Mind",
+      "Conscious Mind",
+      "Subconscious Mind"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q59",
+    "text": "Which part of Freud's structural model operates on the Pleasure Principle?",
+    "options": [
+      "Ego",
+      "Superego",
+      "Id",
+      "Preconscious"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q61",
+    "text": "The Superego in Freud's model:",
+    "options": [
+      "Seeks to increase pleasure and decrease pain",
+      "Mediates between the id and external reality",
+      "Operates as a moral conscience shaped by parental influence",
+      "Contains unconscious aggressive and sexual drives"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q62",
+    "text": "In the context of STS, which part of Freud's model represents ethics and social norms that restrain and guide the use of technology?",
+    "options": [
+      "Id",
+      "Ego",
+      "Superego",
+      "Preconscious"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q64",
+    "text": "The Preconscious Mind, according to Freud, contains:",
+    "options": [
+      "Basic instincts and drives outside awareness",
+      "Unrepressed memories that can be retrieved for specific purposes",
+      "All thoughts currently in awareness",
+      "Hidden desires and unacceptable ideas"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q65",
+    "text": "Which revolution focused on explaining the origins of life and the diversity of species?",
+    "options": [
+      "Copernican Revolution",
+      "Freudian Revolution",
+      "Darwinian Revolution",
+      "Industrial Revolution"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q66",
+    "text": "Which article of the 1987 Philippine Constitution discusses the role of science and technology in national development?",
+    "options": [
+      "Article XII",
+      "Article XIII",
+      "Article XIV",
+      "Article XV"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q68",
+    "text": "According to Article XIV Section 11, the Congress may provide _____ to encourage private participation in scientific research.",
+    "options": [
+      "Mandatory funding",
+      "Tax deductions and incentives",
+      "Government supervision",
+      "Military support"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q69",
+    "text": "Section 13 of Article XIV protects the _____ of scientists, inventors, artists, and gifted citizens.",
+    "options": [
+      "Physical safety",
+      "Employment rights",
+      "Intellectual property and creations",
+      "Financial assets"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q70",
+    "text": "The Philippine Development Plan (PDP) is launched by which government agency?",
+    "options": [
+      "DOST",
+      "CHED",
+      "NEDA",
+      "DBM"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q71",
+    "text": "Ambisyon Natin 2040 is built on three main pillars. Which of the following is NOT one of them?",
+    "options": [
+      "Malasakit",
+      "Pagbabago",
+      "Kaunlaran",
+      "Kalayaan"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q73",
+    "text": "The NIBRA framework covers four sectors. Which of the following is NOT one of them?",
+    "options": [
+      "Health",
+      "Industry, Energy and Emerging Technology",
+      "Military Research and Defense",
+      "Disaster Risk Reduction and Climate Change Adaptation"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q74",
+    "text": "The SAPAT Program under NIBRA focuses on:",
+    "options": [
+      "Water Security",
+      "Clean Energy",
+      "Food and Nutrition Security",
+      "Sustainable Community"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q76",
+    "text": "The ATIN Program under NIBRA focuses on:",
+    "options": [
+      "Health Sufficiency",
+      "Inclusive Nation-building",
+      "Water Security",
+      "Sustainable Community"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q77",
+    "text": "The SAKLAW Program focuses on:",
+    "options": [
+      "Food security",
+      "Sustainable community",
+      "Clean energy",
+      "Water access"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q78",
+    "text": "Which of the following BEST describes the aim of \"Understanding Science\"?",
+    "options": [
+      "Helping teachers apply pedagogical models",
+      "Developing science-process skills and using science literacy in everyday life",
+      "Encouraging students to memorize scientific facts",
+      "Preparing students for science competitions"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q80",
+    "text": "The conceptual framework of Science Education in the Philippines aims to develop members of society who are scientifically, technologically, and _____ literate.",
+    "options": [
+      "Politically",
+      "Economically",
+      "Environmentally",
+      "Culturally"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q81",
+    "text": "The Philippine Science High School (PSHS) System provides scholarships to students with high aptitude in:",
+    "options": [
+      "Literature and History",
+      "Science and Mathematics",
+      "Engineering and Architecture",
+      "Business and Economics"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q82",
+    "text": "Which S&T program includes the initiatives NICER, RDLead, and CRADLE?",
+    "options": [
+      "Balik Scientist Program",
+      "STARBOOKS",
+      "Science for Change Program (S4CP)",
+      "Tuklas Lunas Program"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q84",
+    "text": "The Tuklas Lunas Program focuses on:",
+    "options": [
+      "Sending Filipino scientists abroad",
+      "Discovering and developing new drugs from natural resources",
+      "Building science high schools in the regions",
+      "Providing digital books to communities"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q85",
+    "text": "The Special Science Elementary Schools (SSES) Project is governed by which DepEd Orders?",
+    "options": [
+      "DepEd Order No. 60 s. 2005 and No. 40 s. 2008",
+      "DepEd Order No. 73 s. 2008 and No. 51 s. 2010",
+      "DepEd Order No. 10 s. 2012 and No. 22 s. 2015",
+      "DepEd Order No. 55 s. 2006 and No. 30 s. 2009"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q86",
+    "text": "As of 2025, how many individuals have been conferred the Order of National Scientist since its establishment in 1976?",
+    "options": [
+      "30",
+      "38",
+      "44",
+      "50"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q88",
+    "text": "Angel C. Alcala is recognized for his research on the ecology and diversity of Philippine:",
+    "options": [
+      "Fish and marine mammals",
+      "Amphibians, reptiles, and marine protected areas",
+      "Tropical plants and seaweeds",
+      "Insects and soil organisms"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q89",
+    "text": "Ramon C. Barba is known for his work in plant physiology, especially the:",
+    "options": [
+      "Cultivation of seaweeds",
+      "Development of erythromycin",
+      "Induction of flowering of mango and micropropagation",
+      "Conservation of coral reefs"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q91",
+    "text": "Edgardo Gomez, Ph.D. is known for being pivotal in:",
+    "options": [
+      "Inventing micropropagation techniques for crops",
+      "The world's first national-scale assessment of damage to coral reefs",
+      "Developing anti-pollution engine technology",
+      "Discovering a new antibiotic from natural resources"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q92",
+    "text": "Emil Q. Javier is recognized for contributions to plant breeding research in crops including rice, maize, sorghum, coconut, and:",
+    "options": [
+      "Banana and papaya",
+      "Abaca and tropical grasses and legumes",
+      "Tobacco and sugarcane",
+      "Camote and cassava"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q93",
+    "text": "The Aerogas Catalytic Combustor (ACC) was invented by:",
+    "options": [
+      "Engr. Aisa Mijeno",
+      "Engr. Marinto C. Martinez",
+      "Atoy Llave",
+      "Narciso Mosuela"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q95",
+    "text": "The SALT lamp generates electricity through:",
+    "options": [
+      "Solar panels embedded in the lamp",
+      "Chemical compounds, catalysts, and metal alloys submerged in electrolytes",
+      "Combustion of biofuel materials",
+      "Magnetic induction from saltwater"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q96",
+    "text": "The Salamander Amphibious Tricycle was invented by:",
+    "options": [
+      "Engr. Aisa Mijeno",
+      "Narciso Mosuela",
+      "Atoy Llave",
+      "Diosdado Banatao"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q98",
+    "text": "The SALT Lamp was invented by:",
+    "options": [
+      "Atoy Llave",
+      "Engr. Aisa Mijeno",
+      "Engr. Marinto C. Martinez",
+      "Fe Del Mundo"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  },
+  {
+    "id": "sts-q99",
+    "text": "Which of the following BEST describes the Aerogas Catalytic Combustor (ACC)?",
+    "options": [
+      "A lamp powered by saltwater",
+      "A tricycle that travels on land and water",
+      "An anti-pollution, eco-friendly fuel saver and power booster engine device",
+      "A solar-powered vehicle for urban transport"
+    ],
+    "answer": 0,
+    "explanation": "Refer to course materials."
+  }
+]
