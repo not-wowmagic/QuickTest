@@ -603,9 +603,9 @@ export default function AdminDashboard() {
                   </select>
                   <div className="flex gap-2 items-center">
                     <FiCalendar size={13} style={{ color: 'var(--text-muted)' }} />
-                    <input type="date" className="form-input" style={{ maxWidth: 140, fontSize: '0.82rem' }} value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
+                    <input type="date" className="form-input" style={{ maxWidth: 140, fontSize: '1rem' }} value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
                     <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>to</span>
-                    <input type="date" className="form-input" style={{ maxWidth: 140, fontSize: '0.82rem' }} value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
+                    <input type="date" className="form-input" style={{ maxWidth: 140, fontSize: '1rem' }} value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
                   </div>
                 </div>
 

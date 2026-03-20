@@ -350,6 +350,7 @@ export default function ExamPage() {
       // Helper: build seed fallback
       const getSeedFallback = () =>
         subjectInfo ? [...subjectInfo.questions].sort(() => Math.random() - 0.5) : [];
+      const shouldForceSeedData = true;
 
       const applyQuestions = (qs, isTimeAttack) => {
         const safeQs = sanitizeQuestions(qs);
@@ -379,6 +380,34 @@ export default function ExamPage() {
         }
       };
 
+      const searchParams = new URLSearchParams(location.search);
+      const limitParam = searchParams.get('items');
+      const isTimeAttack = searchParams.get('timeAttack') === 'true';
+      const isHideNav = searchParams.get('hideNav') === 'true';
+      const isPracticeMode = searchParams.get('practiceMode') === 'true';
+      const isAutoNext = searchParams.get('autoNext') === 'true';
+      setTimeAttack(isTimeAttack);
+      setHideNav(isHideNav);
+      setPracticeMode(isPracticeMode);
+      setAutoNextParam(isAutoNext);
+
+      const applyItemLimit = (inputQuestions) => {
+        let limited = inputQuestions;
+        if (limitParam && limitParam !== 'all') {
+          const limit = parseInt(limitParam, 10);
+          if (!isNaN(limit) && limit > 0) {
+            limited = limited.slice(0, limit);
+          }
+        }
+        return limited;
+      };
+
+      if (shouldForceSeedData) {
+        applyQuestions(applyItemLimit(getSeedFallback()), isTimeAttack);
+        setLoading(false);
+        return;
+      }
+
       try {
         // Race Firestore against a 3-second timeout — falls back to seed data
         // if Firebase isn't configured or the network is unavailable
@@ -396,47 +425,10 @@ export default function ExamPage() {
           qs = qs.sort(() => Math.random() - 0.5);
         }
 
-        // Limit items if requested
-        const searchParams = new URLSearchParams(location.search);
-        const limitParam = searchParams.get('items');
-        const isTimeAttack = searchParams.get('timeAttack') === 'true';
-        const isHideNav = searchParams.get('hideNav') === 'true';
-        const isPracticeMode = searchParams.get('practiceMode') === 'true';
-        const isAutoNext = searchParams.get('autoNext') === 'true';
-        setTimeAttack(isTimeAttack);
-        setHideNav(isHideNav);
-        setPracticeMode(isPracticeMode);
-        setAutoNextParam(isAutoNext);
-        
-        if (limitParam && limitParam !== 'all') {
-          const limit = parseInt(limitParam, 10);
-          if (!isNaN(limit) && limit > 0) {
-            qs = qs.slice(0, limit);
-          }
-        }
-        
-        applyQuestions(qs, isTimeAttack);
+        applyQuestions(applyItemLimit(qs), isTimeAttack);
       } catch {
         // Timeout OR any error → immediate seed fallback
-        let qs = getSeedFallback();
-        const searchParams = new URLSearchParams(location.search);
-        const limitParam = searchParams.get('items');
-        const isTimeAttack = searchParams.get('timeAttack') === 'true';
-        const isHideNav = searchParams.get('hideNav') === 'true';
-        const isPracticeMode = searchParams.get('practiceMode') === 'true';
-        const isAutoNext = searchParams.get('autoNext') === 'true';
-        setTimeAttack(isTimeAttack);
-        setHideNav(isHideNav);
-        setPracticeMode(isPracticeMode);
-        setAutoNextParam(isAutoNext);
-
-        if (limitParam && limitParam !== 'all') {
-          const limit = parseInt(limitParam, 10);
-          if (!isNaN(limit) && limit > 0) {
-            qs = qs.slice(0, limit);
-          }
-        }
-        applyQuestions(qs, isTimeAttack);
+        applyQuestions(applyItemLimit(getSeedFallback()), isTimeAttack);
       } finally {
         setLoading(false);
       }

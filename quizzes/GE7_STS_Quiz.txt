@@ -1,5 +1,5 @@
-GE7 SCIENCE, TECHNOLOGY & SOCIETY — 100-ITEM QUIZ
-===================================================
+GE7 SCIENCE, TECHNOLOGY & SOCIETY — 100-ITEM QUIZ (UPDATED)
+=============================================================
 Directions: Choose the best answer for each multiple choice item. For True/False items, write TRUE or FALSE.
 
 ------------------------------------------------------------
@@ -12,11 +12,11 @@ UNIT 1 LESSON 1: Relationship of Science, Technology & Society
    C) Socius
    D) Logos
 
-2. Technology comes from the Greek words "techne" and "logos." What does "techne" mean?
-   A) Knowledge
+2. Technology comes from the Greek words "techne" and "logos." What does "logos" mean?
+   A) Art or craft
    B) Society
-   C) Art, skills, or crafts
-   D) Word or thought
+   C) Knowledge
+   D) Word, thought, principle, or speech
 
 3. Which of the following BEST defines Society?
    A) The application of scientific knowledge to practical aims
@@ -24,27 +24,27 @@ UNIT 1 LESSON 1: Relationship of Science, Technology & Society
    C) A pursuit of knowledge covering fundamental laws
    D) The study of how values affect scientific research
 
-4. STS stands for:
-   A) Science, Technology, and Statistics
-   B) Society, Technology, and Systems
-   C) Science, Technology, and Society
-   D) Systems, Theory, and Science
+4. STS is defined as the study of how social, political, and cultural values affect:
+   A) Military strategy and national security
+   B) Scientific research and technological innovation, and how these in turn affect society
+   C) Economic systems and trade relations
+   D) Religious beliefs and moral philosophy
 
-5. Which characteristic of science states that conclusions must be based on observable, measurable data?
+5. Which characteristic of science states that findings must be reviewed, challenged, and validated by other scientists?
    A) Focuses on the natural world
-   B) Passes through the scientific community
+   B) Relies on evidence
    C) Goes through experiments
-   D) Relies on evidence
+   D) Passes through the scientific community
 
 6. [TRUE or FALSE] The STS cycle shows that science, technology, and society operate independently of one another.
 
-7. Which of the following BEST describes the role of technology in the STS cycle?
-   A) Technology demands more from society
-   B) Technology makes life easier and benefits society
-   C) Technology informs scientific research
-   D) Technology replaces the need for science
+7. In the STS cycle, what does society do in relation to science and technology?
+   A) Society replaces the need for science
+   B) Society demands more and benefits from science and technology
+   C) Society only produces technology
+   D) Society limits scientific research
 
-8. [TRUE or FALSE] According to STS, social and cultural values can affect scientific research and technological innovation.
+8. [TRUE or FALSE] Technology is defined as the application of scientific knowledge to the practical aims of human life.
 
 9. The word "Society" is derived from the Latin word "socius," which means:
    A) Knowledge
@@ -68,7 +68,7 @@ UNIT 1 LESSON 2: Global History of Science & Technology
     C) Nicolaus Copernicus
     D) James Watt
 
-12. Which ancient civilization invented the wheel, glass, and maps?
+12. Which ancient civilization in the Middle East invented the wheel, glass, and maps?
     A) Egypt
     B) Sumerians
     C) Mesopotamia
@@ -80,7 +80,7 @@ UNIT 1 LESSON 2: Global History of Science & Technology
     C) Age of Reason
     D) Renaissance
 
-14. [TRUE or FALSE] The Renaissance Period is described as a period of rebirth or revival.
+14. [TRUE or FALSE] The Renaissance Period is described as a period of rebirth or revival and served as the age of preparation for 17th-century scientific achievements.
 
 15. Who improved the steam engine during the Industrial Period?
     A) Robert Fulton
@@ -88,13 +88,13 @@ UNIT 1 LESSON 2: Global History of Science & Technology
     C) James Watt
     D) Thomas Edison
 
-16. Alexander Graham Bell invented the:
-    A) Lightbulb
-    B) Telephone
-    C) Steam engine
-    D) Telegraph
+16. Alexander Graham Bell invented the telephone in what year?
+    A) 1865
+    B) 1872
+    C) 1876
+    D) 1882
 
-17. Thomas Edison invented the lightbulb in what year?
+17. Thomas Edison invented the lightbulb in:
     A) 1865
     B) 1876
     C) 1879
@@ -108,11 +108,11 @@ UNIT 1 LESSON 2: Global History of Science & Technology
 
 19. [TRUE or FALSE] Marie and Pierre Curie discovered the electron in 1897.
 
-20. Michael Faraday is known for:
-    A) Discovering radioactivity
-    B) Inventing the telescope
-    C) Showing that a magnet can produce electricity and inventing the dynamo
-    D) Formulating the Atomic Theory
+20. Michael Faraday showed that a magnet can produce electricity and invented the:
+    A) Telegraph
+    B) Telephone
+    C) Dynamo
+    D) Microscope
 
 21. Who discovered that electric current in a wire caused a nearby compass needle to move?
     A) Michael Faraday
@@ -126,7 +126,7 @@ UNIT 1 LESSON 2: Global History of Science & Technology
     C) DARPA
     D) NetLink
 
-23. [TRUE or FALSE] Henry Ford is known for the mass production of cars in the 20th century.
+23. [TRUE or FALSE] George Stephenson developed the first steam-powered locomotive in 1814.
 
 24. Karl Benz and Gottlieb Daimler made the first cars in:
     A) 1876 and 1879
@@ -150,7 +150,7 @@ UNIT 1 LESSON 3: Philippine History of Science & Technology
     C) Paraw
     D) Bangka
 
-27. The University of Santo Tomas was established during which period of Philippine history?
+27. The University of Santo Tomas, the oldest university in Asia, was established during the:
     A) Pre-Spanish Period
     B) Spanish Period
     C) Post-Colonial Period
@@ -170,57 +170,57 @@ UNIT 1 LESSON 3: Philippine History of Science & Technology
     C) 1955
     D) 1963
 
-31. Gregorio Y. Zara is best remembered for:
-    A) Inventing the karaoke machine
-    B) Discovering erythromycin
-    C) Inventing the first two-way video telephone in 1955
-    D) Developing the single-chip GUI accelerator
+31. Gregorio Y. Zara is best remembered for inventing the first two-way video telephone in 1955, which laid the foundation for:
+    A) Internet browsing
+    B) Video conferencing
+    C) Radio communication
+    D) Satellite technology
 
-32. [TRUE or FALSE] The karaoke machine patent is held by Daisuke Inoue, the Japanese inventor who built the first machine in 1971.
+32. [TRUE or FALSE] Roberto del Rosario holds the patent for the Karaoke machine, having developed the Karaoke Sing-Along System in 1975.
 
-33. Diosdado "Dado" Banatao invented the single-chip graphical user interface accelerator in:
+33. Diosdado "Dado" Banatao, known as the Bill Gates of the Philippines, invented the single-chip GUI accelerator in:
     A) 1965
     B) 1972
     C) 1980
     D) 1988
 
-34. Which Filipino inventor developed the Karaoke Sing-Along System in 1975?
-    A) Narciso Mosuela
-    B) Marc Loinaz
-    C) Roberto del Rosario
-    D) Gregorio Zara
-
-35. Dr. Abelardo Aguilar is credited with isolating a strain of bacteria that led to the development of:
+34. Dr. Abelardo Aguilar is credited with isolating a strain of bacteria that led to the development of:
     A) Penicillin
     B) Aspirin
     C) Erythromycin
     D) Amoxicillin
 
-36. De La Salle University's solar-powered car SINAG placed _____ out of 40 competitors at the 2007 World Solar Challenge in Australia.
+35. De La Salle University's solar-powered car SINAG placed _____ out of 40 competitors at the 2007 World Solar Challenge in Australia.
     A) 1st
     B) 5th
     C) 12th
     D) 20th
 
-37. [TRUE or FALSE] The Super Kalan, invented by Narciso Mosuela, can only be powered by gasoline.
+36. [TRUE or FALSE] The Super Kalan, invented by Narciso Mosuela, can only be powered by gasoline.
 
-38. Marc Loinaz invented the:
+37. Marc Loinaz invented the:
     A) Bamboo incubator
     B) One-chip video camera
     C) Single-chip GUI accelerator
     D) Videophone
 
-39. During the Marcos Period, which government body was established to monitor weather and related phenomena?
+38. During the Marcos Period, which government body was established to monitor weather and related phenomena?
     A) DOST
     B) NEDA
     C) PAGASA
     D) NBSB
 
-40. Pres. Corazon Aquino replaced the National Science & Technology Authority with the:
+39. Pres. Corazon Aquino replaced the National Science & Technology Authority with the:
     A) National Research Council of the Philippines
     B) Department of Science and Technology (DOST)
     C) Philippine Science High School System
     D) Bureau of Science
+
+40. Which law did President Gloria Arroyo sign that is related to science and technology in the energy sector?
+    A) Balik Scientist Act
+    B) Magna Carta for S&T Personnel
+    C) R.A. 9367 or the Biofuel Act
+    D) Science Act of 1958
 
 ------------------------------------------------------------
 UNIT 1 LESSON 4: Intellectual Revolutions
@@ -240,7 +240,7 @@ UNIT 1 LESSON 4: Intellectual Revolutions
 
 43. [TRUE or FALSE] The Geocentric Model holds that the Sun is at the center of the universe.
 
-44. Who developed the Ptolemaic System to explain planetary motion?
+44. Who developed the Ptolemaic System using epicycles to explain planetary motion?
     A) Aristotle
     B) Pythagoras
     C) Claudius Ptolemy
@@ -258,7 +258,7 @@ UNIT 1 LESSON 4: Intellectual Revolutions
     C) Nicolaus Copernicus
     D) Aristarchus of Samos
 
-47. Copernicus's major work, "De Revolutionibus Orbium Coelestium," was published in:
+47. Copernicus's major work "De Revolutionibus Orbium Coelestium" was published in:
     A) 1506
     B) 1530
     C) 1543
@@ -272,227 +272,223 @@ UNIT 1 LESSON 4: Intellectual Revolutions
     C) Barometer
     D) Thermometer
 
-50. The Age of Enlightenment occurred during which century?
-    A) 16th century
-    B) 17th century
-    C) 18th century
-    D) 19th century
-
-51. Jean-Baptiste Lamarck's Theory of Use and Disuse states that:
+50. Jean-Baptiste Lamarck's Theory of Use and Disuse states that:
     A) Only the fittest organisms survive
-    B) Variations are inherited from parents
+    B) Variations are inherited from parents at birth
     C) Body parts used more grow stronger; those unused deteriorate
-    D) Species were created separately and distinctly
+    D) Species were created separately and distinctly by God
 
-52. [TRUE or FALSE] According to Lamarck, acquired characteristics are inherited by offspring.
+51. [TRUE or FALSE] According to Lamarck, acquired characteristics are inherited by offspring.
 
-53. Charles Darwin joined the HMS Beagle expedition in what year?
-    A) 1825
-    B) 1831
-    C) 1840
-    D) 1859
+52. Charles Darwin joined the HMS Beagle expedition headed by Vice-Admiral:
+    A) Charles Lyell
+    B) Robert Fitzroy
+    C) Thomas Huxley
+    D) Alfred Wallace
 
-54. Darwin's "On the Origin of Species" introduced the concept of:
-    A) Psychoanalysis
-    B) Natural Selection
-    C) Paradigm Shift
-    D) Use and Disuse
-
-55. Which of the four principles of Darwinism states that overpopulation leads to competition, and organisms with survival traits persist?
+53. Which of the four principles of Darwinism states that overpopulation leads to competition, and organisms with survival traits persist?
     A) Variations
     B) Inheritance
     C) Selective Pressure
     D) Survival of the Fittest
 
-56. [TRUE or FALSE] Darwin observed species variation among finches on the Galapagos Islands.
+54. [TRUE or FALSE] Darwin observed species variation among finches on the Galapagos Islands during the HMS Beagle expedition.
 
-57. Sigmund Freud is known as the Father of:
+55. Sigmund Freud is known as the Father of:
     A) Evolution
     B) Psychoanalysis
     C) Behaviorism
     D) Cognitive Psychology
 
-58. According to Freud's Topographical View, which region of the mind contains thoughts and feelings we are currently aware of?
+56. According to Freud's Topographical View, which region of the mind contains thoughts and feelings we are currently aware of?
     A) Preconscious Mind
     B) Unconscious Mind
     C) Conscious Mind
     D) Subconscious Mind
 
-59. Which part of Freud's structural model operates on the Pleasure Principle?
+57. Which part of Freud's structural model operates on the Pleasure Principle?
     A) Ego
     B) Superego
     C) Id
     D) Preconscious
 
-60. [TRUE or FALSE] The Ego operates on the Morality Principle in Freud's structural model.
+58. [TRUE or FALSE] The Superego operates on the Reality Principle in Freud's structural model.
 
-61. The Superego in Freud's model:
-    A) Seeks to increase pleasure and decrease pain
-    B) Mediates between the id and external reality
+59. The Ego in Freud's model:
+    A) Seeks to increase pleasure and decrease pain at all times
+    B) Acts as a realistic mediator between the id and the superego
     C) Operates as a moral conscience shaped by parental influence
-    D) Contains unconscious aggressive and sexual drives
+    D) Contains all unconscious aggressive and sexual drives
 
-62. In the context of STS, which part of Freud's model represents ethics and social norms that restrain and guide the use of technology?
+60. In the context of STS, which part of Freud's model represents science and technology stimulating human desires?
     A) Id
     B) Ego
     C) Superego
     D) Preconscious
 
-63. [TRUE or FALSE] Lamarck believed that variation is inherited from birth, while Darwin believed variation is acquired during an organism's lifetime.
-
-64. The Preconscious Mind, according to Freud, contains:
-    A) Basic instincts and drives outside awareness
-    B) Unrepressed memories that can be retrieved for specific purposes
-    C) All thoughts currently in awareness
-    D) Hidden desires and unacceptable ideas
-
-65. Which revolution focused on explaining the origins of life and the diversity of species?
-    A) Copernican Revolution
-    B) Freudian Revolution
-    C) Darwinian Revolution
-    D) Industrial Revolution
-
 ------------------------------------------------------------
-UNIT 2: S&T in Philippine Nation Building
+UNIT 2 LESSON 2: S&T in Philippine Nation Building
 ------------------------------------------------------------
 
-66. Which article of the 1987 Philippine Constitution discusses the role of science and technology in national development?
+61. Which article of the 1987 Philippine Constitution discusses the role of science and technology in national development?
     A) Article XII
     B) Article XIII
     C) Article XIV
     D) Article XV
 
-67. [TRUE or FALSE] Section 10 of Article XIV states that science and technology are essential for national development and progress.
+62. [TRUE or FALSE] Article XIV Section 10 states that the State shall support indigenous, appropriate, and self-reliant scientific and technological capabilities.
 
-68. According to Article XIV Section 11, the Congress may provide _____ to encourage private participation in scientific research.
-    A) Mandatory funding
-    B) Tax deductions and incentives
-    C) Government supervision
-    D) Military support
+63. According to Article XIV Section 11, which of the following may be provided to deserving science students, researchers, and scientists?
+    A) Government employment guarantees
+    B) Scholarships, grants-in-aid, or other forms of incentives
+    C) Mandatory military exemptions
+    D) Free housing and transportation
 
-69. Section 13 of Article XIV protects the _____ of scientists, inventors, artists, and gifted citizens.
-    A) Physical safety
-    B) Employment rights
-    C) Intellectual property and creations
-    D) Financial assets
+64. Article XIV Section 12 states that the State shall encourage the widest participation of which groups in the generation and utilization of science and technology?
+    A) Foreign corporations and multinational companies
+    B) Private groups, local governments, and community-based organizations
+    C) The military and national defense agencies
+    D) International scientific organizations only
 
-70. The Philippine Development Plan (PDP) is launched by which government agency?
+65. [TRUE or FALSE] Article XIV Section 13 of the 1987 Constitution protects the intellectual property and creations of scientists, inventors, artists, and other gifted citizens.
+
+------------------------------------------------------------
+UNIT 2 LESSON 3: Philippine Government S&T Agenda
+------------------------------------------------------------
+
+66. The Philippine Development Plan (PDP) is launched by which government agency?
     A) DOST
     B) CHED
     C) NEDA
     D) DBM
 
-71. Ambisyon Natin 2040 is built on three main pillars. Which of the following is NOT one of them?
-    A) Malasakit
-    B) Pagbabago
-    C) Kaunlaran
-    D) Kalayaan
+67. Ambisyon Natin 2040 aims to realize the collective vision of Filipinos over the next:
+    A) 10 years
+    B) 15 years
+    C) 20 years
+    D) 25 years
 
-72. [TRUE or FALSE] "Malasakit" under Ambisyon Natin 2040 refers to regaining people's trust in public institutions and cultivating trust among fellow Filipinos.
+68. Which pillar of Ambisyon Natin 2040 focuses on regaining people's trust in public institutions?
+    A) Pagbabago
+    B) Kaunlaran
+    C) Malasakit
+    D) Patuloy na Pag-unlad
 
-73. The NIBRA framework covers four sectors. Which of the following is NOT one of them?
+69. [TRUE or FALSE] "Pagbabago" under Ambisyon Natin 2040 refers to inequality-reducing transformation through increasing opportunities for growth of output and income.
+
+70. The overall goal of PDP 2017-2022 is best described as:
+    A) Achieving complete industrialization by 2022
+    B) Laying the foundation for inclusive growth, a high-trust and resilient society, and a globally competitive knowledge economy
+    C) Eliminating all foreign debt within five years
+    D) Transitioning the Philippines to a fully digital economy
+
+71. Under the PDP 2017-2022, "Patuloy na Pag-unlad" focuses on:
+    A) Ensuring people-centered governance and swift justice
+    B) Expanding economic opportunities and reducing vulnerability
+    C) Advancing technology adoption, stimulating innovation, and ensuring ecological integrity
+    D) Protecting the purchasing power of Filipino families
+
+72. [TRUE or FALSE] Under PDP 2017-2022, accelerating human capital development falls under the "Pagbabago" pillar.
+
+73. The PDP 2023-2028 is guided by a plan called:
+    A) Ambisyon Natin 2050
+    B) Six-Year Game Plan for Economic Transformation
+    C) National S&T Competitiveness Roadmap
+    D) Philippine Innovation Agenda
+
+74. Which of the following is part of the 8-point near-term agenda of PDP 2023-2028?
+    A) Build a nuclear power plant
+    B) Address learning losses
+    C) Establish a national AI program
+    D) Reduce military spending
+
+75. [TRUE or FALSE] Advancing R&D and innovation is included in the Job Creation Agenda of PDP 2023-2028.
+
+76. Which of the following best describes the Green and Sustainable Development agenda of PDP 2023-2028?
+    A) Focusing only on solar and wind energy
+    B) Pursuing a green and blue economy and establishing livable, sustainable communities
+    C) Banning all fossil fuel use by 2028
+    D) Privatizing all natural resource industries
+
+77. The NIBRA framework covers four sectors. Which of the following is NOT one of them?
     A) Health
     B) Industry, Energy and Emerging Technology
     C) Military Research and Defense
     D) Disaster Risk Reduction and Climate Change Adaptation
 
-74. The SAPAT Program under NIBRA focuses on:
+78. The SAPAT Program under NIBRA focuses on:
     A) Water Security
     B) Clean Energy
     C) Food and Nutrition Security
     D) Sustainable Community
 
-75. [TRUE or FALSE] The ALERT Program stands for Alternative Energy Research Treads and focuses on clean energy.
+79. [TRUE or FALSE] The ALERT Program stands for Alternative Energy Research Treads and focuses on clean energy.
 
-76. The ATIN Program under NIBRA focuses on:
-    A) Health Sufficiency
-    B) Inclusive Nation-building
-    C) Water Security
-    D) Sustainable Community
-
-77. The SAKLAW Program focuses on:
-    A) Food security
-    B) Sustainable community
-    C) Clean energy
-    D) Water access
+80. The ATIN Program under NIBRA stands for:
+    A) Ang Tinig Natin — Inclusive Nation-building
+    B) Ang Tubig Natin — Water Security
+    C) Ang Tiwala Natin — Social Trust
+    D) Ang Tatak Natin — National Identity
 
 ------------------------------------------------------------
 UNIT 2 LESSON 4: Science Education & Major Programs
 ------------------------------------------------------------
 
-78. Which of the following BEST describes the aim of "Understanding Science"?
-    A) Helping teachers apply pedagogical models
-    B) Developing science-process skills and using science literacy in everyday life
-    C) Encouraging students to memorize scientific facts
-    D) Preparing students for science competitions
-
-79. [TRUE or FALSE] Science education in basic education focuses primarily on preparing science teachers and engineers.
-
-80. The conceptual framework of Science Education in the Philippines aims to develop members of society who are scientifically, technologically, and _____ literate.
+81. The conceptual framework of Science Education in the Philippines aims to develop members of society who are scientifically, technologically, and _____ literate.
     A) Politically
     B) Economically
     C) Environmentally
     D) Culturally
 
-81. The Philippine Science High School (PSHS) System provides scholarships to students with high aptitude in:
-    A) Literature and History
-    B) Science and Mathematics
-    C) Engineering and Architecture
-    D) Business and Economics
+82. Which of the following BEST describes science education at the tertiary level?
+    A) Developing process skills and critical thinking for daily life
+    B) Building curiosity and creativity in young children
+    C) Preparing science teachers, scientists, engineers, and other professionals
+    D) Providing scholarships for high school students
 
-82. Which S&T program includes the initiatives NICER, RDLead, and CRADLE?
+83. [TRUE or FALSE] STARBOOKS is a digital library that provides access to S&T information and is deployed especially in remote areas.
+
+84. Which S&T program includes the initiatives NICER, RDLead, and CRADLE?
     A) Balik Scientist Program
     B) STARBOOKS
     C) Science for Change Program (S4CP)
     D) Tuklas Lunas Program
 
-83. [TRUE or FALSE] STARBOOKS is a digital library that provides access to S&T information and is deployed especially in remote areas.
-
-84. The Tuklas Lunas Program focuses on:
+85. The Tuklas Lunas Program focuses on:
     A) Sending Filipino scientists abroad
     B) Discovering and developing new drugs from natural resources
     C) Building science high schools in the regions
     D) Providing digital books to communities
 
-85. The Special Science Elementary Schools (SSES) Project is governed by which DepEd Orders?
-    A) DepEd Order No. 60 s. 2005 and No. 40 s. 2008
-    B) DepEd Order No. 73 s. 2008 and No. 51 s. 2010
-    C) DepEd Order No. 10 s. 2012 and No. 22 s. 2015
-    D) DepEd Order No. 55 s. 2006 and No. 30 s. 2009
+86. [TRUE or FALSE] The Balik Scientist Program encourages Filipino scientists working abroad to return to the Philippines and provides incentives and support for them.
 
-86. As of 2025, how many individuals have been conferred the Order of National Scientist since its establishment in 1976?
+87. As of 2025, how many individuals have been conferred the Order of National Scientist since its establishment in 1976?
     A) 30
     B) 38
     C) 44
     D) 50
 
-87. [TRUE or FALSE] The Order of National Scientist is awarded by the Senate President.
+88. [TRUE or FALSE] The Order of National Scientist is the highest honor given by the President to an individual who has contributed significantly to science and technology in the Philippines.
 
-88. Angel C. Alcala is recognized for his research on the ecology and diversity of Philippine:
+89. Angel C. Alcala is recognized for his research on the ecology and diversity of Philippine:
     A) Fish and marine mammals
     B) Amphibians, reptiles, and marine protected areas
     C) Tropical plants and seaweeds
     D) Insects and soil organisms
 
-89. Ramon C. Barba is known for his work in plant physiology, especially the:
+90. Ramon C. Barba is known for his work in plant physiology, especially the:
     A) Cultivation of seaweeds
     B) Development of erythromycin
     C) Induction of flowering of mango and micropropagation
     D) Conservation of coral reefs
 
-90. [TRUE or FALSE] Gavino C. Trono was the first to report the occurrence of "ice-ice" disease that affected seaweed farms.
+91. [TRUE or FALSE] Emil Q. Javier was the first to report the occurrence of "ice-ice" disease that affected seaweed farms.
 
-91. Edgardo Gomez, Ph.D. is known for being pivotal in:
+92. Edgardo Gomez, Ph.D. is known for being pivotal in:
     A) Inventing micropropagation techniques for crops
     B) The world's first national-scale assessment of damage to coral reefs
     C) Developing anti-pollution engine technology
     D) Discovering a new antibiotic from natural resources
-
-92. Emil Q. Javier is recognized for contributions to plant breeding research in crops including rice, maize, sorghum, coconut, and:
-    A) Banana and papaya
-    B) Abaca and tropical grasses and legumes
-    C) Tobacco and sugarcane
-    D) Camote and cassava
 
 ------------------------------------------------------------
 UNIT 2: Indigenous Science & Technologies
@@ -520,51 +516,52 @@ UNIT 2: Indigenous Science & Technologies
 
 97. [TRUE or FALSE] The Salamander Amphibious Tricycle can only be powered by an electric engine.
 
-98. The SALT Lamp was invented by:
-    A) Atoy Llave
-    B) Engr. Aisa Mijeno
-    C) Engr. Marinto C. Martinez
-    D) Fe Del Mundo
+98. What are the two power options of the Salamander Amphibious Tricycle?
+    A) Nuclear and solar
+    B) 5kW electric engine or 250-cc gasoline motor
+    C) Hydrogen fuel cell or diesel motor
+    D) Wind turbine or coal-powered engine
 
-99. Which of the following BEST describes the Aerogas Catalytic Combustor (ACC)?
-    A) A lamp powered by saltwater
-    B) A tricycle that travels on land and water
-    C) An anti-pollution, eco-friendly fuel saver and power booster engine device
-    D) A solar-powered vehicle for urban transport
+99. The ACC invented by Engr. Marinto C. Martinez is described as:
+    A) A lamp powered by saltwater electrolytes
+    B) A tricycle capable of traveling on land and water
+    C) An anti-pollution fuel saver and power booster for internal combustion engines
+    D) A solar-powered car for urban commuting
 
-100. [TRUE or FALSE] Science and technology play a significant role in Philippine nation-building by addressing poverty, inequality, and national development.
+100. [TRUE or FALSE] Science and technology play a significant role in Philippine nation-building by addressing poverty, inequality, and national development as recognized in the 1987 Constitution.
 
 ====================================================
 ANSWER KEY
 ====================================================
-1.  B      26. B      51. C      76. B
-2.  C      27. B      52. TRUE   77. B
-3.  B      28. TRUE   53. B      78. B
-4.  C      29. C      54. B      79. FALSE
-5.  D      30. B      55. C      80. C
-6.  FALSE  31. C      56. TRUE   81. B
-7.  B      32. FALSE  57. B      82. C
-8.  TRUE   33. B      58. C      83. TRUE
-9.  C      34. C      59. C      84. B
-10. B      35. C      60. FALSE  85. B
-11. B      36. C      61. C      86. C
-12. C      37. FALSE  62. C      87. FALSE
-13. B      38. B      63. FALSE  88. B
-14. TRUE   39. C      64. B      89. C
-15. C      40. B      65. C      90. FALSE
-16. B      41. C      66. C      91. B
-17. C      42. B      67. TRUE   92. B
-18. D      43. FALSE  68. B      93. B
-19. FALSE  44. C      69. C      94. TRUE
-20. C      45. C      70. C      95. B
-21. B      46. D      71. D      96. C
-22. B      47. C      72. TRUE   97. FALSE
-23. TRUE   48. TRUE   73. C      98. B
-24. B      49. B      74. C      99. C
-25. C      50. C      75. TRUE   100. TRUE
+1.   B        26.  B        51.  TRUE     76.  B
+2.   D        27.  B        52.  B        77.  C
+3.   B        28.  TRUE     53.  C        78.  C
+4.   B        29.  C        54.  TRUE     79.  TRUE
+5.   D        30.  B        55.  B        80.  A
+6.   FALSE    31.  B        56.  C        81.  C
+7.   B        32.  TRUE     57.  C        82.  C
+8.   TRUE     33.  B        58.  FALSE    83.  TRUE
+9.   C        34.  C        59.  B        84.  C
+10.  B        35.  C        60.  A        85.  B
+11.  B        36.  FALSE    61.  C        86.  TRUE
+12.  C        37.  B        62.  TRUE     87.  C
+13.  B        38.  C        63.  B        88.  TRUE
+14.  TRUE     39.  B        64.  B        89.  B
+15.  C        40.  C        65.  TRUE     90.  C
+16.  C        41.  C        66.  C        91.  TRUE
+17.  C        42.  B        67.  D        92.  B
+18.  D        43.  FALSE    68.  C        93.  B
+19.  FALSE    44.  C        69.  TRUE     94.  TRUE
+20.  C        45.  C        70.  B        95.  B
+21.  B        46.  D        71.  C        96.  C
+22.  B        47.  C        72.  TRUE     97.  FALSE
+23.  TRUE     48.  TRUE     73.  B        98.  B
+24.  B        49.  B        74.  B        99.  C
+25.  C        50.  C        75.  TRUE     100. TRUE
 
 ====================================================
 NOTES
 ====================================================
-- Item 63: FALSE — the statement is reversed. Darwin believed variation is INHERITED; Lamarck believed variation is ACQUIRED.
-- Item 90: FALSE — it was Emil Q. Javier (not Gavino C. Trono) who first reported the "ice-ice" disease in seaweed farms.
+- Item 58: FALSE — The Superego operates on the MORALITY Principle, not the Reality Principle. The Ego operates on the Reality Principle.
+- Item 60: A (Id) — In the STS context, the Id represents science and technology stimulating desires; the Ego represents institutions/tools mediating those desires; the Superego represents ethics and social norms.
+- Item 91: TRUE — Emil Q. Javier (not Gavino C. Trono) was the first to report "ice-ice" disease. Note that the slides list the descriptions of Trono and Javier under each other's names — Emil Q. Javier's contributions listed in the slides actually describe Gavino C. Trono's work (plant breeding, rice, maize, etc.), and vice versa. Study both descriptions carefully for your exam.
