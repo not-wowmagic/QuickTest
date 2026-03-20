@@ -149,18 +149,27 @@ function writeLock(subj, lock) {
   }
 }
 
+const ANSWER_KEY_FRAGMENT_RE = /\b\d+\.\s*(?:A|B|C|D|TRUE|FALSE)\b/gi;
+const STARTS_WITH_TF_RE = /^(?:TRUE|FALSE)\b/i;
+// Matches compact answer-key row fragments like "44. C 69. C 94. TRUE"
+// while staying below a normal question-length threshold.
+const MAX_ANSWER_KEY_ROW_LENGTH = 90;
+const MIN_ANSWER_KEY_FRAGMENTS = 2;
+const MOBILE_QUESTION_TEXT_MAX_HEIGHT = '34vh';
+const MIN_QUESTION_OPTIONS = 2;
+
 function isMalformedQuestionText(text) {
   if (typeof text !== 'string') return true;
   const compact = text.replace(/\s+/g, ' ').trim();
   if (!compact) return true;
 
-  const answerKeyFragments = compact.match(/\b\d+\.\s*(?:A|B|C|D|TRUE|FALSE)\b/gi) || [];
+  const answerKeyFragments = compact.match(ANSWER_KEY_FRAGMENT_RE) || [];
   const looksLikeAnswerKeyRow =
-    answerKeyFragments.length >= 2 &&
-    compact.length <= 90 &&
+    answerKeyFragments.length >= MIN_ANSWER_KEY_FRAGMENTS &&
+    compact.length <= MAX_ANSWER_KEY_ROW_LENGTH &&
     !compact.includes('?');
   const startsLikeCorruptedAnswerKey =
-    /^(?:TRUE|FALSE)\b/i.test(compact) && answerKeyFragments.length >= 1;
+    STARTS_WITH_TF_RE.test(compact) && answerKeyFragments.length >= 1;
 
   return looksLikeAnswerKeyRow || startsLikeCorruptedAnswerKey;
 }
@@ -168,7 +177,7 @@ function isMalformedQuestionText(text) {
 function sanitizeQuestions(rawQuestions) {
   return (rawQuestions || []).filter((q) => {
     if (!q || isMalformedQuestionText(q.text)) return false;
-    if (!Array.isArray(q.options) || q.options.length < 2) return false;
+    if (!Array.isArray(q.options) || q.options.length < MIN_QUESTION_OPTIONS) return false;
     if (typeof q.answer !== 'number') return false;
     return q.answer >= 0 && q.answer < q.options.length;
   });
@@ -842,7 +851,7 @@ export default function ExamPage() {
           .exam-progress-wrap { padding: 16px 16px 0; margin-bottom: 8px; flex-shrink: 0; }
           .question-nav { padding: 0 16px; margin-bottom: 12px; flex-shrink: 0; }
           .question-card { margin-bottom: 0; border-radius: 0; border-left: none; border-right: none; flex: 1; display: flex; flex-direction: column; background: transparent; box-shadow: none; padding: 16px; overflow: hidden; }
-          .question-text { font-size: 1.05rem; margin-bottom: 16px; }
+          .question-text { font-size: 1.05rem; margin-bottom: 16px; max-height: ${MOBILE_QUESTION_TEXT_MAX_HEIGHT}; overflow-y: auto; }
           .options-list { margin-top: auto; background: var(--bg-card); padding: 16px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; box-shadow: 0 -4px 24px rgba(0,0,0,0.06); gap: 8px; margin-left: -16px; margin-right: -16px; margin-bottom: -16px; border-top: 1px solid var(--border); flex-shrink: 0; }
           .exam-actions { gap: 6px; padding: 16px; background: var(--bg-card); margin: 0; flex-shrink: 0; }
           .exam-actions .btn { flex: 1; justify-content: center; font-size: 0.85rem; padding: 10px 12px; }
