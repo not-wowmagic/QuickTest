@@ -103,12 +103,72 @@ function parseSTS(filePath) {
   const lines = content.split('\n');
   let mapped = [];
   let idCounter = 1;
-  
+
   let currentQ = null;
+  let inAnswerKey = false;
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
-    
+
+    // Check if we've hit the answer key section
+    if (line.includes('ANSWER KEY')) {
+      if (currentQ) {
+        if (currentQ.options.length === 0) {
+          currentQ.options = ['TRUE', 'FALSE'];
+        }
+        mapped.push(currentQ);
+        currentQ = null;
+      }
+      inAnswerKey = true;
+      continue;
+    }
+
+    // Skip separator lines in answer key section
+    if (inAnswerKey && line.startsWith('====')) {
+      // Check if this is the end marker (followed by NOTES or end of file)
+      if (lines[i+1] && lines[i+1].trim().includes('NOTES')) {
+        break;
+      }
+      continue;
+    }
+
+    // Parse answer key lines
+    if (inAnswerKey) {
+      // Each line contains multiple answer pairs like "1.  B      26. B      51. C      76. B"
+      // Use regex to match all "number. answer" patterns
+      const answerPattern = /(\d+)\.\s+([A-D]|TRUE|FALSE)/g;
+      let match;
+      while ((match = answerPattern.exec(line)) !== null) {
+        const qNum = parseInt(match[1]);
+        const ans = match[2].trim();
+
+        if (qNum > 0 && qNum <= mapped.length) {
+          const qObj = mapped[qNum - 1];
+          if (ans === 'TRUE') qObj.answer = 0;
+          else if (ans === 'FALSE') qObj.answer = 1;
+          else if (ans === 'A') qObj.answer = 0;
+          else if (ans === 'B') qObj.answer = 1;
+          else if (ans === 'C') qObj.answer = 2;
+          else if (ans === 'D') qObj.answer = 3;
+
+          const letterList = ['A','B','C','D'];
+          if (ans === 'TRUE') qObj.explanation = `Correct answer is TRUE`;
+          else if (ans === 'FALSE') qObj.explanation = `Correct answer is FALSE`;
+          else if (qObj.options && qObj.options[qObj.answer]) {
+            qObj.explanation = `Correct answer: ${letterList[qObj.answer]}) ${qObj.options[qObj.answer]}`;
+          } else {
+            qObj.explanation = `Correct answer: ${ans}`;
+          }
+        }
+      }
+      continue;
+    }
+
+    // Skip answer key processing if we're in that section
+    if (inAnswerKey) continue;
+
+    // Parse questions
     const match = line.match(/^(\d+)\.\s+(.*)/);
     if (match) {
       if (currentQ) {
@@ -124,51 +184,20 @@ function parseSTS(filePath) {
         answer: 0,
         explanation: 'Answers are recorded in the answer key.'
       };
-      
+
       if (line.includes('[TRUE or FALSE]')) {
          currentQ.options = ['TRUE', 'FALSE'];
       }
     } else if (currentQ && /^[A-D]\)/.test(line)) {
       currentQ.options.push(line.substring(3).trim());
-    } else if (line.startsWith('====================================================') && lines[i+1] && lines[i+1].includes('ANSWER KEY')) {
-       if (currentQ) {
-          if (currentQ.options.length === 0) currentQ.options = ['TRUE', 'FALSE'];
-          mapped.push(currentQ);
-          currentQ = null;
-       }
-       
-       i += 2;
-       while (i < lines.length && !lines[i].includes('=======')) {
-          const l = lines[i].trim();
-          if (l) {
-             const parts = l.split(/\s{2,}/);
-             for (const p of parts) {
-                const kv = p.split('.');
-                if (kv.length >= 2) {
-                   const qNum = parseInt(kv[0].trim());
-                   const ans = kv[1].trim();
-                   if (qNum > 0 && qNum <= mapped.length) {
-                      const qObj = mapped[qNum - 1];
-                      if (ans === 'TRUE') qObj.answer = 0;
-                      else if (ans === 'FALSE') qObj.answer = 1;
-                      else if (ans === 'A') qObj.answer = 0;
-                      else if (ans === 'B') qObj.answer = 1;
-                      else if (ans === 'C') qObj.answer = 2;
-                      else if (ans === 'D') qObj.answer = 3;
-                      
-                      const letterList = ['A','B','C','D'];
-                      if (ans === 'TRUE') qObj.explanation = `Correct answer is TRUE`;
-                      else if (ans === 'FALSE') qObj.explanation = `Correct answer is FALSE`;
-                      else qObj.explanation = `Correct answer: ${letterList[qObj.answer]}) ${qObj.options[qObj.answer]}`;
-                   }
-                }
-             }
-          }
-          i++;
-       }
     }
   }
-  if (currentQ) mapped.push(currentQ);
+
+  if (currentQ && !inAnswerKey) {
+    if (currentQ.options.length === 0) currentQ.options = ['TRUE', 'FALSE'];
+    mapped.push(currentQ);
+  }
+
   return mapped;
 }
 
