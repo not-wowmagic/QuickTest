@@ -808,19 +808,119 @@ export default function ExamPage() {
         .practice-feedback.correct { background: rgba(52, 199, 89, 0.1); border: 1px solid var(--success); color: var(--success); }
         .practice-feedback.incorrect { background: rgba(255, 59, 48, 0.1); border: 1px solid var(--error); color: var(--error); }
         @media (max-width: 768px) {
-          .exam-page { overflow: hidden; height: 100vh; display: flex; flex-direction: column; }
-          .exam-nav { padding: 10px 12px; gap: 6px; flex-shrink: 0; }
-          .exam-nav-left { gap: 8px; }
-          .exam-subject-badge { font-size: 0.82rem; }
-          .exam-body { padding: 0; display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+          .exam-page {
+            overflow: hidden;
+            height: 100vh;
+            height: 100dvh; /* dvh for better mobile browser support */
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+          }
+          .exam-header {
+            padding: 10px 12px;
+            gap: 6px;
+            flex-shrink: 0;
+            border-bottom: 1px solid var(--border);
+          }
+          .exam-header-left { gap: 8px; }
+          .exam-subject-title { font-size: 0.82rem; }
+          .exam-body {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+            max-height: 100%;
+          }
           .exam-progress-wrap { padding: 16px 16px 0; margin-bottom: 8px; flex-shrink: 0; }
-          .question-nav { padding: 0 16px; margin-bottom: 12px; flex-shrink: 0; }
-          .question-card { margin-bottom: 0; border-radius: 0; border-left: none; border-right: none; flex: 1; display: flex; flex-direction: column; background: transparent; box-shadow: none; padding: 16px; overflow-y: auto; }
-          .question-text { font-size: 1.05rem; margin-bottom: 16px; }
-          .options-list { margin-top: auto; background: var(--bg-card); padding: 16px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; box-shadow: 0 -4px 24px rgba(0,0,0,0.06); gap: 8px; margin-left: -16px; margin-right: -16px; margin-bottom: -16px; border-top: 1px solid var(--border); flex-shrink: 0; }
-          .exam-actions { gap: 6px; padding: 16px; background: var(--bg-card); margin: 0; flex-shrink: 0; }
+          .question-nav {
+            padding: 0 16px;
+            margin-bottom: 12px;
+            flex-shrink: 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+          }
+          .question-card {
+            margin-bottom: 0;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            box-shadow: none;
+            padding: 16px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            max-height: 100%;
+          }
+          .question-text { font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
+          .options-list {
+            margin-top: auto;
+            background: var(--bg-card);
+            padding: 16px;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.06);
+            gap: 8px;
+            margin-left: -16px;
+            margin-right: -16px;
+            margin-bottom: -16px;
+            border-top: 1px solid var(--border);
+            flex-shrink: 0;
+          }
+          .option-btn {
+            padding: 12px 14px;
+            font-size: 0.9rem;
+          }
+          .exam-actions {
+            gap: 6px;
+            padding: 12px 16px;
+            background: var(--bg-card);
+            margin: 0;
+            flex-shrink: 0;
+            border-top: 1px solid var(--border);
+          }
           .exam-actions .btn { flex: 1; justify-content: center; font-size: 0.85rem; padding: 10px 12px; }
-          .submit-section { margin-top: 0; padding: 24px 16px; background: var(--bg-card); flex-shrink: 0; }
+          .submit-section {
+            margin-top: 0;
+            padding: 24px 16px;
+            background: var(--bg-card);
+            flex-shrink: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+          }
+        }
+        @media (max-width: 480px) {
+          .exam-header-right {
+            font-size: 0.75rem;
+          }
+          .exam-timer {
+            font-size: 0.85rem;
+            padding: 4px 8px;
+          }
+          .exam-progress-text {
+            font-size: 0.7rem;
+            padding: 4px 8px;
+          }
+          .question-text {
+            font-size: 0.95rem;
+          }
+          .option-btn {
+            padding: 10px 12px;
+            font-size: 0.85rem;
+          }
+          .option-letter {
+            width: 24px;
+            height: 24px;
+            font-size: 0.7rem;
+          }
         }
       `}</style>
     </div>

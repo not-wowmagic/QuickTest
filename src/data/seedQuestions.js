@@ -1,18 +1,9 @@
 // src/data/seedQuestions.js
 
-import filipinoData from './filipino.json';
 export const SUBJECTS = {
-  filipino: {
-    id: 'filipino',
-    title: "Filipino sa Iba't Ibang Larangan",
-    description: 'Pag-aaral ng wika at pananaliksik sa kultura, sining, at kasaysayan.',
-    icon: '📜',
-    tags: ['Lika', 'Pananaliksik'],
-    questions: filipinoData
-  },
   ethics: {
     id: 'ethics',
-    title: 'Ethics with Peace Education',
+    title: 'Ethics',
     description: 'Explore moral principles and what makes actions right or wrong.',
     icon: '⚖️',
     tags: ['Philosophy', 'Morality'],
@@ -4733,8 +4724,8 @@ export const SUBJECTS = {
       "Socius",
       "Logos"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Scientia"
   },
   {
     "id": "sts-q2",
@@ -4745,8 +4736,8 @@ export const SUBJECTS = {
       "Art, skills, or crafts",
       "Word or thought"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Art, skills, or crafts"
   },
   {
     "id": "sts-q3",
@@ -4757,8 +4748,8 @@ export const SUBJECTS = {
       "A pursuit of knowledge covering fundamental laws",
       "The study of how values affect scientific research"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) A larger group of individuals associated with each other"
   },
   {
     "id": "sts-q4",
@@ -4769,8 +4760,8 @@ export const SUBJECTS = {
       "Science, Technology, and Society",
       "Systems, Theory, and Science"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Science, Technology, and Society"
   },
   {
     "id": "sts-q5",
@@ -4781,8 +4772,8 @@ export const SUBJECTS = {
       "Goes through experiments",
       "Relies on evidence"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 3,
+    "explanation": "Correct answer: D) Relies on evidence"
   },
   {
     "id": "sts-q6",
@@ -4791,8 +4782,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q7",
@@ -4803,8 +4794,8 @@ export const SUBJECTS = {
       "Technology informs scientific research",
       "Technology replaces the need for science"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Technology makes life easier and benefits society"
   },
   {
     "id": "sts-q8",
@@ -4814,7 +4805,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q9",
@@ -4825,8 +4816,8 @@ export const SUBJECTS = {
       "Association or companionship",
       "Craftsmanship"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Association or companionship"
   },
   {
     "id": "sts-q10",
@@ -4837,8 +4828,8 @@ export const SUBJECTS = {
       "Relies on evidence",
       "Goes through experiments"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Relies on authority figures"
   },
   {
     "id": "sts-q11",
@@ -4849,8 +4840,8 @@ export const SUBJECTS = {
       "Nicolaus Copernicus",
       "James Watt"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Johannes Gutenberg"
   },
   {
     "id": "sts-q12",
@@ -4861,8 +4852,8 @@ export const SUBJECTS = {
       "Mesopotamia",
       "Greece"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Mesopotamia"
   },
   {
     "id": "sts-q13",
@@ -4873,8 +4864,8 @@ export const SUBJECTS = {
       "Age of Reason",
       "Renaissance"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Dark Ages"
   },
   {
     "id": "sts-q14",
@@ -4884,7 +4875,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q15",
@@ -4895,8 +4886,8 @@ export const SUBJECTS = {
       "James Watt",
       "Thomas Edison"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) James Watt"
   },
   {
     "id": "sts-q16",
@@ -4907,8 +4898,8 @@ export const SUBJECTS = {
       "Steam engine",
       "Telegraph"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Telephone"
   },
   {
     "id": "sts-q17",
@@ -4919,8 +4910,8 @@ export const SUBJECTS = {
       "1879",
       "1885"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) 1879"
   },
   {
     "id": "sts-q18",
@@ -4931,8 +4922,8 @@ export const SUBJECTS = {
       "Henri Becquerel",
       "Dmitri Mendeleev"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 3,
+    "explanation": "Correct answer: D) Dmitri Mendeleev"
   },
   {
     "id": "sts-q19",
@@ -4941,8 +4932,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q20",
@@ -4953,8 +4944,8 @@ export const SUBJECTS = {
       "Showing that a magnet can produce electricity and inventing the dynamo",
       "Formulating the Atomic Theory"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Showing that a magnet can produce electricity and inventing the dynamo"
   },
   {
     "id": "sts-q21",
@@ -4965,8 +4956,8 @@ export const SUBJECTS = {
       "Samuel Morse",
       "James Clerk Maxwell"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Hans Christian Oersted"
   },
   {
     "id": "sts-q22",
@@ -4977,8 +4968,8 @@ export const SUBJECTS = {
       "DARPA",
       "NetLink"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) ARPANET"
   },
   {
     "id": "sts-q23",
@@ -4988,7 +4979,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q24",
@@ -4999,8 +4990,8 @@ export const SUBJECTS = {
       "1890 and 1892",
       "1900 and 1901"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) 1885 and 1886"
   },
   {
     "id": "sts-q25",
@@ -5011,8 +5002,8 @@ export const SUBJECTS = {
       "China",
       "Thailand"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) China"
   },
   {
     "id": "sts-q26",
@@ -5023,8 +5014,8 @@ export const SUBJECTS = {
       "Paraw",
       "Bangka"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Caracoa"
   },
   {
     "id": "sts-q27",
@@ -5035,8 +5026,8 @@ export const SUBJECTS = {
       "Post-Colonial Period",
       "Marcos Period"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Spanish Period"
   },
   {
     "id": "sts-q28",
@@ -5046,7 +5037,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q29",
@@ -5057,8 +5048,8 @@ export const SUBJECTS = {
       "National Science Development Board",
       "Philippine Science High School System"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) National Science Development Board"
   },
   {
     "id": "sts-q30",
@@ -5069,8 +5060,8 @@ export const SUBJECTS = {
       "1955",
       "1963"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) 1941"
   },
   {
     "id": "sts-q31",
@@ -5081,8 +5072,8 @@ export const SUBJECTS = {
       "Inventing the first two-way video telephone in 1955",
       "Developing the single-chip GUI accelerator"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Inventing the first two-way video telephone in 1955"
   },
   {
     "id": "sts-q32",
@@ -5091,8 +5082,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q33",
@@ -5103,8 +5094,8 @@ export const SUBJECTS = {
       "1980",
       "1988"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) 1972"
   },
   {
     "id": "sts-q34",
@@ -5115,8 +5106,8 @@ export const SUBJECTS = {
       "Roberto del Rosario",
       "Gregorio Zara"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Roberto del Rosario"
   },
   {
     "id": "sts-q35",
@@ -5127,8 +5118,8 @@ export const SUBJECTS = {
       "Erythromycin",
       "Amoxicillin"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Erythromycin"
   },
   {
     "id": "sts-q36",
@@ -5139,8 +5130,8 @@ export const SUBJECTS = {
       "12th",
       "20th"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) 12th"
   },
   {
     "id": "sts-q37",
@@ -5149,8 +5140,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q38",
@@ -5161,8 +5152,8 @@ export const SUBJECTS = {
       "Single-chip GUI accelerator",
       "Videophone"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) One-chip video camera"
   },
   {
     "id": "sts-q39",
@@ -5173,8 +5164,8 @@ export const SUBJECTS = {
       "PAGASA",
       "NBSB"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) PAGASA"
   },
   {
     "id": "sts-q40",
@@ -5185,8 +5176,8 @@ export const SUBJECTS = {
       "Philippine Science High School System",
       "Bureau of Science"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Department of Science and Technology (DOST)"
   },
   {
     "id": "sts-q41",
@@ -5197,8 +5188,8 @@ export const SUBJECTS = {
       "Thomas Kuhn",
       "Nicolaus Copernicus"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Thomas Kuhn"
   },
   {
     "id": "sts-q42",
@@ -5209,8 +5200,8 @@ export const SUBJECTS = {
       "De Revolutionibus Orbium Coelestium",
       "The Interpretation of Dreams"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) The Structure of Scientific Revolutions"
   },
   {
     "id": "sts-q43",
@@ -5219,8 +5210,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q44",
@@ -5231,8 +5222,8 @@ export const SUBJECTS = {
       "Claudius Ptolemy",
       "Aristarchus"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Claudius Ptolemy"
   },
   {
     "id": "sts-q45",
@@ -5243,8 +5234,8 @@ export const SUBJECTS = {
       "40,000 km",
       "50,000 km"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) 40,000 km"
   },
   {
     "id": "sts-q46",
@@ -5255,8 +5246,8 @@ export const SUBJECTS = {
       "Nicolaus Copernicus",
       "Aristarchus of Samos"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 3,
+    "explanation": "Correct answer: D) Aristarchus of Samos"
   },
   {
     "id": "sts-q47",
@@ -5267,8 +5258,8 @@ export const SUBJECTS = {
       "1543",
       "1564"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) 1543"
   },
   {
     "id": "sts-q48",
@@ -5278,7 +5269,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q49",
@@ -5289,8 +5280,8 @@ export const SUBJECTS = {
       "Barometer",
       "Thermometer"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Telescope"
   },
   {
     "id": "sts-q50",
@@ -5301,8 +5292,8 @@ export const SUBJECTS = {
       "18th century",
       "19th century"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) 18th century"
   },
   {
     "id": "sts-q51",
@@ -5313,8 +5304,8 @@ export const SUBJECTS = {
       "Body parts used more grow stronger; those unused deteriorate",
       "Species were created separately and distinctly"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Body parts used more grow stronger; those unused deteriorate"
   },
   {
     "id": "sts-q52",
@@ -5324,7 +5315,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q53",
@@ -5335,8 +5326,8 @@ export const SUBJECTS = {
       "1840",
       "1859"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) 1831"
   },
   {
     "id": "sts-q54",
@@ -5347,8 +5338,8 @@ export const SUBJECTS = {
       "Paradigm Shift",
       "Use and Disuse"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Natural Selection"
   },
   {
     "id": "sts-q55",
@@ -5359,8 +5350,8 @@ export const SUBJECTS = {
       "Selective Pressure",
       "Survival of the Fittest"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Selective Pressure"
   },
   {
     "id": "sts-q56",
@@ -5370,7 +5361,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q57",
@@ -5381,8 +5372,8 @@ export const SUBJECTS = {
       "Behaviorism",
       "Cognitive Psychology"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Psychoanalysis"
   },
   {
     "id": "sts-q58",
@@ -5393,8 +5384,8 @@ export const SUBJECTS = {
       "Conscious Mind",
       "Subconscious Mind"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Conscious Mind"
   },
   {
     "id": "sts-q59",
@@ -5405,8 +5396,8 @@ export const SUBJECTS = {
       "Id",
       "Preconscious"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Id"
   },
   {
     "id": "sts-q60",
@@ -5415,8 +5406,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q61",
@@ -5427,8 +5418,8 @@ export const SUBJECTS = {
       "Operates as a moral conscience shaped by parental influence",
       "Contains unconscious aggressive and sexual drives"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Operates as a moral conscience shaped by parental influence"
   },
   {
     "id": "sts-q62",
@@ -5439,8 +5430,8 @@ export const SUBJECTS = {
       "Superego",
       "Preconscious"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Superego"
   },
   {
     "id": "sts-q63",
@@ -5449,8 +5440,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q64",
@@ -5461,8 +5452,8 @@ export const SUBJECTS = {
       "All thoughts currently in awareness",
       "Hidden desires and unacceptable ideas"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Unrepressed memories that can be retrieved for specific purposes"
   },
   {
     "id": "sts-q65",
@@ -5473,8 +5464,8 @@ export const SUBJECTS = {
       "Darwinian Revolution",
       "Industrial Revolution"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Darwinian Revolution"
   },
   {
     "id": "sts-q66",
@@ -5485,8 +5476,8 @@ export const SUBJECTS = {
       "Article XIV",
       "Article XV"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Article XIV"
   },
   {
     "id": "sts-q67",
@@ -5496,7 +5487,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q68",
@@ -5507,8 +5498,8 @@ export const SUBJECTS = {
       "Government supervision",
       "Military support"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Tax deductions and incentives"
   },
   {
     "id": "sts-q69",
@@ -5519,8 +5510,8 @@ export const SUBJECTS = {
       "Intellectual property and creations",
       "Financial assets"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Intellectual property and creations"
   },
   {
     "id": "sts-q70",
@@ -5531,8 +5522,8 @@ export const SUBJECTS = {
       "NEDA",
       "DBM"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) NEDA"
   },
   {
     "id": "sts-q71",
@@ -5543,8 +5534,8 @@ export const SUBJECTS = {
       "Kaunlaran",
       "Kalayaan"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 3,
+    "explanation": "Correct answer: D) Kalayaan"
   },
   {
     "id": "sts-q72",
@@ -5554,7 +5545,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q73",
@@ -5565,8 +5556,8 @@ export const SUBJECTS = {
       "Military Research and Defense",
       "Disaster Risk Reduction and Climate Change Adaptation"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Military Research and Defense"
   },
   {
     "id": "sts-q74",
@@ -5577,8 +5568,8 @@ export const SUBJECTS = {
       "Food and Nutrition Security",
       "Sustainable Community"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Food and Nutrition Security"
   },
   {
     "id": "sts-q75",
@@ -5588,7 +5579,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q76",
@@ -5599,8 +5590,8 @@ export const SUBJECTS = {
       "Water Security",
       "Sustainable Community"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Inclusive Nation-building"
   },
   {
     "id": "sts-q77",
@@ -5611,8 +5602,8 @@ export const SUBJECTS = {
       "Clean energy",
       "Water access"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Sustainable community"
   },
   {
     "id": "sts-q78",
@@ -5623,8 +5614,8 @@ export const SUBJECTS = {
       "Encouraging students to memorize scientific facts",
       "Preparing students for science competitions"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Developing science-process skills and using science literacy in everyday life"
   },
   {
     "id": "sts-q79",
@@ -5633,8 +5624,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q80",
@@ -5645,8 +5636,8 @@ export const SUBJECTS = {
       "Environmentally",
       "Culturally"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Environmentally"
   },
   {
     "id": "sts-q81",
@@ -5657,8 +5648,8 @@ export const SUBJECTS = {
       "Engineering and Architecture",
       "Business and Economics"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Science and Mathematics"
   },
   {
     "id": "sts-q82",
@@ -5669,8 +5660,8 @@ export const SUBJECTS = {
       "Science for Change Program (S4CP)",
       "Tuklas Lunas Program"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Science for Change Program (S4CP)"
   },
   {
     "id": "sts-q83",
@@ -5680,7 +5671,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q84",
@@ -5691,8 +5682,8 @@ export const SUBJECTS = {
       "Building science high schools in the regions",
       "Providing digital books to communities"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Discovering and developing new drugs from natural resources"
   },
   {
     "id": "sts-q85",
@@ -5703,8 +5694,8 @@ export const SUBJECTS = {
       "DepEd Order No. 10 s. 2012 and No. 22 s. 2015",
       "DepEd Order No. 55 s. 2006 and No. 30 s. 2009"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) DepEd Order No. 73 s. 2008 and No. 51 s. 2010"
   },
   {
     "id": "sts-q86",
@@ -5715,8 +5706,8 @@ export const SUBJECTS = {
       "44",
       "50"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) 44"
   },
   {
     "id": "sts-q87",
@@ -5725,8 +5716,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q88",
@@ -5737,8 +5728,8 @@ export const SUBJECTS = {
       "Tropical plants and seaweeds",
       "Insects and soil organisms"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Amphibians, reptiles, and marine protected areas"
   },
   {
     "id": "sts-q89",
@@ -5749,8 +5740,8 @@ export const SUBJECTS = {
       "Induction of flowering of mango and micropropagation",
       "Conservation of coral reefs"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Induction of flowering of mango and micropropagation"
   },
   {
     "id": "sts-q90",
@@ -5759,8 +5750,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q91",
@@ -5771,8 +5762,8 @@ export const SUBJECTS = {
       "Developing anti-pollution engine technology",
       "Discovering a new antibiotic from natural resources"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) The world's first national-scale assessment of damage to coral reefs"
   },
   {
     "id": "sts-q92",
@@ -5783,8 +5774,8 @@ export const SUBJECTS = {
       "Tobacco and sugarcane",
       "Camote and cassava"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Abaca and tropical grasses and legumes"
   },
   {
     "id": "sts-q93",
@@ -5795,8 +5786,8 @@ export const SUBJECTS = {
       "Atoy Llave",
       "Narciso Mosuela"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Engr. Marinto C. Martinez"
   },
   {
     "id": "sts-q94",
@@ -5806,7 +5797,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   },
   {
     "id": "sts-q95",
@@ -5817,8 +5808,8 @@ export const SUBJECTS = {
       "Combustion of biofuel materials",
       "Magnetic induction from saltwater"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Chemical compounds, catalysts, and metal alloys submerged in electrolytes"
   },
   {
     "id": "sts-q96",
@@ -5829,8 +5820,8 @@ export const SUBJECTS = {
       "Atoy Llave",
       "Diosdado Banatao"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) Atoy Llave"
   },
   {
     "id": "sts-q97",
@@ -5839,8 +5830,8 @@ export const SUBJECTS = {
       "TRUE",
       "FALSE"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer is FALSE"
   },
   {
     "id": "sts-q98",
@@ -5851,8 +5842,8 @@ export const SUBJECTS = {
       "Engr. Marinto C. Martinez",
       "Fe Del Mundo"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 1,
+    "explanation": "Correct answer: B) Engr. Aisa Mijeno"
   },
   {
     "id": "sts-q99",
@@ -5863,8 +5854,8 @@ export const SUBJECTS = {
       "An anti-pollution, eco-friendly fuel saver and power booster engine device",
       "A solar-powered vehicle for urban transport"
     ],
-    "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "answer": 2,
+    "explanation": "Correct answer: C) An anti-pollution, eco-friendly fuel saver and power booster engine device"
   },
   {
     "id": "sts-q100",
@@ -5874,7 +5865,7 @@ export const SUBJECTS = {
       "FALSE"
     ],
     "answer": 0,
-    "explanation": "Answers are recorded in the answer key."
+    "explanation": "Correct answer is TRUE"
   }
 ]
   }
