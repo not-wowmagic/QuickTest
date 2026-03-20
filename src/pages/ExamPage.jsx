@@ -149,6 +149,31 @@ function writeLock(subj, lock) {
   }
 }
 
+function isMalformedQuestionText(text) {
+  if (typeof text !== 'string') return true;
+  const compact = text.replace(/\s+/g, ' ').trim();
+  if (!compact) return true;
+
+  const answerKeyFragments = compact.match(/\b\d+\.\s*(?:A|B|C|D|TRUE|FALSE)\b/gi) || [];
+  const looksLikeAnswerKeyRow =
+    answerKeyFragments.length >= 2 &&
+    compact.length <= 90 &&
+    !compact.includes('?');
+  const startsLikeCorruptedAnswerKey =
+    /^(?:TRUE|FALSE)\b/i.test(compact) && answerKeyFragments.length >= 1;
+
+  return looksLikeAnswerKeyRow || startsLikeCorruptedAnswerKey;
+}
+
+function sanitizeQuestions(rawQuestions) {
+  return (rawQuestions || []).filter((q) => {
+    if (!q || isMalformedQuestionText(q.text)) return false;
+    if (!Array.isArray(q.options) || q.options.length < 2) return false;
+    if (typeof q.answer !== 'number') return false;
+    return q.answer >= 0 && q.answer < q.options.length;
+  });
+}
+
 // ── Main ExamPage ──
 export default function ExamPage() {
   const { subject } = useParams();
@@ -318,8 +343,9 @@ export default function ExamPage() {
         subjectInfo ? [...subjectInfo.questions].sort(() => Math.random() - 0.5) : [];
 
       const applyQuestions = (qs, isTimeAttack) => {
+        const safeQs = sanitizeQuestions(qs);
         // Shuffle options for each question
-        const processedQs = qs.map(q => {
+        const processedQs = safeQs.map(q => {
           if (q.options && q.options.length === 2 && q.options.includes('True') && q.options.includes('False')) {
             return q;
           }
@@ -815,7 +841,7 @@ export default function ExamPage() {
           .exam-body { padding: 0; display: flex; flex-direction: column; flex: 1; overflow: hidden; }
           .exam-progress-wrap { padding: 16px 16px 0; margin-bottom: 8px; flex-shrink: 0; }
           .question-nav { padding: 0 16px; margin-bottom: 12px; flex-shrink: 0; }
-          .question-card { margin-bottom: 0; border-radius: 0; border-left: none; border-right: none; flex: 1; display: flex; flex-direction: column; background: transparent; box-shadow: none; padding: 16px; overflow-y: auto; }
+          .question-card { margin-bottom: 0; border-radius: 0; border-left: none; border-right: none; flex: 1; display: flex; flex-direction: column; background: transparent; box-shadow: none; padding: 16px; overflow: hidden; }
           .question-text { font-size: 1.05rem; margin-bottom: 16px; }
           .options-list { margin-top: auto; background: var(--bg-card); padding: 16px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; box-shadow: 0 -4px 24px rgba(0,0,0,0.06); gap: 8px; margin-left: -16px; margin-right: -16px; margin-bottom: -16px; border-top: 1px solid var(--border); flex-shrink: 0; }
           .exam-actions { gap: 6px; padding: 16px; background: var(--bg-card); margin: 0; flex-shrink: 0; }
