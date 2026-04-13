@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Sensitive data and raw quiz files
+.env
+.env.*
+quizzes/
+scripts/

@@ -31,13 +31,13 @@ export default function LeaderboardPage() {
       try {
         let q;
         if (activeTab === 'all') {
-          q = query(collection(db, 'results'), orderBy('percentage', 'desc'), limit(50));
+          q = query(collection(db, 'results'), orderBy('percentage', 'desc'), limit(300));
         } else {
           q = query(
             collection(db, 'results'),
             where('subject', '==', activeTab),
             orderBy('percentage', 'desc'),
-            limit(50)
+            limit(300)
           );
         }
         const snap = await getDocs(q);
@@ -49,7 +49,7 @@ export default function LeaderboardPage() {
           return b.percentage - a.percentage;
         });
         
-        if (isMounted) setResults(data.slice(0, 50));
+        if (isMounted) setResults(data.slice(0, 300));
       } catch (err) {
         console.error('[Leaderboard] fetch error:', err);
         if (isMounted) setResults([]);
