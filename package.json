@@ -8,7 +8,8 @@
     "build": "vite build",
     "prerender": "node prerender.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:vercel": "npm run build && npm run prerender"
   },
   "dependencies": {
     "chart.js": "^4.5.1",
