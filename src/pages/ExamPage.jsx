@@ -212,9 +212,9 @@ export default function ExamPage() {
   const [warningPopup, setWarningPopup] = useState(null);
   const autoNextTimerRef = useRef(null);
 
-  const sessionIdRef = useRef(`sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`);
-  const startedAtRef = useRef(Date.now());
-  const perfStartedAtRef = useRef(performance.now());
+  const sessionIdRef = useRef(null);
+  const startedAtRef = useRef(0);
+  const perfStartedAtRef = useRef(0);
   const visibilitySwitchesRef = useRef(0);
   const hiddenCountRef = useRef(0);
   const blurCountRef = useRef(0);
@@ -236,6 +236,15 @@ export default function ExamPage() {
 
   useEffect(() => () => {
     if (autoNextTimerRef.current) clearTimeout(autoNextTimerRef.current);
+  }, []);
+
+  // These values are intentionally created after mount so rendering stays pure.
+  useEffect(() => {
+    if (!sessionIdRef.current) {
+      sessionIdRef.current = `sess_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+      startedAtRef.current = Date.now();
+      perfStartedAtRef.current = performance.now();
+    }
   }, []);
 
   // Duplicate tab/session lock hardening

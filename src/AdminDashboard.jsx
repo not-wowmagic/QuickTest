@@ -170,7 +170,6 @@ export default function AdminDashboard() {
 
   // Fetch data with real-time listeners
   useEffect(() => {
-    setLoading(true);
     let qLoaded = false;
     let rLoaded = false;
 
